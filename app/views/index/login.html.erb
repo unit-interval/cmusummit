@@ -1,0 +1,46 @@
+<div id="content" class="clearfix">
+  <section>
+    <article id="register">
+      <h1><span>Log In</span><span>Sign Up</span></h1>
+      <div id="login" class="clearfix">
+        <%= form_tag login_path, :method => 'post' do %>
+          <%= label_tag :email %>
+          <%= email_field_tag :email %>
+          <br />
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+          <br />
+          <%= label_tag %>
+          <%= submit_tag 'Log In' %>
+        <% end %>
+      </div><div id="signup" class="clearfix">
+        <%= form_for(@user) do |f| %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <br />
+          <%= f.label :email_confirmation %>
+          <%= f.text_field :email_confirmation %>
+          <br />
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <br />
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+          <br />
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+          <br />
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+          <br />
+          <%= f.label :gender %>
+          <%= f.radio_button :gender, 1 %> Male
+          <%= f.radio_button :gender, 0 %> Female
+          <br />
+          <%= label_tag %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </article>
+  </section>
+</div>

@@ -1,0 +1,42 @@
+<div id="content" class="clearfix">
+  <section id="sessions">
+    <article>
+      <h1>Sessions</h1>
+      <% @keynotes.each do |keynote| %>
+      <div class="session-detail">
+        <div class="session-info">
+          <h2><%= keynote.title %></h2>
+          <div class="speaker-list">
+            <%= keynote.speakers.collect { |s| s.first_name + ' ' + s.last_name } .join(', ') %>
+          </div>
+          <div class="description-container">
+            <p class="description">
+          	Thanks to the ecosystem of manufacturers, developers and carriers, the platform has
+          	grown exponentially--100M activated Android devices. Read more on the official blog
+          	post at http://goo.gl/XZkAo
+            </p>
+            <div class="session-stats">
+            	Level: <span>101</span>
+            	<br>
+            	Track: <span><a href="/events/io/2011/sessions.html#keynote-track">Keynote</a></span>
+            	<br>
+            	Time: <span>May 10, 09:00AM – 10:00AM</span>
+            	<br>
+            	Room:
+            </div>
+          </div>
+        </div>
+        <div class="speaker-info">
+          <div class="speaker has-image">
+          <div class="image c1"></div>
+            <div class="bio">
+              <h3> About Nico Weber </h3>
+              <p>Nico is a software engineer on the Chrome team. In his 20% time he recently started looking at 3d graphics on Android and ported Google Body to Android.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </article>
+  </session>
+</div>
