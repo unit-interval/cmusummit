@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore gems from deployment bundle install
-/verdor/bundle
+/vendor/bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
