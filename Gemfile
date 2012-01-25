@@ -37,3 +37,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+# Use Thin as the application server
+gem 'thin', :group => :production
+
