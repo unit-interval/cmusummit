@@ -41,3 +41,6 @@ gem 'jquery-rails'
 # Use Thin as the application server
 gem 'thin', :group => :production
 
+# Use mysql2 adapter
+gem 'mysql2', :group => :production
+
