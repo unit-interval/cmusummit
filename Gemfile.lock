@@ -33,6 +33,8 @@ GEM
     daemons (1.1.6)
     erubis (2.7.0)
     eventmachine (0.12.10)
+    execjs (1.3.0)
+      multi_json (~> 1.0)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.0)
@@ -88,6 +90,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
+    uglifier (1.2.2)
+      execjs (>= 0.3.0)
+      multi_json (>= 1.0.2)
 
 PLATFORMS
   ruby
@@ -99,3 +104,4 @@ DEPENDENCIES
   rails (= 3.2.0)
   sqlite3
   thin
+  uglifier (>= 1.0.3)
