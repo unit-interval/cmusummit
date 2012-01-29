@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(:version => 20120124141805) do
 
   create_table "keynotes", :force => true do |t|
-    t.text     "title",      :limit => 512, :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "title",      :limit => 1024, :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "sessions", :force => true do |t|
@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(:version => 20120124141805) do
   add_index "sessions", ["speaker_id"], :name => "index_sessions_on_speaker_id"
 
   create_table "speakers", :force => true do |t|
-    t.string   "last_name",  :limit => 40,  :null => false
-    t.string   "first_name", :limit => 40,  :null => false
-    t.text     "title",      :limit => 512, :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.string   "last_name",                  :null => false
+    t.string   "first_name",                 :null => false
+    t.text     "title",      :limit => 1024, :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "users", :force => true do |t|
