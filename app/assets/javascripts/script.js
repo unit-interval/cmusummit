@@ -1,22 +1,22 @@
 $(function() {
-  $("#contest > h1 > a").click(function() {
-    var b = $(this);
-    var a = b.html().toLowerCase();
-    b.siblings().removeClass("active");
-    b.addClass("active");
-    $("#contest .content").removeClass("active");
-    $("#contest #" + a).addClass("active");
-    return false;
-  });
-  $("#info > h1 > a").click(function() {
-    var b = $(this);
-    var a = b.html().toLowerCase();
-    b.siblings().removeClass("active");
-    b.addClass("active");
-    $("#info .content").removeClass("active");
-    $("#info #" + a).addClass("active");
-    return false;
-  });
+	$("#contest > h1 > a").click(function() {
+		var b = $(this);
+		var a = b.html().toLowerCase();
+		b.siblings().removeClass("active");
+		b.addClass("active");
+		$("#contest .content").removeClass("active");
+		$("#contest #" + a).addClass("active");
+		return false;
+	});
+	$("#info > h1 > a").click(function() {
+		var b = $(this);
+		var a = b.html().toLowerCase();
+		b.siblings().removeClass("active");
+		b.addClass("active");
+		$("#info .content").removeClass("active");
+		$("#info #" + a).addClass("active");
+		return false;
+	});
 	$("#top h3").delay(2000).animate({'margin-top': 0}, 500);
 	$(".arrow-nav a.up").click(function(){
 		var f=$(this);
@@ -45,4 +45,20 @@ $(function() {
 		return false;
 	})
 	if ($("#index").length > 0) $("#home").hide();
+	if ($("#random-fact").length > 0) {
+		var a = $("#random-fact dd");
+		var n = a.find("span").length;
+		var b = a.find("span");
+		var m = Math.floor(Math.random()*n);
+		var c = $(b[m]);
+		c.show();
+	}
+	self.setTimeout(setInterval("randomFactScroll()", 5000), 5000);
 });
+
+
+function randomFactScroll() {
+	var a = $("#random-fact dd");
+	if (a.scrollTop()<a.get(0).scrollHeight-a.height()) a.animate({scrollTop: "+=40"}, 500);
+	else a.animate({scrollTop: "0"}, 500)
+}

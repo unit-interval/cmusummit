@@ -254,8 +254,41 @@ nav > ul > li a:hover {
 #index p {
 	float: left;
 	width: 340px;
-	font-size: 20px;
-	line-height: 36px;
+	font-size: 18px;
+	line-height: 40px;
+}
+#why p {
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+#why p:last-child {
+	margin-bottom: 0;
+}
+#random-fact {
+	background: #EEE;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width: 900px;
+	padding: 0px 20px;
+	margin: 30px 0 0;
+	-moz-box-shadow: 0 0 6px #c6c6c6;
+	-webkit-box-shadow: 0 0 6px #c6c6c6;
+	line-height: 40px;
+}
+#random-fact dt {
+	float: left;
+	border-right: 1px dashed #FFF;
+	padding-right: 20px;
+}
+#random-fact dd {
+	float: left;
+	padding-left: 20px;
+	height: 40px;
+	width: 750px;
+	overflow: hidden;
+}
+#random-fact dd span{
+	display: none;
 }
 article {
 	overflow: hidden;
@@ -719,7 +752,7 @@ div.arrow-nav a.down-inactive {
 }
 /* info */
 #info > h1 > a {
-	width: 33%;
+	width: 25%;
 	display: inline-block;
 	text-align: center;
 }
