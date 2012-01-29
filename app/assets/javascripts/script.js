@@ -44,4 +44,5 @@ $(function() {
 		});
 		return false;
 	})
+	if ($("#index").length > 0) $("#home").hide();
 });
