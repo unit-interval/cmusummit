@@ -3,42 +3,51 @@
     <article id="register">
       <h1><span>Log In</span><span>Sign Up</span></h1>
       <div id="login" class="clearfix">
+	    <p id="forget-notification">Password has been sent to your email.</p>
         <%= form_tag login_path, :method => 'post' do %>
+		  <div>
           <%= label_tag :email %>
           <%= email_field_tag :email %>
-          <br />
+          <span>Email Does Not Exist</span></div><div>
           <%= label_tag :password %>
           <%= password_field_tag :password %>
-          <br />
+          <span>Password Does Not Match</span></div><div>
           <%= label_tag %>
           <%= submit_tag 'Log In' %>
+          <input id="forget-button" type="button" value="Forget Password?" class="button-gray"></div>
         <% end %>
-      </div><div id="signup" class="clearfix">
+		<form id="forget">
+			<div><label>Email</label><input type="text"></div>
+			<div><label> </label><input type="submit" value="Retrive Password Through Email" class="button-gray"></div>
+		</form>
+      </div>
+      <div id="signup" class="clearfix">
         <%= form_for(@user) do |f| %>
-          <%= f.label :email %>
+          <div><%= f.label :email %>
           <%= f.text_field :email %>
-          <br />
+          <span>Email Has Been Registered</span></div><div>
           <%= f.label :confirmation %>
           <%= f.text_field :email_confirmation %>
-          <br />
+          <span>Two Entries Do Not Match</span></div><div>
           <%= f.label :password %>
           <%= f.password_field :password %>
-          <br />
+          <span>No Less Than 6 Letters</span></div><div>
           <%= f.label :confirmation %>
           <%= f.password_field :password_confirmation %>
-          <br />
+          <span>Two Entries Do Not Match</span></div><div>
           <%= f.label :last_name %>
           <%= f.text_field :last_name %>
-          <br />
+          <span>Cannot Be Empty</span></div><div>
           <%= f.label :first_name %>
           <%= f.text_field :first_name %>
-          <br />
+          <span>Cannot Be Empty</span></div><div>
           <%= f.label :gender %>
           <%= f.radio_button :gender, 1 %> Male
           <%= f.radio_button :gender, 0 %> Female
-          <br />
+          </div><div>
           <%= label_tag %>
           <%= f.submit %>
+		  </div>
         <% end %>
       </div>
     </article>

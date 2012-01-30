@@ -72,6 +72,14 @@ $(function() {
 		c.show();
 		self.setTimeout(setInterval("randomFactScroll()", 5000), 5000);
 	}
+	$(function(){
+		$("#register form input").focus(function(){
+			$(this).siblings('span').fadeOut(500);
+		})
+		$("#forget-button").click(function(){
+			$("#forget").slideDown(500);
+		})
+	})
 });
 
 
