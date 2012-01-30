@@ -1,12 +1,12 @@
 class CreateSessions < ActiveRecord::Migration
   def change
     create_table :sessions do |t|
-      t.belongs_to :speaker, :null => false
-      t.belongs_to :keynote
+      t.belongs_to :guest
+      t.belongs_to :presentation
 
       t.timestamps
     end
-    add_index :sessions, :speaker_id
-    add_index :sessions, :keynote_id
+    add_index :sessions, :guest_id
+    add_index :sessions, :presentation_id
   end
 end

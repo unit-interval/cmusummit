@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @presentation.title %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @presentation.type %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @presentation.content %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @presentation.venue %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @presentation.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @presentation.time %>
+</p>
+
+
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<%= link_to 'Back', presentations_path %>

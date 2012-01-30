@@ -10,38 +10,50 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120124141805) do
+ActiveRecord::Schema.define(:version => 20120130144105) do
 
-  create_table "keynotes", :force => true do |t|
-    t.text     "title",      :null => false
+  create_table "guests", :force => true do |t|
+    t.string   "last_name"
+    t.string   "first_name"
+    t.string   "datatype"
+    t.text     "title"
+    t.text     "bio"
+    t.string   "picture"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "presentations", :force => true do |t|
+    t.string   "title"
+    t.string   "datatype"
+    t.text     "content"
+    t.string   "venue"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "presentations", ["datatype"], :name => "index_presentations_on_datatype"
+  add_index "presentations", ["date"], :name => "index_presentations_on_date"
+  add_index "presentations", ["time"], :name => "index_presentations_on_time"
 
   create_table "sessions", :force => true do |t|
-    t.integer  "speaker_id", :null => false
-    t.integer  "keynote_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "guest_id"
+    t.integer  "presentation_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
-  add_index "sessions", ["keynote_id"], :name => "index_sessions_on_keynote_id"
-  add_index "sessions", ["speaker_id"], :name => "index_sessions_on_speaker_id"
-
-  create_table "speakers", :force => true do |t|
-    t.string   "last_name",  :null => false
-    t.string   "first_name", :null => false
-    t.text     "title",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "sessions", ["guest_id"], :name => "index_sessions_on_guest_id"
+  add_index "sessions", ["presentation_id"], :name => "index_sessions_on_presentation_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",              :null => false
-    t.string   "encrypted_password", :null => false
-    t.string   "salt",               :null => false
-    t.string   "last_name",          :null => false
-    t.string   "first_name",         :null => false
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.string   "last_name"
+    t.string   "first_name"
     t.boolean  "gender"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

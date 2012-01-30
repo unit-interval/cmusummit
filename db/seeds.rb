@@ -5,12 +5,14 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
-if Speaker.count < 2 then
-  Speaker.delete_all
+if Guest.count < 2 then
+  Guest.delete_all
   Session.delete_all
-  Keynote.delete_all
-  
-  speakers = Speaker.create([{
+  Presentation.delete_all
+
+  t = Time.now
+
+  guests = Guest.create([{
     :last_name => 'Gundotra',
     :first_name => 'Vic',
     :title => 'Corporate Vice President, Microsoft Corporation|Chairman, Microsoft Asia-Pacific R&D Group'
@@ -19,13 +21,21 @@ if Speaker.count < 2 then
     :first_name => 'Hugo',
     :title => 'Corporate Vice President, Microsoft Corporation|Chairman, Microsoft Asia-Pacific R&D Group'
   }])
-  keynotes = Keynote.create([{
-    :title => %{Thanks to the ecosystem of manufacturers, developers and carriers, the platform has grown exponentially--100M activated Android devices. Read more on the official blog post at http://goo.gl/XZkAo}
+  presentations = Presentation.create([{
+    :title => %{I'm an Android},
+    :datatype => 'keynote',
+    :content => %{Thanks to the ecosystem of manufacturers, developers and carriers, the platform has grown exponentially--100M activated Android devices. Read more on the official blog post at http://goo.gl/XZkAo},
+    :date => t.strftime("%Y-%m-%d"),
+    :time => t
   }, {
-    :title => %{Thanks to the ecosystem of manufacturers, developers and carriers, the platform has grown exponentially--100M activated Android devices. Read more on the official blog post at http://goo.gl/XZkAo}
+    :title => %{I'm an iPhone},
+    :datatype => 'panel',
+    :content => %{Thanks to the ecosystem of manufacturers, developers and carriers, the platform has grown exponentially--100M activated Android devices. Read more on the official blog post at http://goo.gl/XZkAo},
+    :date => t.strftime("%Y-%m-%d"),
+    :time => t
   }])
   
-  keynotes.collect { |k| k.speakers = speakers }
+  presentations.collect { |k| k.guests = guests }
 end
 
 if User.count < 1 then

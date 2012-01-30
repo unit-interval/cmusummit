@@ -1,9 +1,9 @@
 Cmusummit::Application.routes.draw do
-  resources :speakers
+  resources :guests
+
+  resources :presentations
 
   resources :users
-
-  resources :keynotes
 
   root :to => 'index#index'
 
