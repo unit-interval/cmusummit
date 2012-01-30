@@ -490,6 +490,20 @@ div.arrow-nav a.down-inactive {
 #agenda {
 	font-size: 13px;
 }
+#agenda .content{
+	display: none;
+}
+#agenda .content.active {
+	display: block;
+}
+#agenda h1 > a {
+	width: 25%;
+	text-align: center;
+	display: inline-block;
+}
+#agenda > h1 > a:hover, #agenda > h1 > a.active {
+	color: #363636
+}
 #agenda #agenda-container {
 	padding: 0px 30px 10px;
 }
@@ -499,9 +513,6 @@ div.arrow-nav a.down-inactive {
 }
 #agenda h2:first-child {
 	margin-top: 0;
-}
-#agenda p {
-	margin: 30px 0 0;
 }
 #agenda #content {
 	overflow: hidden;
@@ -530,8 +541,8 @@ div.arrow-nav a.down-inactive {
 	position: absolute;
 	top: 0;
 	height: 30px;
-	background: #c41230;
 	color: #FFF;
+	margin-left: -6px;
 }
 #agenda div.agenda-row div.agenda-item:hover {
 	cursor: pointer;
@@ -548,16 +559,31 @@ div.arrow-nav a.down-inactive {
 	background: #EFEFEF;
 }
 #agenda div.agenda-row div.agenda-item span {
-	color: #e51937;
-	font-size: 36px;
-	line-height: 30px;
-	font: arial;
+	position: absolute;
+	height: 8px;
+	width: 8px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	top: 12px;
+	left: 3px;
+	background: #ddd;
+	z-index: 2;
 }
 #agenda div.agenda-row div.agenda-item:hover span {
-	color: #900;
+	background: white;
 }
 #agenda div.agenda-row div.agenda-item:hover .info-balloon {
 	display: block;
+}
+#agenda .info-dot {
+	position: absolute;
+	height: 14px;
+	width: 14px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	top: 9px;
+	background: #666;
+	z-index: 1;
 }
 #agenda .info-balloon {
 	background: transparent url(../images/agenda-info-balloon.png) no-repeat top left;
@@ -566,8 +592,8 @@ div.arrow-nav a.down-inactive {
 	height: 79px;
 	padding: 10px;
 	z-index: 99;
-	top: -85px;
-	left: -25px;
+	top: -87px;
+	left: -33px;
 	line-height: 20px;
 	display: none;
 }
@@ -586,34 +612,43 @@ div.arrow-nav a.down-inactive {
 	padding: 0;
 }
 /* sessions */
-.session-detail .session-info{
+#agenda .session-detail {
+	margin: 0 -40px;
+}
+#agenda .session-detail:first-child {
+	margin-top: -40px;
+}
+#agenda .session-detail:last-child {
+	margin-bottom: -40px;
+}
+#agenda .session-detail .session-info{
 	padding: 40px;
 	border-bottom: 1px dotted #D2D2D2;
 }
-.session-detail:last-child {
+#agenda .session-detail:last-child {
 	border: none;
 }
-.session-detail h2 {
+#agenda .session-detail h2 {
 	font-size: 25px;
 	color: #900;
 	margin-bottom: 4px;
 }
-.session-detail h3 {
+#agenda .session-detail h3 {
 	font-size: 24px;
 	font-weight: normal;
 	margin: 0 0 10px 0;
 }
-.session-detail .speaker-list {
+#agenda .session-detail .speaker-list {
     color: #363636;
     font-size: 18px;
     line-height: 1.2;
     margin: 0 0 24px;
 }
-.session-detail .description-container {
+#agenda .session-detail .description-container {
     overflow: hidden;
     width: 100%;
 }
-.session-detail .description {
+#agenda .session-detail .description {
     border-right: 1px dotted #d2d2d2;
     color: #939393;
     float: left;
@@ -623,7 +658,7 @@ div.arrow-nav a.down-inactive {
     padding-right: 26px;
     width: 540px;
 }
-.session-detail .session-stats {
+#agenda .session-detail .session-stats {
     color: #363636;
     font-size: 13px;
     line-height: 1.8;
@@ -632,7 +667,7 @@ div.arrow-nav a.down-inactive {
     padding: 0;
     width: 255px;
 }
-.session-detail .session-stats span {
+#agenda .session-detail .session-stats span {
     color: #939393;
     margin-left: 12px;
 }

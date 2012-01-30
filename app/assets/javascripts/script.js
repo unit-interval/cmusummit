@@ -1,4 +1,22 @@
 $(function() {
+	$("#agenda > h1 > a").click(function() {
+		var b = $(this);
+		var a = b.html().toLowerCase();
+		b.siblings().removeClass("active");
+		b.addClass("active");
+		$("#agenda .content").removeClass("active");
+		$("#agenda #" + a).addClass("active");
+		return false;
+	});
+	$("#people > h1 > a").click(function() {
+		var b = $(this);
+		var a = b.html().toLowerCase();
+		b.siblings().removeClass("active");
+		b.addClass("active");
+		$("#people .people-page").removeClass("active");
+		$("#people #" + a).addClass("active");
+		return false;
+	});
 	$("#contest > h1 > a").click(function() {
 		var b = $(this);
 		var a = b.html().toLowerCase();
@@ -52,8 +70,8 @@ $(function() {
 		var m = Math.floor(Math.random()*n);
 		var c = $(b[m]);
 		c.show();
+		self.setTimeout(setInterval("randomFactScroll()", 5000), 5000);
 	}
-	self.setTimeout(setInterval("randomFactScroll()", 5000), 5000);
 });
 
 

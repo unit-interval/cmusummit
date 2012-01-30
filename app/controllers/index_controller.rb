@@ -10,7 +10,7 @@ class IndexController < ApplicationController
   def contest
   end
 
-  def faq
+  def team
   end
 
   def info

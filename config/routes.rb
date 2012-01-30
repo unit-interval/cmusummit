@@ -7,7 +7,7 @@ Cmusummit::Application.routes.draw do
 
   root :to => 'index#index'
 
-  get "agenda", "contest", "faq", "info", "login", "logout", "sessions", :controller => "index"
+  get "agenda", "contest", "team", "info", "login", "logout", "people", :controller => "index"
   post "login" => 'index#sign_in'
 
 end
