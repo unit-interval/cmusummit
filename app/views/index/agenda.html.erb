@@ -129,7 +129,7 @@
 									<div class="session-info">
 										<h2>Energy and Environment Panel: Towards a Sustainable Future</h2>
 										<div class="speaker-list">
-											Panelist List
+											Khee Poh Lam
 										</div>
 										<div class="description-container">
 											<div class="description">
@@ -140,6 +140,14 @@
 												</br>
 												Place:<span>TBD</span>
 											</div>
+											<div class="session-interested">
+												<div class="button-gray">12 people like this</div>
+												<% if session[:user_id] %>
+												<a href="/login" class="button-gray">Be one of them and put it in my calendar</a>
+												<% else %>
+									            <a href="/login" class="button-gray">Sign up and be one of them</a>
+												<% end %>
+											</div>
 										</div>
 									</div>
 									<div class="speaker-info">
@@ -147,6 +155,14 @@
 											<div class="image c1"></div>
 											<div class="bio">
 												<h3>Khee Poh Lam</h3>
+												<div class="people-interested">
+													<div class="button-gray">12 people are following</div>
+													<% if session[:user_id] %>
+													<a href="/login" class="button-gray">Be one of them and add to my contact</a>
+													<% else %>
+										            <a href="/login" class="button-gray">Sign up and be one of them</a>
+													<% end %>
+												</div>
 												<p>
 													PhD, Royal Institute of British Architects<br>
 													Board of Directors of Energy Foundation, USA; US-China Green Energy Council<br>

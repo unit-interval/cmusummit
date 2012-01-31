@@ -15,6 +15,9 @@ class IndexController < ApplicationController
 
   def info
   end
+  
+  def todo
+  end
 
   def login
     @user = User.new
