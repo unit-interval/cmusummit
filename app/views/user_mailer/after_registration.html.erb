@@ -1,0 +1,8 @@
+<h1>Welcome to CMU Summit, <%= @user.first_name %>!</h1>
+<p>
+  You receive this email because you have successfully signed up to <%= link_to "http://cmusummit.org", root_url, :target => '_blank' %>.<br />
+  Login with the email address: <em><%= @user.email %></em>.<br/>
+</p><p>
+  Thanks for joining and have a great day!
+</p>
+

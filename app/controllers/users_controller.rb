@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
+        UserMailer.after_registration(@user).deliver if Rails.env == 'production'
         format.html { redirect_to agenda_path, :notice => 'User was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
