@@ -5,18 +5,16 @@ class IndexController < ApplicationController
   end
 
   def agenda
+    presentations = Presentation.all
+    @panels = presentations.find_all { |p| p.datatype == 'panel' }
+    @keynotes = presentations.find_all { |p| p.datatype == 'keynote' }
+    @misc_sessions = presentations - @panels - @keynotes
   end
 
   def contest
   end
 
-  def team
-  end
-
   def info
-  end
-  
-  def todo
   end
 
   def login
@@ -28,8 +26,8 @@ class IndexController < ApplicationController
     redirect_to root_path
   end
 
-  def sessions
-    @keynotes = Keynote.all
+  def people
+    @guests = Guest.all
   end
 
   def sign_in
@@ -40,5 +38,11 @@ class IndexController < ApplicationController
     else
       redirect_to login_path
     end
+  end
+  
+  def team
+  end
+
+  def todo
   end
 end

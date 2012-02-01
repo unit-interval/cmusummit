@@ -3,28 +3,20 @@
 		<article id="people">
 			<h1><a href="#speakers" class="active" data-page="speakers">Speaker</a><a href="#guests" data-page="guests">Panelist</a><a href="#participants" data-page="participants">Participant</a></h1>
 			<div id="speaker" class="active people-page clearfix">
+              <% @guests.each do |guest| %>
 				<div class="speaker-info">
 					<div class="speaker has-image">
 						<div class="image"><img src="images/default_avatar_male.jpg"></div>
 						<div class="bio">
-							<h3>Name</h3>
-							<h4>Title 1</h4>
-							<h4>Title 2</h4>
-							<p>Bio, Interest</p>
+                            <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
+                            <% guest.title.split('|').each do |title| %>
+                              <h4><%= title %></h4>
+                            <% end %>
+                            <p><%= guest.bio %></p>
 						</div>
 					</div>
 				</div>
-				<div class="speaker-info">
-					<div class="speaker has-image">
-						<div class="image"><img src="images/default_avatar_female.jpg"></div>
-						<div class="bio">
-							<h3>Name</h3>
-							<h4>Title 1</h4>
-							<h4>Title 2</h4>
-							<p>Bio, Interest</p>
-						</div>
-					</div>
-				</div>
+              <% end %>
 			</div>
 			<div id="panelist" class="people-page clearfix">
 				<div class="speaker-info">

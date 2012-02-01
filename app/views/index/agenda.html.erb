@@ -125,20 +125,20 @@
 								</div>
 							</div>
 							<div class="content clearfix" id="panel">
+                              <% @panels.each do |panel| %>
 								<div class="session-detail">
 									<div class="session-info">
-										<h2>Energy and Environment Panel: Towards a Sustainable Future</h2>
+                                        <h2><%= panel.title %></h2>
 										<div class="speaker-list">
-											Khee Poh Lam
+                                          <%= panel.guests.collect { |g| g.first_name + ' ' + g.last_name } .join(', ') %>
 										</div>
 										<div class="description-container">
 											<div class="description">
-												Energy and environment problem, especially the global climate change has become a major concern for our planet. As the two largest economies in the world, the United States and China have the responsibility and opportunity to work hand-in-hand solving the problem and building a sustainable future for our children. Carnegie Mellon has world leading researchers in this sphere. Together with policy makers, entrepreneurs, environmentalists and anyone who are interested in solving this problem, we are ready to proceed. Topics include energy generation and efficiency solutions, energy and environment policies and green buildings and cities.</br>
+                                              <%= panel.content %>
 											</div>
 											<div class="session-stats">
-												Time: <span>TBD</span>
-												</br>
-												Place: <span>TBD</span>
+                                                Time: <span><%= panel.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span></br>
+                                                Place: <span><%= panel.venue ? panel.venue : 'TBD' %></span>
 											</div>
 											<div class="session-interested">
 												<div class="button-gray">12 people like this</div>
@@ -151,10 +151,11 @@
 										</div>
 									</div>
 									<div class="speaker-info">
+                                      <% panel.guests.each do |guest| %>
 										<div class="speaker has-image">
 											<div class="image c1"></div>
 											<div class="bio">
-												<h3>Khee Poh Lam</h3>
+                                                <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 												<div class="people-interested">
 													<div class="button-gray">12 people are following</div>
 													<% if session[:user_id] %>
@@ -164,45 +165,16 @@
 													<% end %>
 												</div>
 												<p>
-													PhD, Royal Institute of British Architects<br>
-													Board of Directors of Energy Foundation, USA; US-China Green Energy Council<br>
-													Professor in School of Architecture, Carnegie Mellon University<br>
+                                                  <% guest.title.split('|').each do |title| %>
+                                                    <%= title %><br />
+                                                  <% end %>
 												</p>
 											</div>
 										</div>
+                                      <% end %>
 									</div>
 								</div>
-								<div class="session-detail">
-									<div class="session-info">
-										<h2>Title</h2>
-										<div class="speaker-list">
-											Panelist List
-										</div>
-										<div class="description-container">
-											<p class="description">
-												Subtitle.</br>
-												Description.</br>
-												Topics.
-											</p>
-											<div class="session-stats">
-												Time: <span>May 10, 09:00AM – 10:00AM</span>
-												<br>
-												Place:
-											</div>
-										</div>
-									</div>
-									<div class="speaker-info">
-										<div class="speaker has-image">
-											<div class="image c1"></div>
-											<div class="bio">
-												<h3> Panelist TBD </h3>
-												<p>
-													Bio and title TBD
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
+                              <% end %>
 							</div>
 							
 							<div class="content clearfix" id="misc">

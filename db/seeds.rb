@@ -5,37 +5,25 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
-if Guest.count < 2 then
+if Guest.count < 1 then
   Guest.delete_all
   Session.delete_all
   Presentation.delete_all
 
-  t = Time.now
-
-  guests = Guest.create([{
-    :last_name => 'Gundotra',
-    :first_name => 'Vic',
-    :title => 'Corporate Vice President, Microsoft Corporation|Chairman, Microsoft Asia-Pacific R&D Group'
-  }, {
-    :last_name => 'Barra',
-    :first_name => 'Hugo',
-    :title => 'Corporate Vice President, Microsoft Corporation|Chairman, Microsoft Asia-Pacific R&D Group'
-  }])
-  presentations = Presentation.create([{
-    :title => %{I'm an Android},
-    :datatype => 'keynote',
-    :content => %{Thanks to the ecosystem of manufacturers, developers and carriers, the platform has grown exponentially--100M activated Android devices. Read more on the official blog post at http://goo.gl/XZkAo},
-    :date => t.strftime("%Y-%m-%d"),
-    :time => t
-  }, {
-    :title => %{I'm an iPhone},
+  lam = Guest.create(
+    :last_name => 'Lam',
+    :first_name => 'Khee Poh',
+    :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA; US-China Green Energy Council|Professor in School of Architecture, Carnegie Mellon University'
+  )
+  panel1 = Presentation.create(
+    :title => %{Energy and Environment Panel: Towards a Sustainable Future},
     :datatype => 'panel',
-    :content => %{Thanks to the ecosystem of manufacturers, developers and carriers, the platform has grown exponentially--100M activated Android devices. Read more on the official blog post at http://goo.gl/XZkAo},
-    :date => t.strftime("%Y-%m-%d"),
-    :time => t
-  }])
+    :content => %{Energy and environment problem, especially the global climate change has become a major concern for our planet. As the two largest economies in the world, the United States and China have the responsibility and opportunity to work hand-in-hand solving the problem and building a sustainable future for our children. Carnegie Mellon has world leading researchers in this sphere. Together with policy makers, entrepreneurs, environmentalists and anyone who are interested in solving this problem, we are ready to proceed. Topics include energy generation and efficiency solutions, energy and environment policies and green buildings and cities.},
+    :date => '2012-01-01',
+    :time => '00:00'
+  )
   
-  presentations.collect { |k| k.guests = guests }
+  panel1.guests << lam
 end
 
 if User.count < 1 then
