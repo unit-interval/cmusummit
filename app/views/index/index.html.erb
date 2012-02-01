@@ -81,10 +81,12 @@
 		<article id="follow-us">
 			<h3>Get Involved</h3>
 			<div class="content">
+				<% if not session[:user_id] %>
 				<div>
 					<p>Register to keep up-to-date.</p>
 					<a href="/login" class="button-gray" id="aside-register">Sign Up</a>
 				</div>
+				<% end %>
 				<div class="clearfix">
 					<p>Follow us on your social network.</p>
 					<ul id="aside-social-network">
@@ -93,14 +95,6 @@
 						<li><a href="http://weibo.com/cmusummit"><img src="images/weibo_icon.png" /></a></li>
 						<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><img src="images/linkin_icon.jpg" /></a></li>
 					</ul>
-				</div>
-			</div>
-		</article>
-		<article id="pitch">
-			<h3>Pitch Competition</h3>
-			<div class="content">
-				<div>
-					<p>Content to be determined.</p>
 				</div>
 			</div>
 		</article>

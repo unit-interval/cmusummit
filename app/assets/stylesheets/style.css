@@ -613,7 +613,7 @@ div.arrow-nav a.down-inactive {
 	margin: 0 0 3px 0;
 	padding: 0;
 }
-.session-interested {
+#agenda .session-interested {
 	left: 605px;
 	bottom: 0px;
 	position: absolute;
@@ -745,6 +745,30 @@ div.arrow-nav a.down-inactive {
 	font-size: 13px;
 	line-height: 1.5;
 	margin: 0;
+}
+#participant {
+	padding: 40px;
+}
+#participant .speaker-info, #my-contact .speaker-info {
+	padding: 0px;
+	background: transparent;
+	float: left;
+	width: 286px;
+}
+#participant .image, #my-contact .image {
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+}
+#participant h3, #my-contact h3{
+	font-size: 20px;
+	margin: 0 0 5px 0;
+}
+#participant .bio, #my-contact .bio {
+	margin-bottom: 10px;
+}
+#participant .image img, #my-contact .image img{
+	margin: 5px;
 }
 /* contest */
 #contest h1 > a {
@@ -937,6 +961,35 @@ div.arrow-nav a.down-inactive {
 	margin: 2px;
 }
 /* todo */
+#my-profile, #connect-social-network {
+	font-size: 13px;
+}
+#my-profile label, #connect-social-network label{
+	width: 90px;
+	text-align: right;
+	padding: 10px 20px 10px 0;
+	display: inline-block;
+}
+#my-profile input[type="text"], #my-profile input[type="password"]{
+	width: 300px;
+}
+#connect-social-network .button-gray{
+	width: 100px;
+}
+#update-profile .social-network-link {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px dashed #D2D2D2;
+	display: none;
+}
+#update-profile .social-network-link input[type="text"]{
+	margin-left: 0;
+	width: 100px;
+}
+#update-profile .social-network-link input[type="submit"]{
+	margin-left: 1px;
+	width: 117px;
+}
 #update-profile form {
 	font-size: 13px;
 }
@@ -951,7 +1004,7 @@ div.arrow-nav a.down-inactive {
 	margin: 2px;
 }
 #update-profile #connect-social-network div.button-gray {
-	margin: 15px auto 0px;
+	margin: 5px auto 0px;
 }
 #update-profile .content {
 	max-height: 9999px;
@@ -961,13 +1014,37 @@ div.arrow-nav a.down-inactive {
     background-color: #fff;
     float: left;
     margin-right: 15px;
-    height: 121px;
-    width: 121px;
+    height: 60px;
+    width: 60px;
 }
 #update-profile .image img {
 	height: 50px;
 	width: 50px;
-	margin: 35px 35px 36px 36px;
+	margin: 5px 5px 5px 5px;
+}
+#my-calendar{
+	font-size: 13px;
+	line-height: 20px;
+}
+#my-calendar h2{
+	color: #900;
+}
+#my-calendar .session-info {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #D2D2D2;
+}
+#my-contact .speaker-info {
+	float: none;
+	width: auto;
+	font-size: 13px;
+	margin: 10px;
+	padding: 10px 10px 4px;
+	border: 1px solid #D2D2D2;
+}
+#my-contact .speaker-info h3, #my-contact .speaker-info h4{
+	font-size: 13px;
+	margin-bottom: 10px;
 }
 /* footer */
 footer {

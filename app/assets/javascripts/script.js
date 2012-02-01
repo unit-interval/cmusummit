@@ -80,6 +80,14 @@ $(function() {
 			$("#forget").slideDown(500);
 		})
 	})
+	$("#facebook-link-button").click(function(){
+		$("#facebook-link-form").show(100);
+		$("#renren-link-form").hide(100);
+	})
+	$("#renren-link-button").click(function(){
+		$("#facebook-link-form").hide(100);
+		$("#renren-link-form").show(100);
+	})
 });
 
 
