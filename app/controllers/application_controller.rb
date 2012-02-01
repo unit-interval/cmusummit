@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by_id(session[:user_id])
-      redirect_to login_url
+      redirect_to login_path
+    end
+  end
+  def admin_only
+    unless session[:user_is_admin]
+      redirect_to agenda_path
     end
   end
 end

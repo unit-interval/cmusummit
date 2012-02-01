@@ -1,4 +1,6 @@
 class PresentationsController < ApplicationController
+  before_filter :admin_only
+
   # GET /presentations
   # GET /presentations.json
   def index

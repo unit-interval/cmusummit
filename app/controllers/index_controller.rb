@@ -35,9 +35,10 @@ class IndexController < ApplicationController
   def sign_in
     if user = User.authenticate(params[:email], params[:password])
       session[:user_id] = user.id
+      session[:user_is_admin] = user.is_admin
       redirect_to agenda_path
     else
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 end

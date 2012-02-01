@@ -1,4 +1,6 @@
 class GuestsController < ApplicationController
+  before_filter :admin_only
+
   # GET /guests
   # GET /guests.json
   def index
