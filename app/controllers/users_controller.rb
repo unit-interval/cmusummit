@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    #TODO auto confirmation fields
 
     respond_to do |format|
       if @user.save

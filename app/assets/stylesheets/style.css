@@ -1058,3 +1058,7 @@ footer {
 footer a:hover {
 	color: black;
 }
+/* override rails field_error_proc */
+form div.field_with_errors {
+  display: inline;
+}

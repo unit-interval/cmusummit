@@ -22,7 +22,7 @@
 		</form>
       </div>
       <div id="signup" class="clearfix">
-        <%= form_for(@user) do |f| %>
+        <%= form_for @user, :url => login_path do |f| %>
           <div><%= f.label :email %>
           <%= f.text_field :email %>
           <span>Email Has Been Registered</span></div><div>

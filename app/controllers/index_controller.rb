@@ -31,12 +31,23 @@ class IndexController < ApplicationController
   end
 
   def sign_in
-    if user = User.authenticate(params[:email], params[:password])
-      session[:user_id] = user.id
-      session[:user_is_admin] = user.is_admin
-      redirect_to agenda_path
+    if params[:user]
+      @user = User.new(params[:user])
+      if @user.save
+        session[:user_id] = @user.id
+        UserMailer.after_registration(@user).deliver if Rails.env == 'production'
+        redirect_to agenda_path
+      else
+        render 'login'
+      end
     else
-      redirect_to login_path
+      if user = User.authenticate(params[:email], params[:password])
+        session[:user_id] = user.id
+        session[:user_is_admin] = user.is_admin
+        redirect_to agenda_path
+      else
+        redirect_to login_path
+      end
     end
   end
   
