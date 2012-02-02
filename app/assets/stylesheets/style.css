@@ -75,8 +75,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
 	-moz-border-radius: 1px;
 	-webkit-border-radius: 1px;
 	border-radius: 1px;
-	line-height: 27px;
-	padding: 0 8px;
+	padding: 6px 8px;
 	font-size: 12px;
 }
 textarea {
@@ -930,9 +929,9 @@ div.arrow-nav a.down-inactive {
 	font-size: 13px;
 }
 #register label {
-	width: 70px;
+	width: 80px;
 	text-align: right;
-	padding: 20px 20px 20px 0;
+	padding: 20px 10px 20px 0;
 	display: inline-block;
 }
 #register .field_with_errors label {
