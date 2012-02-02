@@ -3,68 +3,13 @@
 		<article id="people">
 			<h1><a href="#speakers" class="active" data-page="speakers">Speaker</a><a href="#guests" data-page="guests">Panelist</a><a href="#participants" data-page="participants">Participant</a></h1>
 			<div id="speaker" class="active people-page clearfix">
-              <% @speakers.each do |guest| %>
-				<div class="speaker-info">
-					<div class="speaker has-image">
-						<div class="image"><img src="images/default_avatar_male.jpg"></div>
-						<div class="bio">
-                            <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
-							<div class="people-interested">
-								<div class="button-gray">12 people are following</div>
-								<% if session[:user_id] %>
-								<a href="/login" class="button-gray">Be one of them and add to my contact</a>
-								<% else %>
-					            <a href="/login" class="button-gray">Sign up and be one of them</a>
-								<% end %>
-							</div>
-                            <% guest.title.split('|').each do |title| %>
-                              <h4><%= title %></h4>
-                            <% end %>
-                            <p><%= guest.bio %></p>
-						</div>
-					</div>
-				</div>
-              <% end %>
+				<%= render :partial => "guests", :locals => { :speakers => @speakers, :layout_type => 0 }%>
 			</div>
 			<div id="panelist" class="people-page clearfix">
-              <% @panelists.each do |guest| %>
-				<div class="speaker-info">
-					<div class="speaker has-image">
-						<div class="image"><img src="images/default_avatar_male.jpg"></div>
-						<div class="bio">
-                            <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
-							<div class="people-interested">
-								<div class="button-gray">12 people are following</div>
-								<% if session[:user_id] %>
-								<a href="/login" class="button-gray">Be one of them and add to my contact</a>
-								<% else %>
-					            <a href="/login" class="button-gray">Sign up and be one of them</a>
-								<% end %>
-							</div>
-                            <% guest.title.split('|').each do |title| %>
-                              <h4><%= title %></h4>
-                            <% end %>
-                            <p><%= guest.bio %></p>
-						</div>
-					</div>
-				</div>
-              <% end %>
+				<%= render :partial => "guests", :locals => { :speakers => @panelists, :layout_type => 0 }%>
 			</div>
 			<div id="participant" class="people-page clearfix">
-				  <% @participants.each do |g| %>
-					<div class="speaker-info">
-						<div class="speaker has-image">
-							<div class="image"><img src="images/default_avatar_female.jpg"></div>
-							<div class="bio">
-								<h3><%= g.first_name + ' ' + g.last_name %></h3>
-								<h4>Title</h4>
-								<p>Links</p>
-							</div>
-							<div class="button-gray">Followed by 122</div>
-							<a href="/login" class="button-gray">Add to my contact</a>
-						</div>
-					</div>
-				  <% end %>
+				<%= render :partial => "guests", :locals => { :speakers => @participants, :layout_type => 1 }%>
 			</div>
 		</article>
 	</section>

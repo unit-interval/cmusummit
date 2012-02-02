@@ -23,6 +23,13 @@ if Guest.count < 1 then
     :date => '2012-01-01',
     :time => '00:00'
   )
+  panel2 = Presentation.create(
+    :title => %{Social Network Technologies and Entertainment: Social Networking Technologies},
+    :datatype => 'panel',
+    :content => %{In the new millennium, social networking techniques have permeated into a great variety of areas in industry, and have fundamentally changed the way we work and live. In recent years, social networking has developed beyond its traditional sense to the extent that any aspect of life that emphasizes users can potentially benefit from the social elements, such as entertainment, health care, etc. In this panel, we would like to present you the popular ideas and trends of the social networking arena.Topics include Social Networks, Microblogging Services, Mobile Applications, Socially-enhanced Health Care and Social Entertainment},
+    :date => '2012-01-01',
+    :time => '00:00'
+  )
   panel1.guests << lam
 end
 
