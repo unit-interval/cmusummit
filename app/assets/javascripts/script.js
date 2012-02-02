@@ -74,7 +74,7 @@ $(function() {
 	}
 	$(function(){
 		$("#register form input").focus(function(){
-			$(this).siblings('span').fadeOut(500);
+			$(this).parent().siblings('span').fadeOut(500);
 		})
 		$("#forget-button").click(function(){
 			$("#forget").slideDown(500);

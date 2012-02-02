@@ -894,7 +894,7 @@ div.arrow-nav a.down-inactive {
 	display: block;
 }
 /* register */
-#register #forget-notification {
+#register #forget-notification, #register #error-signup, #register #error-signin {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -935,6 +935,9 @@ div.arrow-nav a.down-inactive {
 	padding: 20px 20px 20px 0;
 	display: inline-block;
 }
+#register .field_with_errors label {
+  color: #ff4500;
+}
 #register form div {
 	position: relative;
 }
@@ -959,6 +962,9 @@ div.arrow-nav a.down-inactive {
 #register input[type="text"], #register input[type="password"], #register input[type="email"] {
 	width: 250px;
 	margin: 2px;
+}
+#register .field_with_errors input {
+  border: 2px solid #ff4500;
 }
 /* todo */
 #my-profile, #connect-social-network {

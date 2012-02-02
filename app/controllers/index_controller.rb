@@ -43,14 +43,26 @@ class IndexController < ApplicationController
       else
         render 'login'
       end
-    else
+    elsif params[:password]
       if user = User.authenticate(params[:email], params[:password])
         session[:user_id] = user.id
         session[:user_is_admin] = user.is_admin
         redirect_to agenda_path
       else
+        flash[:user_email] = params[:email]
+        flash[:error_signin] = true
         redirect_to login_path
       end
+    else
+      if @user = User.find_by_email(params[:email])
+        ## TODO add mailer
+        #UserMailer.retrieve_password(@user).deliver if Rails.env == 'production'
+        flash[:retrieve_password_notice] = 'Password has been sent to you.'
+      else
+        flash[:retrieve_password_notice] = 'Email address not found.'
+      end
+      flash[:user_email] = params[:email]
+      redirect_to login_path
     end
   end
   
