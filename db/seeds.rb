@@ -13,6 +13,7 @@ if Guest.count < 1 then
   lam = Guest.create(
     :last_name => 'Lam',
     :first_name => 'Khee Poh',
+    :datatype => 'panel',
     :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA; US-China Green Energy Council|Professor in School of Architecture, Carnegie Mellon University'
   )
   panel1 = Presentation.create(
@@ -22,7 +23,6 @@ if Guest.count < 1 then
     :date => '2012-01-01',
     :time => '00:00'
   )
-  
   panel1.guests << lam
 end
 

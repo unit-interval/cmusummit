@@ -27,7 +27,10 @@ class IndexController < ApplicationController
   end
 
   def people
-    @guests = Guest.all
+    guests = Guest.all
+    @speakers = guests.find_all { |p| p.datatype == "keynote" }
+    @panelists = guests - @speakers
+    @participants = User.all
   end
 
   def sign_in
