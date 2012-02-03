@@ -2,7 +2,7 @@
 	<% speakers.each do |guest| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-				<div class="image"><img src="images/default_avatar_male.jpg"></div>
+            <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 				<div class="bio">
 	              <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 					<div class="people-interested">
@@ -25,7 +25,7 @@
 	<% speakers.each do |g| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-				<div class="image"><img src="images/default_avatar_female.jpg"></div>
+                <div class="image"><%= image_tag 'default_avatar_female.jpg' %></div>
 				<div class="bio">
 					<h3><%= g.first_name + ' ' + g.last_name %></h3>
 					<h4>Title</h4>

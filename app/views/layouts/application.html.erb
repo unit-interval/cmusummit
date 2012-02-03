@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>CMU Summit</title>
+  <%= favicon_link_tag %>
   <%= stylesheet_link_tag "application" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" %>
   <%= javascript_include_tag "application" %>
@@ -13,7 +14,7 @@
     <div id="container">
       <header>
         <nav>
-			<a id="home" href="/"><img src="images/logo.png" alt="logo" /><span>CMU Summit</span></a>
+			<a id="home" href="/"><%= image_tag 'logo.png' %><span>CMU Summit</span></a>
           <ul>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Agenda", agenda_path %></li>

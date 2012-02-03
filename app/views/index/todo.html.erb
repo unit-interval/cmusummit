@@ -52,7 +52,7 @@
 				<p>Go to <a href="/people">People</a> and add people to my contact to keep in touch.</p>
 				<div class="speaker-info">
 					<div class="speaker has-image">
-						<div class="image"><img src="images/default_avatar_male.jpg"></div>
+                        <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 						<div class="bio">
 							<h3>Name (<a href="/login">Remove from my contact</a>)</h3>
 							<h4>Title</h4>
@@ -62,7 +62,7 @@
 				</div>								
 				<div class="speaker-info">
 					<div class="speaker has-image">
-						<div class="image"><img src="images/default_avatar_male.jpg"></div>
+                        <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 						<div class="bio">
 							<h3>Name (<a href="/login">Remove from my contact</a>)</h3>
 							<h4>Title</h4>
@@ -78,7 +78,7 @@
 			<h3>My Profile</h3>
 			<div class="content">
 				<div id="connect-social-network">
-					<div class="image"><img src="images/default_avatar_male.jpg"></div>
+                    <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 					<p>Add my social media links to my profile and use the profile picture as my avatar.</p>
 					<div class="button-gray" id="facebook-link-button">Add Facebook</div>
 					<div class="button-gray" id="renren-link-button">Add Renren</div>
@@ -117,10 +117,10 @@
 				<div class="clearfix">
 					<p>Follow us on your social network.</p>
 					<ul id="aside-social-network">
-						<li><a href="https://www.facebook.com/cmusummit"><img src="images/facebook_icon.png" /></a></li>
-						<li><a href="http://page.renren.com/601202783"><img src="images/renren_icon.jpg" /></a></li>
-						<li><a href="http://weibo.com/cmusummit"><img src="images/weibo_icon.png" /></a></li>
-						<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><img src="images/linkin_icon.jpg" /></a></li>
+                        <li><a href="https://www.facebook.com/cmusummit"><%= image_tag 'facebook_icon.png' %></a></li>
+						<li><a href="http://page.renren.com/601202783"><%= image_tag 'renren_icon.jpg' %></a></li>
+						<li><a href="http://weibo.com/cmusummit"><%= image_tag 'weibo_icon.png' %></a></li>
+						<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><%= image_tag 'linkin_icon.jpg' %></a></li>
 					</ul>
 				</div>
 			</div>
