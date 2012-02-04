@@ -305,7 +305,13 @@ article h1 {
 	color: #111;
 	font-size: 25px;
 	border-bottom: 1px dotted #D2D2D2;
-	padding: 20px 40px;
+}
+article h1.tab-nav {
+	height: 65px;
+	background-color: #EFEFEF;
+}
+article h1.tab-nav > a {
+	padding: 20px 0;
 }
 section article div.content {
 	padding: 40px;
@@ -501,6 +507,14 @@ div.arrow-nav a.down-inactive {
 	width: 25%;
 	text-align: center;
 	display: inline-block;
+}
+h1.tab-nav > a.active {
+	background-color: white;
+	border-bottom: 1px solid white;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
 }
 #agenda > h1 > a:hover, #agenda > h1 > a.active {
 	color: #363636
@@ -721,9 +735,12 @@ div.arrow-nav a.down-inactive {
 }
 /* people */
 #people h1 > a {
-	width: 33%;
+	width: 313px;
 	text-align: center;
 	display: inline-block;
+}
+#people h1 > a:last-child {
+	width: 314px;
 }
 #people > h1 > a:hover, #people > h1 > a.active {
 	color: #363636
@@ -771,9 +788,12 @@ div.arrow-nav a.down-inactive {
 }
 /* contest */
 #contest h1 > a {
-	width: 33%;
+	width: 313px;
 	text-align: center;
 	display: inline-block;
+}
+#contest h1 > a:last-child {
+	width: 314px;
 }
 #contest > h1 > a:hover, #contest > h1 > a.active {
 	color: #363636
@@ -893,6 +913,9 @@ div.arrow-nav a.down-inactive {
 	display: block;
 }
 /* register */
+#register h1 {
+	padding: 20px;
+}
 #register #forget-notification, #register #error-signup, #register #error-signin {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -1050,6 +1073,11 @@ div.arrow-nav a.down-inactive {
 #my-contact .speaker-info h3, #my-contact .speaker-info h4{
 	font-size: 13px;
 	margin-bottom: 10px;
+}
+/* team */
+#team h1 {
+	padding: 20px;
+	text-align: center;
 }
 /* footer */
 footer {

@@ -74,10 +74,10 @@ $(function() {
 	}
 	$(function(){
 		$("#register form input").focus(function(){
-			$(this).parent().siblings('span').fadeOut(500);
+			$(this).parent().siblings('span').fadeOut(100);
 		})
 		$("#forget-button").click(function(){
-			$("#forget").slideDown(500);
+			$("#forget").slideDown(100);
 		})
 	})
 	$("#facebook-link-button").click(function(){

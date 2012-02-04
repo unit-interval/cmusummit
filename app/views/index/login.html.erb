@@ -17,7 +17,7 @@
           <%= password_field_tag :password %>
           <%= label_tag %>
           <%= submit_tag 'Log In' %>
-          <%= button_tag 'Retrieve Password', :type => 'button', :id => 'forget-button', :class => 'button-gray' %>
+          <%= button_tag 'Forget Password?', :type => 'button', :id => 'forget-button', :class => 'button-gray' %>
           </div>
         <% end %>
         <%= form_tag login_path, :method => 'post', :id => 'forget' do %>
@@ -25,7 +25,7 @@
           <%= label_tag :email %>
           <%= email_field_tag :email, flash[:user_email] %>
           <%= label_tag %>
-          <%= submit_tag 'Retrieve Password Through Email', :class => 'button-gray' %>
+          <%= submit_tag 'Retrieve Password By Email', :class => 'button-gray' %>
           </div>
         <% end %>
       </div>

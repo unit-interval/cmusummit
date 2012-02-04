@@ -1,7 +1,7 @@
 <div id="content" class="clearfix">
 	<section>
 		<article id="people">
-			<h1><a href="#speakers" class="active" data-page="speakers">Speaker</a><a href="#guests" data-page="guests">Panelist</a><a href="#participants" data-page="participants">Participant</a></h1>
+			<h1 class="tab-nav"><a href="#speakers" class="active" data-page="speakers">Speaker</a><a href="#guests" data-page="guests">Panelist</a><a href="#participants" data-page="participants">Participant</a></h1>
 			<div id="speaker" class="active people-page clearfix">
 				<%= render :partial => "guests", :locals => { :speakers => @speakers, :layout_type => 0 }%>
 			</div>
