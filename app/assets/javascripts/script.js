@@ -96,6 +96,14 @@ $(function() {
 		$("#facebook-link-form").hide(100);
 		$("#renren-link-form").show(100);
 	})
+	$("#change-profile-button").click(function(){
+		$("#update-info").addClass('active');
+		return false;
+	})
+	$("#change-password-button").click(function(){
+		$("#update-password-div").slideDown(100);
+		return false;
+	})
 });
 
 

@@ -1031,21 +1031,17 @@ h1.tab-nav > a.active {
 	font-size: 13px;
 }
 #update-profile label {
-	width: 85px;
-	//text-align: right;
+	width: 90px;
 	padding: 10px 0;
 	display: inline-block;
 }
 #update-profile input[type="text"], #update-profile input[type="password"]{
-	width: 130px;
+	width: 125px;
 	margin: 2px;
     float: right;
 }
 #update-profile input[type="radio"] {
     margin-left: 10px;
-}
-#update-profile input[type="submit"] {
-    float: right;
 }
 #update-profile #connect-social-network div.button-gray {
 	margin: 5px auto 0px;
@@ -1066,6 +1062,31 @@ h1.tab-nav > a.active {
 	width: 50px;
 	margin: 5px 5px 5px 5px;
 }
+#update-info span {
+	font-weight: bold;
+}
+#update-info.active span, #update-info.active #change-profile-button, #update-info.active span, #update-info #save-changes {
+	display: none;
+}
+#update-info.active input[type="text"], #update-info.active input[type="radio"], #update-info.active .gender-span {
+	display: inline;
+	font-weight: normal;
+}
+#update-info.active #save-changes {
+	display: inline-block;
+}
+#change-password-button {
+	float: right;
+}
+#update-info input[type="text"], #update-info input[type="radio"], #update-info .gender-span {
+	display: none;
+}
+.change-profile-button-group {
+	margin-top: 10px;
+}
+#update-password-div {
+	display: none;
+}
 #my-calendar{
 	font-size: 13px;
 	line-height: 20px;
@@ -1076,30 +1097,34 @@ h1.tab-nav > a.active {
 #my-calendar .session-info {
 	padding: 10px 20px;
 	margin: 20px 0;
-	border-left: 5px solid #D2D2D2;
+	border-left: 5px solid #EEE;
 }
 #my-contact .speaker-info {
 	padding: 15px 20px 8px;
 	margin: 20px 0;
-	border-left: 5px solid #D2D2D2;
+	border-left: 5px solid #EEE;
 	float: none;
 	width: auto;
 	font-size: 13px;
+	line-height: 20px;
 }
 #my-contact .speaker-info .image {
 	margin-right: 20px;
 }
 #my-contact .speaker-info h3, #my-contact .speaker-info h4{
 	font-size: 13px;
-	margin-bottom: 10px;
+	margin: 0;
 }
 .todo-remove {
 	float: right;
-	border-bottom: 1px dashed #900;
+	border-bottom: 1px dotted #900;
 	margin-top: -21px;
 	display: none;
 }
-#my-contact .speaker-info, #my-calendar .session-info {
+#my-contact .speaker-info .todo-remove {
+	margin-top: -28px;
+}
+#my-contact .speaker-info:hover, #my-calendar .session-info:hover {
 	background-color: #EEE;
 }
 .session-info:hover .todo-remove, .speaker-info:hover .todo-remove {
