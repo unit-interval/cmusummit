@@ -30,12 +30,16 @@
 		<article id="voice">
 			<h1>Voice</h1>
 			<div class="content clearfix">
-				<div id="voice-quote">
-					<p>
-						"My heart is in the work."
-					</p>
+				<div class="voice-quote">
+					<p>"For those of you thinking about Carnegie Mellon, it's a terrific place, and you guys are doing just great work... Carnegie Mellon is a great example of what it means to move forward... At its founding, no one would have imagined that a trade school for the sons and daughters of steelworkers would one day become … one of the region's largest employers and a global research university."</p>
 					<p class="author">
-						Andrew Carnegie
+						President Obama
+					</p>
+				</div>
+				<div class="voice-quote">
+					<p>"We have a lot of Carnegie Mellon alums at Facebook and a lot of them are actually some of our best engineers. So when we decided to organize this trip to go see a few colleges, Carnegie Mellon was at the top of the list."</p>
+					<p class="author">
+						Mark Zuckerberg, Facebook CEO
 					</p>
 				</div>
 			</div>
@@ -45,29 +49,11 @@
 			<div class="content clearfix">
 				<ul id="sponsor-list">
 					<li>
-						<a href="#benetech"><img alt="Benetech" height="100" src="http://www.google.com/events/io/2011/static/img/benetech.png" width="100"></a>
-					</li>
-					<li>
-						<a href="#code-factory-s-l"><img alt="CODE FACTORY S.L." height="100" src="http://www.google.com/events/io/2011/static/img/codefactory.png" width="100"></a>
-					</li>
-					<li>
-						<a href="#levelstar"><img alt="LevelStar" height="100" src="http://www.google.com/events/io/2011/static/img/levelstar.png" width="100"></a>
-					</li>
-					<li>
-						<a href="#national-braille-press"><img alt="National Braille Press" height="100" src="http://www.google.com/events/io/2011/static/img/nationalbraillepress.png" width="100"></a>
-					</li>
-					<li>
-						<a href="#university-of-washington"><img alt="University of Washington" height="100" src="http://www.google.com/events/io/2011/static/img/universityofwashington.png" width="100"></a>
-					</li>
-					<li>
-						<a href="#apps4android-inc"><img alt="Apps4Android, Inc." height="100" src="http://www.google.com/events/io/2011/static/img/app4android.png" width="100"></a>
-					</li>
-					<li>
-						<a href="#adidas"><img alt="adidas" height="100" src="http://www.google.com/events/io/2011/static/img/Adidas.png" width="100"></a>
+						<a href="http://www.zhenfund.com/"><%= image_tag 'sponsor1.png', :alt => 'Xiaoping Xu' %></a>
 					</li>
 				</ul>
 			</div>
-		</article>
+		</article> 
 	</section>
 	<aside>
 		<article id="follow-us">
@@ -90,23 +76,7 @@
 				</div>
 			</div>
 		</article>
-		<article id="announcement">
-			<h3>Announcement</h3>
-			<div class="content">
-				<div>
-					<h4>CMU Summit Website Alpha Version Launched</h4>
-					<p>
-						Thanks to <a href="theunitinterval.com">Unit Interval Studio</a>. The alpha version is launched today.
-					</p>
-					<p class="date">
-						January 29, 2012
-					</p>
-				</div>
-			</div>
-			<div class="arrow-nav">
-				<a href="#" class="up up-inactive"></a><a href="#" class="down"></a>
-			</div>
-		</article>
+		<%=render :partial => "announcements" %>
 	</aside>
 	</section>
 </div>

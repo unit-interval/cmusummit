@@ -1,4 +1,12 @@
 $(function() {
+	if ($("#voice").length > 0) {
+		var a = $("#voice div.content");
+		var b = a.find("div.voice-quote");
+		var n = b.length;
+		var m = Math.floor(Math.random()*n);
+		var c = $(b[m]);
+		c.show();
+	}
 	$("#agenda > h1 > a").click(function() {
 		var b = $(this);
 		var a = b.html().toLowerCase();
