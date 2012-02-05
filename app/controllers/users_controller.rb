@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :authorize, :only => [:create]
-  before_filter :admin_only
+  before_filter :admin_only, :except => [:update]
 
   # GET /users
   # GET /users.json
@@ -44,7 +44,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    #TODO auto confirmation fields
 
     respond_to do |format|
       if @user.save
@@ -62,15 +61,19 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, :notice => 'User was successfully updated.' }
-        format.json { head :no_content }
+    @user = User.find(session[:user_id])
+    case params[:task]
+    when 'update_profile'
+      if @user.update_attributes(@user.attributes.merge(params[:user]))
+        redirect_to @user, :notice => 'User was successfully updated.'
       else
-        format.html { render :action => "edit" }
-        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+        render :action => "edit"
+      end
+    else
+      if @user.update_attributes(params[:user])
+        redirect_to @user, :notice => 'User was successfully updated.'
+      else
+        render :action => "edit"
       end
     end
   end

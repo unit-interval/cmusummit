@@ -1,9 +1,10 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+  ##TODO limit write access to fields like is_admin
   validates :email, :email_confirmation, :password, :password_confirmation, :salt, :encrypted_password, :last_name, :first_name, :presence => true
   validates :email, :salt, :last_name, :first_name, :length => { :maximum => 255 }
-  validates :password_confirmation, :length => { :minimum => 6 }
+  validates :password, :length => { :minimum => 6 }
   validates :email, :password, :confirmation => true
   validates :email, :uniqueness => true
 

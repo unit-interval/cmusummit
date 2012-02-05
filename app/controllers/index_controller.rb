@@ -23,6 +23,7 @@ class IndexController < ApplicationController
 
   def logout
     session[:user_id] = nil
+    session[:user_is_admin] = nil
     redirect_to root_path
   end
 
@@ -70,5 +71,6 @@ class IndexController < ApplicationController
   end
 
   def todo
+    @user = User.find(session[:user_id])
   end
 end

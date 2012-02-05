@@ -72,8 +72,8 @@
             <% end %>
           </div><div>
             <%= f.label :gender %>
-            <%= f.radio_button :gender, 1 %> Male
-            <%= f.radio_button :gender, 0 %> Female
+            <%= f.radio_button :gender, true %> Male
+            <%= f.radio_button :gender, false %> Female
           </div><div>
             <%= label_tag %>
             <%= f.submit %>

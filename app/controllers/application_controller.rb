@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   def admin_only
     unless session[:user_is_admin]
-      redirect_to agenda_path
+      redirect_to todo_path
     end
   end
 end
