@@ -7,7 +7,7 @@
 		</article>
 	</section>
 	<section id="main">
-		<article>
+		<article style="display: none">
 			<h1>My Ticket</h1>
 			<div class="content">
 				<p>Click the button to buy the ticket. Please use the same name and the same email address when you buy the ticket so that we can match your purchase with your account.</p>
@@ -22,18 +22,18 @@
 					<h2>Energy and Environment Panel: Towards a Sustainable Future</h2>
 					<div class="description-container">
 						<div class="session-stats">
-							Time: <span>28 April 2:00 pm - 4:00 pm</span>; Place: <span>UC Rangos</span> (<a href="/login">Remove from my calendar</a>)
+							Time: <span>28 April 2:00 pm - 4:00 pm</span><br>Place: <span>UC Rangos</span>
 						</div>
-							
+						<a href="#" class="todo-remove">Remove</a>
 					</div>
 				</div>
 				<div class="session-info">
 					<h2>Energy and Environment Panel: Towards a Sustainable Future</h2>
 					<div class="description-container">
 						<div class="session-stats">
-							Time: <span>28 April 2:00 pm - 4:00 pm</span>; Place: <span>UC Rangos</span> (<a href="/login">Remove from my calendar</a>)
+							Time: <span>28 April 2:00 pm - 4:00 pm</span><br>Place: <span>UC Rangos</span>
 						</div>
-							
+						<a href="#" class="todo-remove">Remove</a>
 					</div>
 				</div>
 			</div>
@@ -46,20 +46,22 @@
 					<div class="speaker has-image">
                         <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 						<div class="bio">
-							<h3>Name (<a href="/login">Remove from my contact</a>)</h3>
+							<h3>Name</h3>
 							<h4>Title</h4>
 							<h4>Social Media Links</h4>
 						</div>
+						<a href="#" class="todo-remove">Remove</a>
 					</div>
 				</div>								
 				<div class="speaker-info">
 					<div class="speaker has-image">
                         <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 						<div class="bio">
-							<h3>Name (<a href="/login">Remove from my contact</a>)</h3>
+							<h3>Name</h3>
 							<h4>Title</h4>
 							<h4>Social Media Links</h4>
 						</div>
+						<a href="#" class="todo-remove">Remove</a>
 					</div>
 				</div>								
 			</div>
@@ -69,7 +71,7 @@
 		<article id="update-profile">
 			<h3>My Profile</h3>
 			<div class="content">
-				<div id="connect-social-network">
+				<div id="connect-social-network" style="display: none">
                     <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 					<p>Add my social media links to my profile and use the profile picture as my avatar.</p>
 					<div class="button-gray" id="facebook-link-button">Add Facebook</div>

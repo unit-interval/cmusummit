@@ -1074,21 +1074,36 @@ h1.tab-nav > a.active {
 	color: #900;
 }
 #my-calendar .session-info {
-	margin: 10px;
-	padding: 10px;
-	border: 1px solid #D2D2D2;
+	padding: 10px 20px;
+	margin: 20px 0;
+	border-left: 5px solid #D2D2D2;
 }
 #my-contact .speaker-info {
+	padding: 15px 20px 8px;
+	margin: 20px 0;
+	border-left: 5px solid #D2D2D2;
 	float: none;
 	width: auto;
 	font-size: 13px;
-	margin: 10px;
-	padding: 10px 10px 4px;
-	border: 1px solid #D2D2D2;
+}
+#my-contact .speaker-info .image {
+	margin-right: 20px;
 }
 #my-contact .speaker-info h3, #my-contact .speaker-info h4{
 	font-size: 13px;
 	margin-bottom: 10px;
+}
+.todo-remove {
+	float: right;
+	border-bottom: 1px dashed #900;
+	margin-top: -21px;
+	display: none;
+}
+#my-contact .speaker-info, #my-calendar .session-info {
+	background-color: #EEE;
+}
+.session-info:hover .todo-remove, .speaker-info:hover .todo-remove {
+	display: block;
 }
 /* team */
 #team h1 {
