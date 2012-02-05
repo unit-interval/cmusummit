@@ -64,8 +64,18 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     case params[:task]
     when 'update_profile'
-      if @user.update_attributes(@user.attributes.merge(params[:user]))
-        redirect_to @user, :notice => 'User was successfully updated.'
+      if @user.update_attributes(params[:user])
+        redirect_to todo_path
+      else
+        render :action => "edit"
+      end
+    when 'update_password'
+      unless User.authenticate(@user.email, params[:password_old])
+        redirect_to todo_path
+        return
+      end
+      if @user.update_attributes(params[:user])
+        redirect_to todo_path
       else
         render :action => "edit"
       end

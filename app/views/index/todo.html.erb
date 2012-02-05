@@ -114,8 +114,8 @@
                     <%= form_for @user do |f| %>
                       <%= hidden_field_tag :task, 'update_password' %>
                       <div>
-                        <%= f.label :password_old, 'Old Password' %>
-                        <%= f.password_field :password_old, :placeholder => 'Old Password' %>
+                        <%= label_tag :password_old, 'Old Password' %>
+                        <%= password_field_tag :password_old, nil, :placeholder => 'Old Password' %>
                       </div><div>
                         <%= f.label :password, 'New Password' %>
                         <%= f.password_field :password, :placeholder => 'New Password' %>
