@@ -100,7 +100,7 @@
                         <%= f.text_field :first_name, :placeholder => 'First Name' %>
                       </div><div>
                         <%= f.label :gender %>
-						<span><%= @user.gender ? "Male" : "Female" %></span>
+						<span><%= @user.gender.nil? ? "n/a" : (@user.gender ? "Male" : "Female") %></span>
                         <%= f.radio_button :gender, true %> <span class="gender-span">Male</span>
                         <%= f.radio_button :gender, false %> <span class="gender-span">Female</span>
                       </div><div class="change-profile-button-group">
