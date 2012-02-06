@@ -25,14 +25,18 @@
 	<% speakers.each do |g| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-                <div class="image"><%= image_tag 'default_avatar_female.jpg' %></div>
+                <div class="image">
+					<% if not g.gender.nil? %>
+						<%= g.gender ? (image_tag 'default_avatar_male.jpg') : (image_tag 'default_avatar_female.jpg') %>
+					<% end %>
+				</div>
 				<div class="bio">
 					<h3><%= g.first_name + ' ' + g.last_name %></h3>
 					<h4>Title</h4>
 					<p>Links</p>
 				</div>
-				<div class="button-gray">Followed by 122</div>
-				<a href="/login" class="button-gray">Add to my contact</a>
+<!--				<div class="button-gray">Followed by 122</div>
+				<a href="/login" class="button-gray">Add to my contact</a>	-->
 			</div>
 		</div>
 	<% end %>
