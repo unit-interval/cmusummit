@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_filter :admin_only
+  before_filter :admin_only, :except => [:follow, :unfollow]
 
   # GET /guests
   # GET /guests.json
@@ -81,5 +81,21 @@ class GuestsController < ApplicationController
       format.html { redirect_to guests_url }
       format.json { head :no_content }
     end
+  end
+
+  # GET /guests/1/follow
+  def follow
+    guest = Guest.find(params[:id])
+    user = User.find(session[:user_id])
+    user.guests << guest
+    redirect_to :back
+  end
+
+  # GET /guests/1/unfollow
+  def unfollow
+    guest = Guest.find(params[:id])
+    user = User.find(session[:user_id])
+    user.guests.delete guest
+    redirect_to :back
   end
 end

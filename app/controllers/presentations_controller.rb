@@ -1,5 +1,5 @@
 class PresentationsController < ApplicationController
-  before_filter :admin_only
+  before_filter :admin_only, :except => [:follow, :unfollow]
 
   # GET /presentations
   # GET /presentations.json
@@ -81,5 +81,21 @@ class PresentationsController < ApplicationController
       format.html { redirect_to presentations_url }
       format.json { head :no_content }
     end
+  end
+
+  # GET /presentations/1/follow
+  def follow
+    presentation = Presentation.find(params[:id])
+    user = User.find(session[:user_id])
+    user.presentations << presentation
+    redirect_to :back
+  end
+
+  # GET /presentations/1/unfollow
+  def unfollow
+    presentation = Presentation.find(params[:id])
+    user = User.find(session[:user_id])
+    user.presentations.delete presentation
+    redirect_to :back
   end
 end

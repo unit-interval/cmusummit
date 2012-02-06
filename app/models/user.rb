@@ -1,7 +1,10 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-  ##TODO limit write access to fields like is_admin
+  has_many :guests, :through => :followings, :uniq => true
+  has_many :presentations, :through => :followings, :uniq => true
+  has_many :followings
+
   validates :email, :encrypted_password, :salt, :last_name, :first_name, :presence => true
   validates :email, :uniqueness => true
   validates :email, :password, :confirmation => true

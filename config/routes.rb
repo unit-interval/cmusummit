@@ -1,7 +1,15 @@
 Cmusummit::Application.routes.draw do
-  resources :guests
+  resources :guests do
+    member do
+      get :follow, :unfollow
+    end
+  end
 
-  resources :presentations
+  resources :presentations do
+    member do
+      get :follow, :unfollow
+    end
+  end
 
   resources :users
 

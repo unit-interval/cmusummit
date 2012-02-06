@@ -18,52 +18,39 @@
 			<h1>My Calendar</h1>
 			<div class="content clearfix" id="my-calendar">
 				<p>Go to <a href="/agenda">Agenda</a> and add events to my schedule.</p>
+                <% @user.presentations.each do |p| %>
 				<div class="session-info">
-					<h2>Energy and Environment Panel: Towards a Sustainable Future</h2>
+                    <h2><%= p.title %></h2>
 					<div class="description-container">
 						<div class="session-stats">
-							Time: <span>28 April 2:00 pm - 4:00 pm</span><br>Place: <span>UC Rangos</span>
+                        Time: <span><%= p.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span><br>
+                        Place: <span><%= p.venue ? panel.venue : 'TBD' %></span>
 						</div>
-						<a href="#" class="todo-remove">Remove</a>
+                        <%= link_to 'Remove', unfollow_presentation_path(p), :class => 'todo-remove' %>
 					</div>
-				</div>
-				<div class="session-info">
-					<h2>Energy and Environment Panel: Towards a Sustainable Future</h2>
-					<div class="description-container">
-						<div class="session-stats">
-							Time: <span>28 April 2:00 pm - 4:00 pm</span><br>Place: <span>UC Rangos</span>
-						</div>
-						<a href="#" class="todo-remove">Remove</a>
-					</div>
-				</div>
+                </div>
+                <% end %>
 			</div>
 		</article>
 		<article>
 			<h1>My Contact</h1>
 			<div class="content clearfix" id="my-contact">
 				<p>Go to <a href="/people">People</a> and add people to my contact to keep in touch.</p>
+                <% @user.guests.each do |guest| %>
 				<div class="speaker-info">
 					<div class="speaker has-image">
                         <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 						<div class="bio">
-							<h3>Name</h3>
-							<h4>Title</h4>
+                            <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
+                            <% guest.title.split('|').each do |title| %>
+                                <h4><%= title %></h4>
+                            <% end %>
 							<h4>Social Media Links</h4>
 						</div>
-						<a href="#" class="todo-remove">Remove</a>
+                        <%= link_to 'Remove', unfollow_guest_path(guest), :class => 'todo-remove' %>
 					</div>
-				</div>								
-				<div class="speaker-info">
-					<div class="speaker has-image">
-                        <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
-						<div class="bio">
-							<h3>Name</h3>
-							<h4>Title</h4>
-							<h4>Social Media Links</h4>
-						</div>
-						<a href="#" class="todo-remove">Remove</a>
-					</div>
-				</div>								
+				</div>
+                <% end %>
 			</div>
 		</article>
 	</section>

@@ -1,5 +1,5 @@
 class IndexController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_filter :authorize, :except => [:todo]
 
   def index
   end

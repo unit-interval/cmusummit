@@ -1,6 +1,8 @@
 class Guest < ActiveRecord::Base
-  has_many :sessions
   has_many :presentations, :through => :sessions, :uniq => true
+  has_many :users, :through => :followings, :uniq => true
+  has_many :sessions
+  has_many :followings
 
   validates :last_name, :first_name, :title, :presence => true
   validates :last_name, :first_name, :length => { :maximum => 255 }

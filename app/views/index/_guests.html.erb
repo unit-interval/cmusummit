@@ -6,11 +6,11 @@
 				<div class="bio">
 	              <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 					<div class="people-interested">
-						<div class="button-gray">12 people are following</div>
+                        <div class="button-gray"><%= pluralize(guest.users.count, 'person is', 'people are') %> following</div>
 						<% if session[:user_id] %>
-						<a href="/login" class="button-gray">Be one of them and add to my contact</a>
+                          <%= link_to 'Be one of them and add to my contact', follow_guest_path(guest), :class => "button-gray" %>
 						<% else %>
-			            <a href="/login" class="button-gray">Sign up and be one of them</a>
+                          <a href="/login" class="button-gray">Sign up and be one of them</a>
 						<% end %>
 					</div>
 	              <% guest.title.split('|').each do |title| %>
