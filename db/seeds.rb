@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
-if Guest.count < 1 then
+if Guest.count < 4 then
   Guest.delete_all
   Session.delete_all
   Presentation.delete_all
