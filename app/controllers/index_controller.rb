@@ -68,6 +68,8 @@ class IndexController < ApplicationController
   end
   
   def team
+    @advisors = Guest.all.find_all { |p| p.datatype == "advisor" }
+    @members = User.all.find_all { |p| p.email == "libragold@gmail.com" }
   end
 
   def todo

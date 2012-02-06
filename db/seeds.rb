@@ -16,6 +16,24 @@ if Guest.count < 1 then
     :datatype => 'panel',
     :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA; US-China Green Energy Council|Professor in School of Architecture, Carnegie Mellon University'
   )
+  anwar = Guest.create(
+    :last_name => 'Anwar',
+    :first_name => 'Aamir',
+    :datatype => 'advisor',
+    :title => 'CMU International Alumni Relations Director'
+  )
+  blum = Guest.create(
+    :last_name => 'Blum',
+    :first_name => 'Lenore',
+    :datatype => 'advisor',
+    :title => 'Computer Science Professor, Director Project Olympus'
+  )
+  tu = Guest.create(
+    :last_name => 'Tu',
+    :first_name => 'Zipei',
+    :datatype => 'advisor',
+    :title => 'President of the Chinese Association for Science and Technology - Pittsburgh Chapter'
+  )
   panel1 = Presentation.create(
     :title => %{Energy and Environment Panel: Towards a Sustainable Future},
     :datatype => 'panel',
@@ -42,6 +60,13 @@ if Guest.count < 1 then
     :title => %{Innovation and Entrepreneurship Panel: Cooperation Opportunities in Supporting Innovation and Entrepreneurship},
     :datatype => 'panel',
     :content => %{In the next 40 years, the population of China will increase by 100 million. During the same period, the population over the world also has a rapid raise. Therefore, more jobs need to be created. Innovation and Entrepreneurship is important for current business and people who have business ideas. With Innovation and Entrepreneurship, people can build a foundation that supports their dream. I & E can also drive the development of society. Topics include Innovation and entrepreneurship environment in China, US and China entrepreneur experience sharing, The Perks & Challenges of Starting a Business in China, US and China's policy on supporting innovation and entrepreneurship, Cooperation opportunities on innovation and entrepreneurship between CMU, US, and China.},
+    :date => '2012-04-28',
+    :time => '12:00'
+  )
+  panel5 = Presentation.create(
+    :title => %{Finance Panel: Capital Investment Opportunities in Post-Global Financial Crisis Era},
+    :datatype => 'panel',
+    :content => %{The last three years have weathered serious shrink of global financial market. Outputs in advanced economies and emerging markets have slumped. Reversal in capital flows, currency depreciation, and liquidity problems coupled with negative growth. In finance panel, we will explore initiatives to restore confidence and stability to the global capital market and the potential investment opportunities in innovation and entrepreneurship. Topic includes capital market prospect in China, U.S. and worldwide, current investment market opportunities in China and US and possibility of establishing a new funding mechanism for innovative ideas and technology.},
     :date => '2012-04-28',
     :time => '12:00'
   )

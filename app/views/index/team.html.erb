@@ -1,9 +1,16 @@
 <div id="content" class="clearfix">
 	<section>
-		<article id="team">
-			<h1>Team</h1>
+		<article id="advisor" class="people-page">
+			<h1>Advisor</h1>
 			<div class="content">
-				
+				<%= render :partial => "guests", :locals => { :speakers => @advisors, :layout_type => 0 }%>
+			</div>
+		</article>
+		<article id="team" class="people-page clearfix">
+			<h1>Team</h1>
+			<div class="content clearfix">
+				<p id="team-desc">Our team is composed of students and alumni from CMU, University of Pittsburgh and other Universities. We also have members from working professionals. We are still looking for talents of all kind to join to make this a really successful event.</p>
+				<%= render :partial => "guests", :locals => { :speakers => @members, :layout_type => 1 }%>
 			</div>
 		</article>
 	</section>

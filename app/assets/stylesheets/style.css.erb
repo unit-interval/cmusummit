@@ -354,6 +354,10 @@ article div.content p {
 	font-size: 18px;
 	color: #777;
 }
+#sponsor p {
+	line-height: 22px;
+	text-align: right;
+}
 #sponsor-list > li {
 	border: 1px solid #EAEAEA;
 	float: left;
@@ -768,25 +772,25 @@ h1.tab-nav > a.active {
 #participant {
 	padding: 40px;
 }
-#participant .speaker-info, #my-contact .speaker-info {
+#participant .speaker-info, #my-contact .speaker-info, #team .speaker-info {
 	padding: 0px;
 	background: transparent;
 	float: left;
 	width: 286px;
 }
-#participant .image, #my-contact .image {
+#participant .image, #my-contact .image, #team .image {
 	width: 60px;
 	height: 60px;
 	margin-right: 10px;
 }
-#participant h3, #my-contact h3{
+#participant h3, #my-contact h3, #team h3 {
 	font-size: 20px;
 	margin: 0 0 5px 0;
 }
-#participant .bio, #my-contact .bio {
+#participant .bio, #my-contact .bio, #team .bio {
 	margin-bottom: 10px;
 }
-#participant .image img, #my-contact .image img{
+#participant .image img, #my-contact .image img, #team .image img{
 	margin: 5px;
 }
 /* contest */
@@ -1131,9 +1135,15 @@ h1.tab-nav > a.active {
 	display: block;
 }
 /* team */
-#team h1 {
+#advisor h1, #team h1 {
 	padding: 20px;
 	text-align: center;
+}
+#advisor div.content {
+	padding: 0;
+}
+#team-desc {
+	margin-bottom: 20px;
 }
 /* footer */
 footer {
