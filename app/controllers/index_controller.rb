@@ -68,13 +68,13 @@ class IndexController < ApplicationController
   end
   
   def team
-    @advisors = Guest.all.find_all { |p| p.datatype == "advisor" }
+    @advisors = Guest.find_all_by_datatype('advisor')
     mailist = [
       "bowang@andrew.cmu.edu",
       "chenw@cmu.edu",
        "chwang1206@gmail.com",
        "cora330@gmail.com",
-       "cyclone82@gmail.com",  
+       "cyclone82@gmail.com",
        "dorisdiao@gmail.com",
        "dourabbit@gmail.com",
        "duoding.cmu@gmail.com",
@@ -108,6 +108,7 @@ class IndexController < ApplicationController
       "shangg85@gmail.com",
       "shirleyswr@gmail.com",
       "shuxingdeng@gmail.com",
+      "tao@huangtao.me",
        "tianshen65@gmail.com",
       "versatilewang@gmail.com",
        "weiwei@cs.cmu.edu",
