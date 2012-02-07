@@ -30,7 +30,7 @@ class IndexController < ApplicationController
   def people
     guests = Guest.all
     @speakers = guests.find_all { |p| p.datatype == "keynote" }
-    @panelists = guests.find_all { |p| p.datatype == "panels" }
+    @panelists = guests.find_all { |p| p.datatype == "panel" }
     @participants = User.all
   end
 
