@@ -14,12 +14,12 @@
                   Place: <span><%= panel.venue ? panel.venue : 'TBD' %></span>
 				</div>
 				<div class="session-interested">
-                    <div class="button-gray"><%= pluralize(panel.users.count, 'person likes', 'people like') %> this</div>
 					<% if session[:user_id] %>
                         <%= link_to 'Be one of them and add to my calendar', follow_presentation_path(panel), :class => "button-gray" %>
 					<% else %>
                         <a href="/login" class="button-gray">Sign up and be one of them</a>
 					<% end %>
+                    <div class="button-gray-inactive"><%= pluralize(panel.users.count, 'person likes', 'people like') %> this</div>
 				</div>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 				<div class="bio">
                   <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 					<div class="people-interested">
-                        <div class="button-gray"><%= pluralize(guest.users.count, 'person is', 'people are') %> following</div>
+                        <div class="button-gray-inactive"><%= pluralize(guest.users.count, 'person is', 'people are') %> following</div>
 						<% if session[:user_id] %>
                             <%= link_to 'Be one of them and add to my contact', follow_guest_path(guest), :class => "button-gray" %>
 						<% else %>

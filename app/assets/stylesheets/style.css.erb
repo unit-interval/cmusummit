@@ -29,6 +29,22 @@ table {
 	border-spacing: 0;
 }
 /* Button */
+.button-gray-inactive {
+	background-color: white;
+	color: #444;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	cursor: default;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 27px;
+	min-width: 54px;
+	padding: 0 8px;
+	display: inline-block;
+}
 .button-gray, #register input[type="submit"] {
 	background-color: #F5F5F5;
 	background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
@@ -638,11 +654,14 @@ h1.tab-nav > a.active {
 	bottom: 0px;
 	position: absolute;
 }
-#agenda .session-interested .button-gray {
+#agenda .session-interested .button-gray-inactive {
 	margin-top: 10px;
 }
 .people-interested {
 	margin-bottom: 10px;
+}
+.people-interested a.button-gray {
+	margin-left: -5px;
 }
 /* sessions */
 #agenda .session-detail {
