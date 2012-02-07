@@ -6,12 +6,16 @@
 				<div class="bio">
 	              <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 					<div class="people-interested">
-                        <div class="button-gray-inactive"><%= pluralize(guest.users.count, 'person is', 'people are') %> following</div>
+                      <% if guest.user_ids.include? session[:user_id] %>
+                        <div class="button-gray-inactive">You <% if guest.users.count > 1 %>and <%= pluralize(guest.users.count - 1, 'person') %> <% end %>are following</div>
+                      <% else %>
+                        <div class="button-gray-inactive" data-role="follower-count"><%= pluralize(guest.users.count, 'person is', 'people are') %> following</div>
 						<% if session[:user_id] %>
-                          <%= link_to 'Be one of them and add to my contact', follow_guest_path(guest), :class => "button-gray" %>
+                          <%= link_to 'Be one of them and add to my contact', follow_guest_path(guest), :class => "button-gray", "data-ajax" => true, "data-role" => 'follow' %>
 						<% else %>
-                          <a href="/login" class="button-gray">Sign up and be one of them</a>
+                          <%= link_to 'Sign up and be one of them', login_path, :class => "button-gray" %>
 						<% end %>
+                      <% end %>
 					</div>
 	              <% guest.title.split('|').each do |title| %>
 	                <h4><%= title %></h4>

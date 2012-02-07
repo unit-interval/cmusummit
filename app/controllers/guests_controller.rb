@@ -87,8 +87,11 @@ class GuestsController < ApplicationController
   def follow
     guest = Guest.find(params[:id])
     user = User.find(session[:user_id])
-    user.guests << guest
-    redirect_to :back
+    guest.users << user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render :json => { :ok => true, :follower_count => guest.users.count } }
+    end
   end
 
   # GET /guests/1/unfollow
@@ -96,6 +99,9 @@ class GuestsController < ApplicationController
     guest = Guest.find(params[:id])
     user = User.find(session[:user_id])
     user.guests.delete guest
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render :json => { :ok => true } }
+    end
   end
 end

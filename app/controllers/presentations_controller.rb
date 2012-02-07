@@ -87,8 +87,11 @@ class PresentationsController < ApplicationController
   def follow
     presentation = Presentation.find(params[:id])
     user = User.find(session[:user_id])
-    user.presentations << presentation
-    redirect_to :back
+    presentation.users << user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render :json => { :ok => true, :follower_count => presentation.users.count } }
+    end
   end
 
   # GET /presentations/1/unfollow
@@ -96,6 +99,9 @@ class PresentationsController < ApplicationController
     presentation = Presentation.find(params[:id])
     user = User.find(session[:user_id])
     user.presentations.delete presentation
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render :json => { :ok => true } }
+    end
   end
 end

@@ -103,7 +103,8 @@ $(function() {
 	$("#change-password-button").click(function(){
 		$("#update-password-div").slideDown(100);
 		return false;
-	})
+	});
+    bind_ajax_anchors();
 });
 
 
@@ -111,4 +112,44 @@ function randomFactScroll() {
 	var a = $("#random-fact dd");
 	if (a.scrollTop()<a.get(0).scrollHeight-a.height()) a.animate({scrollTop: "+=40"}, 500);
 	else a.animate({scrollTop: "0"}, 500)
+}
+function bind_ajax_anchors() {
+  $.ajaxSetup({
+    cache: false,
+    dataType: 'json'
+  });
+  $('a[data-ajax="true"][data-role="follow"]').each(function() {
+    var $a = $(this);
+    $a.click(function(e){
+      e.preventDefault();
+      $.ajax({
+        url: $a.attr('href'),
+        success: function(data) {
+          var html;
+          if(! data.ok) return;
+          if(data.follower_count-- > 1) {
+            html = 'You and ' + data.follower_count + ' people are following';
+          } else {
+            html = 'You are following';
+          }
+          $a.hide().siblings('div[data-role="follower-count"]').html(html);
+        }
+      });
+      return false;
+    });
+  });
+  $('a[data-ajax="true"][data-role="unfollow"]').each(function() {
+    var $a = $(this);
+    $a.click(function(e){
+      e.preventDefault();
+      $.ajax({
+        url: $a.attr('href'),
+        success: function(data) {
+          if(! data.ok) return;
+          $a.parents('.speaker-info, .session-info').fadeOut();
+        }
+      });
+      return false;
+    });
+  });
 }

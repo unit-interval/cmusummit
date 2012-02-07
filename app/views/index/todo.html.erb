@@ -26,7 +26,7 @@
                         Time: <span><%= p.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span><br>
                         Place: <span><%= p.venue ? panel.venue : 'TBD' %></span>
 						</div>
-                        <%= link_to 'Remove', unfollow_presentation_path(p), :class => 'todo-remove' %>
+                        <%= link_to 'Remove', unfollow_presentation_path(p), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>
                 </div>
                 <% end %>
@@ -47,7 +47,7 @@
                             <% end %>
 							<h4>Social Media Links</h4>
 						</div>
-                        <%= link_to 'Remove', unfollow_guest_path(guest), :class => 'todo-remove' %>
+                        <%= link_to 'Remove', unfollow_guest_path(guest), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>
 				</div>
                 <% end %>
