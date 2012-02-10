@@ -2,7 +2,7 @@
 	<% speakers.each do |guest| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-            <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
+            <div class="image"><%= image_tag guest.picture %></div>
 				<div class="bio">
 	              <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 					<div class="people-interested">
@@ -29,15 +29,15 @@
 	<% speakers.each do |g| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-                <div class="image">
+                <a href="https://www.facebook.com/zilinj" target="_blank" class="image">
 					<% if not g.gender.nil? %>
 						<%= g.gender ? (image_tag 'default_avatar_male.jpg') : (image_tag 'default_avatar_female.jpg') %>
 					<% end %>
-				</div>
+				</a>
 				<div class="bio">
 					<h3><%= g.first_name + ' ' + g.last_name %></h3>
-<!--					<h4>Title</h4>
-					<p>Links</p>	-->
+					<h4>CMU Summit Web / Tech Director</h4>
+					<h4>12 people are following<a class="button-gray button-gray-add">Add</a></h4>
 				</div>
 <!--				<div class="button-gray">Followed by 122</div>
 				<a href="/login" class="button-gray">Add to my contact</a>	-->

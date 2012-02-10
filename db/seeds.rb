@@ -14,25 +14,29 @@ if Guest.count < 4 then
     :last_name => 'Lam',
     :first_name => 'Khee Poh',
     :datatype => 'panel',
-    :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA; US-China Green Energy Council|Professor in School of Architecture, Carnegie Mellon University'
+    :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA|US-China Green Energy Council|Professor in School of Architecture, Carnegie Mellon University',
+    :picture => 'panelist1.jpg'
   )
   anwar = Guest.create(
     :last_name => 'Anwar',
     :first_name => 'Aamir',
     :datatype => 'advisor',
-    :title => 'CMU International Alumni Relations Director'
+    :title => 'CMU International Alumni Relations Director',
+    :picture => 'advisor1.jpg'
   )
   blum = Guest.create(
     :last_name => 'Blum',
     :first_name => 'Lenore',
     :datatype => 'advisor',
-    :title => 'Computer Science Professor, Director Project Olympus'
+    :title => 'Computer Science Professor, Director Project Olympus',
+    :picture => 'advisor2.jpg'
   )
   tu = Guest.create(
     :last_name => 'Tu',
     :first_name => 'Zipei',
     :datatype => 'advisor',
-    :title => 'President of the Chinese Association for Science and Technology - Pittsburgh Chapter'
+    :title => 'President of the Chinese Association for Science and Technology - Pittsburgh Chapter',
+    :picture => 'advisor3.jpg'
   )
   panel1 = Presentation.create(
     :title => %{Energy and Environment Panel: Towards a Sustainable Future},
@@ -43,7 +47,7 @@ if Guest.count < 4 then
   )
   panel1.guests << lam
   panel2 = Presentation.create(
-    :title => %{Social Network Technologies and Entertainment: Social Networking Technologies},
+    :title => %{IT Panel B: Social Networking Technologies},
     :datatype => 'panel',
     :content => %{In the new millennium, social networking techniques have permeated into a great variety of areas in industry, and have fundamentally changed the way we work and live. In recent years, social networking has developed beyond its traditional sense to the extent that any aspect of life that emphasizes users can potentially benefit from the social elements, such as entertainment, health care, etc. In this panel, we would like to present you the popular ideas and trends of the social networking arena.Topics include Social Networks, Microblogging Services, Mobile Applications, Socially-enhanced Health Care and Social Entertainment},
     :date => '2012-04-28',
@@ -66,7 +70,14 @@ if Guest.count < 4 then
   panel5 = Presentation.create(
     :title => %{Finance Panel: Capital Investment Opportunities in Post-Global Financial Crisis Era},
     :datatype => 'panel',
-    :content => %{The last three years have weathered serious shrink of global financial market. Outputs in advanced economies and emerging markets have slumped. Reversal in capital flows, currency depreciation, and liquidity problems coupled with negative growth. In finance panel, we will explore initiatives to restore confidence and stability to the global capital market and the potential investment opportunities in innovation and entrepreneurship. Topic includes capital market prospect in China, U.S. and worldwide, current investment market opportunities in China and US and possibility of establishing a new funding mechanism for innovative ideas and technology.},
+    :content => %{The last three years have weathered serious shrink of global financial market. Outputs in advanced economies and emerging markets have slumped. Reversal in capital flows, currency depreciation, and liquidity problems coupled with negative growth. In finance panel, we will explore initiatives to restore confidence and stability to the global capital market and the potential investment opportunities in innovation and entrepreneurship. Topics include capital market prospect in China, U.S. and worldwide, current investment market opportunities in China and US and possibility of establishing a new funding mechanism for innovative ideas and technology.},
+    :date => '2012-04-28',
+    :time => '12:00'
+  )
+  panel6 = Presentation.create(
+    :title => %{Healthcare Panel: U.S. & China Healthcare Reform – Opportunities and Challenges},
+    :datatype => 'panel',
+    :content => %{China has been the targeted market for consumer goods and services for decades. With China’s demographics shift and healthcare reform in recent years, the health care market is becoming more and more attractive to US companies. Where will the healthcare reform head towards? What are the future business opportunities in healthcare industry in China? What are the challenging issues for US companies doing business in China? Topics include Healthcare Reform, Regulatory Issues, Pharmaceutical Industry, Healthcare IT Industry and Hospitals.},
     :date => '2012-04-28',
     :time => '12:00'
   )

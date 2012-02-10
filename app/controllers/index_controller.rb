@@ -48,7 +48,7 @@ class IndexController < ApplicationController
       if user = User.authenticate(params[:email], params[:password])
         session[:user_id] = user.id
         session[:user_is_admin] = user.is_admin
-        redirect_to agenda_path
+        redirect_to todo_path
       else
         flash[:user_email] = params[:email]
         flash[:error_signin] = true
@@ -72,6 +72,7 @@ class IndexController < ApplicationController
     mailist = [
       "bowang@andrew.cmu.edu",
       "chenw@cmu.edu",
+<<<<<<< HEAD
        "chwang1206@gmail.com",
        "cora330@gmail.com",
        "cyclone82@gmail.com",
@@ -82,18 +83,30 @@ class IndexController < ApplicationController
        "fengfiss@gmail.com",
        "francishan@gmail.com",
        "guibowen.anna@gmail.com",
+=======
+      "chwang1206@gmail.com",
+      "cora330@gmail.com",
+      "cyclone82@gmail.com",  
+      "dorisdiao@gmail.com",
+      "dourabbit@gmail.com",
+      "duoding.cmu@gmail.com",
+      "eric.marui@gmail.com",
+      "fengfiss@gmail.com",
+      "francishan@gmail.com",
+      "guibowen.anna@gmail.com",
+>>>>>>> Ready for 3nd Milestone.
       "hongwenk@cs.cmu.edu",
       "hrjaco@gmail.com",
       "ingayang@gmail.com",
       "jacqueline.chan.sh@gmail.com",
       "jarod.d.wang@gmail.com",
-       "jayzhao@cmu.edu",
+      "jayzhao@cmu.edu",
       "jino.1229@gmail.com",
       "jlin0860@gmail.com",
-       "judyyuncai@gmail.com",
+      "judyyuncai@gmail.com",
       "junzhao.cmu@gmail.com",
-       "kejiaw@andrew.cmu.edu",
-       "kkgreat@hotmail.com",
+      "kejiaw@andrew.cmu.edu",
+      "kkgreat@hotmail.com",
       "lanliu1116@gmail.com",
       "libragold@gmail.com",
       "lipeilin1987@gmail.com",
@@ -102,16 +115,16 @@ class IndexController < ApplicationController
       "manguo85@gmail.com",
       "mengruiz@andrew.cmu.edu",
       "msun@andrew.cmu.edu",
-       "myfriend10099@gmail.com",
-       "pumbaa1616@gmail.com",
-       "qwu@ece.cmu.edu",
+      "myfriend10099@gmail.com",
+      "pumbaa1616@gmail.com",
+      "qwu@ece.cmu.edu",
       "shangg85@gmail.com",
       "shirleyswr@gmail.com",
       "shuxingdeng@gmail.com",
       "tao@huangtao.me",
-       "tianshen65@gmail.com",
+      "tianshen65@gmail.com",
       "versatilewang@gmail.com",
-       "weiwei@cs.cmu.edu",
+      "weiwei@cs.cmu.edu",
       "wizardlast@gmail.com",
       "wxneverlost@gmail.com",
       "xingcmu@gmail.com",
@@ -123,11 +136,11 @@ class IndexController < ApplicationController
       "yingjie1@andrew.cmu.edu",
       "yinxiaoqi522@gmail.com",
       "yufan@andrew.cmu.edu",
-       "ywang0503@gmail.com",
-       "zhangtienv@gmail.com",
+      "ywang0503@gmail.com",
+      "zhangtienv@gmail.com",
       "zhangxiong01@gmail.com",
       "zhangzhuolightning@gmail.com",
-       "zlwe88@gmail.com"
+      "zlwe88@gmail.com"
     ]
     @members = User.all.find_all { |p| mailist.include? p.email }
   end

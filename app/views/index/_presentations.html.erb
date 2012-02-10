@@ -30,7 +30,7 @@
       <% panel.guests.each do |guest| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-				<div class="image c1"></div>
+	            <div class="image"><%= image_tag guest.picture %></div>
 				<div class="bio">
                   <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
 					<div class="people-interested">

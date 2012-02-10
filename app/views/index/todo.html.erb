@@ -58,20 +58,16 @@
 		<article id="update-profile">
 			<h3>My Profile</h3>
 			<div class="content">
-				<div id="connect-social-network" style="display: none">
-                    <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
-					<p>Add my social media links to my profile and use the profile picture as my avatar.</p>
-					<div class="button-gray" id="facebook-link-button">Add Facebook</div>
-					<div class="button-gray" id="renren-link-button">Add Renren</div>
+				<div id="connect-social-network">
+					<div id="connect-social-network-intro">
+	                    <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
+						<p>Link social media and use profile picture as avatar.</p>
+						<div class="button-gray" id="facebook-link-button">Link Facebook</div>
+					</div>
 					<form class="social-network-link" id="facebook-link-form">
-						<p>Enter Facebook id here:</p>
-						<input type="text"><input type="submit" value="Add Facebook" class="button-gray">
-						<p>What is my Facebook id?</p><p>Click on your Facebook homepage, and you will see in the address bar https://www.facebook.com/ followed by your id.</p>
-					</form>
-					<form class="social-network-link" id="renren-link-form">
-						<p>Enter Renren id here:</p>
-						<input type="text"><input type="submit" value="Add Renren" class="button-gray">
-						<p>What is my Renren id?</p><p>Click on your Renren homepage, and you will see in address bar http://www.renren.com/ followed by your id which is followed by /profile.</p>
+						<p>1) Click on your Facebook homepage.<br>2) Enter your Facebook ID as it appears in the address bar.</p>
+						<input type="text" placeholder="Facebook ID"/><label>www.facebook.com/</label>
+						<input class="button-gray" type="submit" value="Link Facebook">
 					</form>
 				</div>
 				<div id="update-info">

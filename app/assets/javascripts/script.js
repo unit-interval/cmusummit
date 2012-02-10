@@ -89,6 +89,7 @@ $(function() {
 		})
 	})
 	$("#facebook-link-button").click(function(){
+		$("#connect-social-network-intro").hide(100);
 		$("#facebook-link-form").show(100);
 		$("#renren-link-form").hide(100);
 	})

@@ -29,6 +29,12 @@ table {
 	border-spacing: 0;
 }
 /* Button */
+.button-gray.button-gray-add {
+	min-width: 0px;
+	padding: 0px 5px;
+	margin-left: 5px;
+	line-height: 17px;
+}
 .button-gray-inactive {
 	background-color: white;
 	color: #444;
@@ -740,14 +746,14 @@ h1.tab-nav > a.active {
     border: 1px solid #c5c5c5;
     background-color: #fff;
     float: left;
-    height: 121px;
-    margin-right: 22px;
-    width: 121px;
+    height: 120px;
+    margin-right: 20px;
+    width: 120px;
 }
 .speaker-info .has-image .image img {
-	height: 50px;
-	width: 50px;
-	margin: 35px 35px 36px 36px;
+	height: 100px;
+	width: 100px;
+	margin: 10px;
 }
 .session-detail .speaker-info .has-image .bio {
     float: left;
@@ -792,7 +798,7 @@ h1.tab-nav > a.active {
 	margin: 0;
 }
 #participant {
-	padding: 40px;
+	padding: 40px 40px 20px;
 }
 #participant .speaker-info, #my-contact .speaker-info, #team .speaker-info {
 	padding: 0px;
@@ -805,6 +811,14 @@ h1.tab-nav > a.active {
 	width: 60px;
 	height: 60px;
 	margin-right: 10px;
+	-webkit-transition: border-color 0.2s ease;
+	-moz-transition: border-color 0.2s ease;
+	-o-transition: border-color 0.2s ease;
+	-ms-transition: border-color 0.2s ease;
+	transition: border-color 0.2s ease;
+}
+#participant .image:hover, #my-contact .image:hover, #team .image:hover {
+	border-color: #900;
 }
 #participant h3, #my-contact h3, #team h3 {
 	font-size: 20px;
@@ -812,8 +826,11 @@ h1.tab-nav > a.active {
 }
 #participant .bio, #my-contact .bio, #team .bio {
 	margin-bottom: 10px;
+	margin-left: 82px;
 }
 #participant .image img, #my-contact .image img, #team .image img{
+	height: 50px;
+	width: 50px;
 	margin: 5px;
 }
 /* contest */
@@ -952,9 +969,6 @@ h1.tab-nav > a.active {
 #register h1 {
 	padding: 20px;
 }
-#forget-button {
-	display: none;
-}
 #register #forget-notification, #register #error-signup, #register #error-signin {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -1044,18 +1058,24 @@ h1.tab-nav > a.active {
 	width: 100px;
 }
 #update-profile .social-network-link {
-	margin-top: 20px;
-	padding-top: 20px;
-	border-top: 1px dashed #D2D2D2;
 	display: none;
+	position: relative;
 }
 #update-profile .social-network-link input[type="text"]{
-	margin-left: 0;
+	padding-left: 130px;
+	margin: 6px 0px;
+	float: none;
 	width: 100px;
+}
+#update-profile .social-network-link label {
+	position: relative;
+	top: -38px;
+	left: 8px;
 }
 #update-profile .social-network-link input[type="submit"]{
 	margin-left: 1px;
 	width: 117px;
+	float: right;
 }
 #update-profile form {
 	font-size: 13px;
@@ -1075,6 +1095,7 @@ h1.tab-nav > a.active {
 }
 #update-profile #connect-social-network div.button-gray {
 	margin: 5px auto 0px;
+	line-height: 18px;
 }
 #update-profile .content {
 	max-height: 9999px;
@@ -1170,6 +1191,9 @@ h1.tab-nav > a.active {
 }
 #team-desc {
 	margin-bottom: 20px;
+}
+#team div.content {
+	padding-bottom: 20px;
 }
 /* footer */
 footer {
