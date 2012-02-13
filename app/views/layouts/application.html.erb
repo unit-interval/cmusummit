@@ -12,8 +12,8 @@
 <body>
   <div id="wrapper">
     <div id="container">
-      <header>
-        <nav>
+      <div class="header">
+        <div class="nav">
 			<a id="home" href="/"><%= image_tag 'logo.png' %><span>CMU Summit</span></a>
           <ul>
             <li><%= link_to "Home", root_path %></li>
@@ -31,17 +31,17 @@
             <% end %>
 <!--            <li id="nav-cn"><%= link_to "中文", root_path %></li>-->
           </ul>
-        </nav>
-      </header>
+        </div>
+      </div>
 
       <%= yield %>
 
     </div>
-    <footer>
+    <div class="footer">
       <p>
-        ©2011 CMU Summit. Proudly Powered by <a href="http://theunitinterval.com" title="unit interval" target="_blank">Unit Interval</a> (<a  target="_blank" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dENzd3RGS2NsQ1lVZnhrNzgwcUtERHc6MQ#gid=0">Feedback</a>)
+        ©2011 CMU Summit. Proudly Powered by <a href="http://theunitinterval.com" title="unit interval" target="_blank">Unit Interval</a><br><a  target="_blank" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dENzd3RGS2NsQ1lVZnhrNzgwcUtERHc6MQ#gid=0">Tell us what you think</a>
       </p>
-    </footer>
+    </div>
   </div>
 </body>
 </html>

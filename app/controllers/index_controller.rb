@@ -72,18 +72,6 @@ class IndexController < ApplicationController
     mailist = [
       "bowang@andrew.cmu.edu",
       "chenw@cmu.edu",
-<<<<<<< HEAD
-       "chwang1206@gmail.com",
-       "cora330@gmail.com",
-       "cyclone82@gmail.com",
-       "dorisdiao@gmail.com",
-       "dourabbit@gmail.com",
-       "duoding.cmu@gmail.com",
-       "eric.marui@gmail.com",
-       "fengfiss@gmail.com",
-       "francishan@gmail.com",
-       "guibowen.anna@gmail.com",
-=======
       "chwang1206@gmail.com",
       "cora330@gmail.com",
       "cyclone82@gmail.com",  
@@ -94,7 +82,6 @@ class IndexController < ApplicationController
       "fengfiss@gmail.com",
       "francishan@gmail.com",
       "guibowen.anna@gmail.com",
->>>>>>> Ready for 3nd Milestone.
       "hongwenk@cs.cmu.edu",
       "hrjaco@gmail.com",
       "ingayang@gmail.com",

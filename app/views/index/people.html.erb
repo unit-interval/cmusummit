@@ -1,6 +1,6 @@
 <div id="content" class="clearfix">
-	<section>
-		<article id="people">
+	<div class="section">
+		<div class="article" id="people">
 			<h1 class="tab-nav"><a href="#speakers" class="active" data-page="speakers">Speaker</a><a href="#guests" data-page="guests">Panelist</a><a href="#participants" data-page="participants">Participant</a></h1>
 			<div id="speaker" class="active people-page clearfix">
 				<p>Interested in giving a keynote speech? Please contact Rui Ma, Chair of CMU Summit, Phone: (+1) 402-517-1820, Email: eric.marui@gmail.com</p>
@@ -12,6 +12,6 @@
 			<div id="participant" class="people-page clearfix">
 				<%= render :partial => "guests", :locals => { :speakers => @participants, :layout_type => 1 }%>
 			</div>
-		</article>
-	</section>
+		</div>
+	</div>
 </div>

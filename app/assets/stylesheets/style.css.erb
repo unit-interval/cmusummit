@@ -106,7 +106,7 @@ textarea {
 }
 /* My Style */
 body {
-	background: transparent url(<%= image_path 'body-bg.png' %>);
+	background: #F9F9F7 url(<%= image_path 'whitesand-bg.png' %>);
 	font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
 	color: #343434;
 }
@@ -130,9 +130,11 @@ strong {
 	visibility: hidden;
 }
 /* header */
-header {
-	background: transparent url(<%= image_path 'header-bg.png' %>) repeat-x top left;
+div.header {
+	
+	background: #F9F9F7 url(<%= image_path 'sand-bg.png' %>) repeat-x top left;
 	height: 70px;
+	border-bottom: 1px solid #DBDCDE;
 }
 #home {
 	float: left;
@@ -150,30 +152,30 @@ header {
 	font-weight: 300;
 	color: C82828;
 }
-nav {
+div.nav {
 	width: 960px;
 	margin: 0 auto;
 	font-size: 12px;
 }
-nav > ul {
+div.nav > ul {
 	float: right;
 	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 0.96em;
 	margin-right: 20px;
 }
-nav > ul > li {
+div.nav > ul > li {
 	float: left;
 	color: #666;
 }
-nav > ul > li a {
+div.nav > ul > li a {
 	height: 12px;
 	padding: 19px 12px 29px;
 	margin-top: 10px;
 	display: block;
 	color: inherit;
 }
-nav > ul > li a:hover {
+div.nav > ul > li a:hover {
 	color: #444;
 }
 #nav-login a {
@@ -195,6 +197,9 @@ nav > ul > li a:hover {
 	width: 940px;
 	margin: 30px auto;
 }
+#container {
+	min-height: 800px;
+}
 #gradient {
 	position: absolute;
 	top: 0;
@@ -211,7 +216,7 @@ nav > ul > li a:hover {
 #index {
 	margin-bottom: 0px;
 }
-#index article {
+#index div.article {
 	border: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
@@ -286,13 +291,15 @@ nav > ul > li a:hover {
 	margin-bottom: 0;
 }
 #random-fact {
-	background: #EEE;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	background: white;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 	width: 900px;
 	padding: 0px 20px;
-	-moz-box-shadow: 0 0 6px #c6c6c6;
-	-webkit-box-shadow: 0 0 6px #c6c6c6;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.10);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.10);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.10);
 	line-height: 40px;
 }
 #index #random-fact {
@@ -300,7 +307,7 @@ nav > ul > li a:hover {
 }
 #random-fact dt {
 	float: left;
-	border-right: 1px dashed #FFF;
+	border-right: 1px dashed #EEE;
 	padding-right: 20px;
 }
 #random-fact dd {
@@ -313,32 +320,32 @@ nav > ul > li a:hover {
 #random-fact dd span{
 	display: none;
 }
-article {
+div.article {
 	overflow: hidden;
 	background: white;
-	-moz-box-shadow: 0 0 6px #c6c6c6;
-	-webkit-box-shadow: 0 0 6px #c6c6c6;
+	-moz-box-shadow: 0 0 2px #c6c6c6;
+	-webkit-box-shadow: 0 0 2px #c6c6c6;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	margin-bottom: 20px;
 	border-radius: 4px 4px 4px 4px;
 }
-article h1 {
+div.article h1 {
 	color: #111;
 	font-size: 25px;
 	border-bottom: 1px dotted #D2D2D2;
 }
-article h1.tab-nav {
+div.article h1.tab-nav {
 	height: 65px;
 	background-color: #EFEFEF;
 }
-article h1.tab-nav > a {
+div.article h1.tab-nav > a {
 	padding: 20px 0;
 }
-section article div.content {
+div.section div.article div.content {
 	padding: 40px;
 }
-article div.content p {
+div.article div.content p {
 	line-height: 1.4em;
 	color: #343434;
 	font-size: 13px;
@@ -348,11 +355,11 @@ article div.content p {
 	float: left;
 	margin-right: 20px;
 }
-#main article h1 {
+#main div.article h1 {
 	padding: 15px 30px;
 	font-size: 25px;
 }
-#main article div.content {
+#main div.article div.content {
 	padding: 30px;
 }
 #voice div.content {
@@ -406,15 +413,15 @@ article div.content p {
 	width: 100%;
 }
 /* aside */
-aside {
+div.aside {
 	float: left;
 	width: 300px;
 }
-aside article div.content {
+div.aside div.article div.content {
 	max-height: 400px;
 	overflow: hidden;
 }
-aside article h3 {
+div.aside div.article h3 {
 	margin-bottom: 0;
 	background: #900;
 	color: white;
@@ -428,29 +435,29 @@ aside article h3 {
 	-webkit-border-top-left-radius: 4px;
 	position: relative;
 }
-aside article h4 {
+div.aside div.article h4 {
 	color: #343434;
 	font-size: 17px;
 	font-weight: normal;
 	margin: 0 0 10px 0;
 	padding: 0;
 }
-aside article p {
+div.aside div.article p {
 	line-height: 1.4em;
 	color: #343434;
 	font-size: 13px;
 }
-aside article p.date {
+div.aside div.article p.date {
 	color: #939393;
 	font-style: italic;
 	font-size: 11px;
 	margin-top: 4px;
 }
-aside div.content > div {
+div.aside div.content > div {
 	border-bottom: 1px solid #F8F3E6;
 	padding: 20px 30px;
 }
-aside div.content > div:last-child {
+div.aside div.content > div:last-child {
 	border: none;
 }
 div.arrow-nav {
@@ -791,7 +798,7 @@ h1.tab-nav > a.active {
 	font-weight: normal;
 	margin: 0 0 10px 0;
 }
-.people-page h4, .people-page p {
+.people-page h4, .people-page p, #team .bio h4, #team .bio p {
 	color: #363636;
 	font-size: 13px;
 	line-height: 1.5;
@@ -824,7 +831,7 @@ h1.tab-nav > a.active {
 	font-size: 20px;
 	margin: 0 0 5px 0;
 }
-#participant .bio, #my-contact .bio, #team .bio {
+#participant .bio, #my-contact .bio, #team .bio, #team .bio {
 	margin-bottom: 10px;
 	margin-left: 82px;
 }
@@ -1196,15 +1203,16 @@ h1.tab-nav > a.active {
 	padding-bottom: 20px;
 }
 /* footer */
-footer {
-	margin: 30px auto;
-	width: 996px;
+div.footer {
+	padding: 30px;
 	font-size: 11px;
 	text-align: center;
 	color: #767676;
 	line-height: 16px;
+	background: #F9F9F7 url("/static/img/global/sand-bg.png");
+	border-top: 1px solid #DBDCDE;
 }
-footer a:hover {
+div.footer a:hover {
 	color: black;
 }
 /* override rails field_error_proc */
