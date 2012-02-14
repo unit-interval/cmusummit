@@ -14,8 +14,17 @@ if Guest.count < 4 then
     :last_name => 'Lam',
     :first_name => 'Khee Poh',
     :datatype => 'panel',
-    :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA|US-China Green Energy Council|Professor in School of Architecture, Carnegie Mellon University',
-    :picture => 'panelist1.jpg'
+    :title => 'PhD, Royal Institute of British Architects|Board of Directors of Energy Foundation, USA|Professor in School of Architecture, Carnegie Mellon University',
+    :picture => 'panelist1.jpg',
+    :bio => 'Professor Khee Poh Lam, PhD, Architect, RIBA, teaches architectural design (focusing on systems integration), building performance modeling, building controls and diagnostics as well as acoustics and lighting. His fields of research are in total building performance studies and the development of computational design support systems. He has completed many major research projects and has published over 100 papers internationally. He serves on the Editorial Boards of the Journal of Building Performance Simulation (UK), and Building Simulation: An International Journal (China). Professor Lam is a member of the US Energy Foundation Board of Directors. He is also actively working specifically with their China Sustainable Energy Program on a range of activities including green building codes and standards, education and training, as well as green design of various demonstration projects in China.  He is also a building performance consultant for several major award winning projects in the private and public sectors in Singapore, and remains actively engaged in ongoing projects in the USA, China and Taiwan. He was formerly Director of the Graduate Program in Architecture at Carnegie Mellon. He is currently Visiting Professor at the Department of Architecture, Chinese University of Hong Kong and at Tsinghua University, China. Prior to his appointment at Carnegie Mellon in 2003, he held positions as Dean of the Faculty of Architecture, Building and Real Estate, Director of the Graduate School of the Built Environment as well as Head of the Department of Building at the National University of Singapore.'
+  )
+  schwartz = Guest.create(
+    :last_name => 'Schwartz',
+    :first_name => 'Louis',
+    :datatype => 'panel',
+    :title => 'President, China Strategies LLC',
+    :picture => 'panelist2.jpg',
+    :bio => 'Lou Schwartz, a lawyer and China specialist who is fluent in Mandarin Chinese, is president of China Strategies LLC. Through China Strategies, Lou provides clients research and analysis, due diligence, merger and acquisition, public and private equity investment and other support on a wide range of matters involving China’s legal system, economic development and trade and investment, with a particular emphasis on China’s burgeoning energy and metals sectors. Lou earned degrees in East Asian Studies from the University of Michigan and Harvard University where he studied Chinese language and literature, economics and law, among other disciplines. Lou also earned a J.D. from George Washington University Law School. For more than 10 years Lou has taught classes at the University of Pittsburgh School of Law and its College of Arts and Sciences, including Law and Development in China, Chinese for Lawyers and Chinese Legal Documents.'
   )
   anwar = Guest.create(
     :last_name => 'Anwar',
@@ -45,7 +54,7 @@ if Guest.count < 4 then
     :date => '2012-04-28',
     :time => '12:00'
   )
-  panel1.guests << lam
+  panel1.guests << lam << schwartz
   panel2 = Presentation.create(
     :title => %{IT Panel B: Social Networking Technologies},
     :datatype => 'panel',

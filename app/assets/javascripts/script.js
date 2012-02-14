@@ -43,7 +43,11 @@ $(function() {
 		$("#info #" + a).addClass("active");
 		return false;
 	});
-	$("#top h3").delay(2000).animate({'margin-top': 0}, 500);
+	$('.speaker-info .bio .read-more').click(function(){
+		$(this).hide().next('p').show();
+		return false;
+	})
+	$("#top h3").delay(2000).animate({'margin-top': 5}, 500);
 	$(".arrow-nav a.up").click(function(){
 		var f=$(this);
 		var c=f.parent().siblings('.content');
@@ -70,7 +74,7 @@ $(function() {
 		});
 		return false;
 	})
-	if ($("#index").length > 0) $("#home").hide();
+//	if ($("#index").length > 0) $("#home").hide();
 	if ($("#random-fact").length > 0) {
 		var a = $("#random-fact dd");
 		var n = a.find("span").length;

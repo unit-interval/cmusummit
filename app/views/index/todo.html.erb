@@ -82,10 +82,6 @@
 						<span><%= @user.first_name %></span>
                         <%= f.text_field :first_name, :placeholder => 'First Name' %>
                       </div><div>
-                        <%= f.label :title %>
-						<span><%= @user.title.nil? ? "N/A" : @user.title %></span>
-                        <%= f.text_field :title, :placeholder => 'Title' %>
-                      </div><div>
                         <%= f.label :gender %>
 						<span><%= @user.gender.nil? ? "N/A" : (@user.gender ? "Male" : "Female") %></span>
                         <%= f.radio_button :gender, true %> <span class="gender-span">Male</span>

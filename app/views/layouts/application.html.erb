@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>CMU Summit</title>
+  <title><%=@layout%> | CMU Summit</title>
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag "application" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" %>
@@ -16,18 +16,17 @@
         <div class="nav">
 			<a id="home" href="/"><%= image_tag 'logo.png' %><span>CMU Summit</span></a>
           <ul>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Agenda", agenda_path %></li>
-           	<li><%= link_to "People", people_path %></li>
-            <li><%= link_to "Contest", contest_path %></li>
-            <li><%= link_to "Info", info_path %></li>
-            <li><%= link_to "Team", team_path %></li>
+            <li><%= link_to "Home", root_path, :class => @layout == "Home" ? "active" : "" %></li>
+            <li><%= link_to "Agenda", agenda_path, :class => @layout == "Agenda" ? "active" : "" %></li>
+           	<li><%= link_to "People", people_path, :class => @layout == "People" ? "active" : "" %></li>
+            <li><%= link_to "Contest", contest_path, :class => @layout == "Contest" ? "active" : "" %></li>
+            <li><%= link_to "Info", info_path, :class => @layout == "Info" ? "active" : "" %></li>
+            <li><%= link_to "Team", team_path, :class => @layout == "Team" ? "active" : "" %></li>
             <% if session[:user_id] %>
-              <li id="nav-login"><%= link_to "Todo", todo_path %></li>
-              <li id="nav-signup"><%= link_to "Log Out", logout_path %></li>
+              <li><%= link_to "Todo", todo_path, :class => @layout == "Todo" ? "active" : "" %></li>
+              <li id="nav-login"><%= link_to "Logout", logout_path %></li>
             <% else %>
-              <li id="nav-login"><%= link_to "Log In", login_path %></li>
-              <li id="nav-signup"><%= link_to "Sign Up", login_path %></li>
+              <li id="nav-login"><%= link_to "Get Involved", login_path %></li>
             <% end %>
 <!--            <li id="nav-cn"><%= link_to "中文", root_path %></li>-->
           </ul>
@@ -39,7 +38,7 @@
     </div>
     <div class="footer">
       <p>
-        ©2011 CMU Summit. Proudly Powered by <a href="http://theunitinterval.com" title="unit interval" target="_blank">Unit Interval</a><br><a  target="_blank" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dENzd3RGS2NsQ1lVZnhrNzgwcUtERHc6MQ#gid=0">Tell us what you think</a>
+        ©2012 CMU Summit. Proudly Powered by Unit Interval<br><a  target="_blank" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dENzd3RGS2NsQ1lVZnhrNzgwcUtERHc6MQ#gid=0">Tell us what you think</a>
       </p>
     </div>
   </div>

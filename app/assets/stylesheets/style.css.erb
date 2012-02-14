@@ -115,7 +115,7 @@ a {
 	-o-transition: color 0.25s ease-in-out;
 	-webkit-transition: color 0.25s ease-in-out;
 	-moz-transition: color 0.25s ease-in-out;
-	color: #900;
+	color: #CF242A;
 }
 strong {
 	font-weight: 700;
@@ -138,6 +138,9 @@ div.header {
 }
 #home {
 	float: left;
+}
+#home span {
+	color: black;
 }
 #home img {
 	width: 60px;
@@ -167,29 +170,58 @@ div.nav > ul {
 div.nav > ul > li {
 	float: left;
 	color: #666;
+	height: 12px;
+	padding: 29px 12px 29px;
 }
 div.nav > ul > li a {
-	height: 12px;
-	padding: 19px 12px 29px;
-	margin-top: 10px;
-	display: block;
 	color: inherit;
+}
+div.nav > ul > li a.active {
+	color: #CF242A;
 }
 div.nav > ul > li a:hover {
 	color: #444;
 }
-#nav-login a {
-	color: #E51937;
+#nav-login {
+	margin: 20px 0 0 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background: #900;
+	background-repeat: no-repeat;
+	background-image: -khtml-gradient(linear,left top,left bottom,from(#CF242A),to(#900));
+	background-image: -moz-linear-gradient(top,#CF242A,#900);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#CF242A),color-stop(100%,#900));
+	background-image: -webkit-linear-gradient(top,#CF242A,#CF242A 25%,#900);
+	background-image: -o-linear-gradient(top,#CF242A,#900);
+	background-image: -ms-linear-gradient(#CF242A,#900);
+	background-image: linear-gradient(#CF242A,#900);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CF242A, endColorstr=#900, GradientType=0);
+	border: 1px solid #600;
+	color: white;
+	cursor: pointer;
+	letter-spacing: 0;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px 15px 4px;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+	-webkit-transition: .1s linear all;
+	-moz-transition: .1s linear all;
+	-ms-transition: .1s linear all;
+	-o-transition: .1s linear all;
+	transition: .1s linear all;
+}
+#nav-login:hover {
+	background-position: 0 -15px;
 }
 #nav-login a:hover {
-	color: #C41230;
+	color: white;
 }
-#nav-signup a {
-	color: #00A950;
-}
-#nav-signup a:hover {
-	color: #00704A;
-}
+#nav-login:active {
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05)
+	color: white;}
+
 /* content */
 #content {
 	padding: 10px;
@@ -225,7 +257,7 @@ div.nav > ul > li a:hover {
 	position: relative;
 }
 #index #top {
-	height: 160px;
+	height: 185px;
 }
 #index .content {
 	padding: 0;
@@ -234,7 +266,7 @@ div.nav > ul > li a:hover {
 	border: none;
 	line-height: 80px;
 	font-size: 60px;
-	color: #900;
+	color: #4C4C4C;
 	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 	padding: 0;
 	margin-top: 20px
@@ -250,10 +282,10 @@ div.nav > ul > li a:hover {
 }
 #index h3 {
 	float: right;
-	border-radius: 80px;
+	border-radius: 88px;
 	width: 160px;
 	height: 160px;
-	background: #5fc6e5;
+	background: white;
 	margin-right: 40px;
 	-moz-box-shadow: 0 0 6px #c6c6c6;
 	-webkit-box-shadow: 0 0 6px #c6c6c6;
@@ -264,7 +296,7 @@ div.nav > ul > li a:hover {
 	display: block;
 	width: 100%;
 	text-align: center;
-	color: white;
+	color: #4C4C4C;
 }
 #index h3 span:nth-child(1){
 	margin-top: 20px;
@@ -278,10 +310,11 @@ div.nav > ul > li a:hover {
 	float: right;
 }
 #index p {
+	margin-top: 40px;
 	float: left;
 	width: 340px;
 	font-size: 18px;
-	line-height: 40px;
+	line-height: 30px;
 }
 #why p {
 	margin-bottom: 20px;
@@ -400,7 +433,7 @@ div.article div.content p {
 	transition: border-color 0.2s ease;
 }
 #sponsor-list > li:hover {
-	border-color: #900;
+	border-color: #CF242A;
 }
 #sponsor-list > li a {
 	display: block;
@@ -423,7 +456,7 @@ div.aside div.article div.content {
 }
 div.aside div.article h3 {
 	margin-bottom: 0;
-	background: #900;
+	background: #CF242A;
 	color: white;
 	font-size: 25px;
 	padding: 15px 30px;
@@ -498,7 +531,7 @@ div.arrow-nav a.down-inactive {
 }
 #announcements h3 {
     margin-bottom: 0;
-    background: #0a67c5;
+    background: #CF242A;
     color: #FFF;
     font-size: 25px;
     padding: 15px 30px;
@@ -695,7 +728,7 @@ h1.tab-nav > a.active {
 }
 #agenda .session-detail h2 {
 	font-size: 25px;
-	color: #900;
+	color: #CF242A;
 	margin-bottom: 4px;
 }
 #agenda .session-detail h3 {
@@ -742,6 +775,19 @@ h1.tab-nav > a.active {
     background: #f3f3f3;
     padding: 40px;
 }
+#agenda .speaker-info {
+	border-bottom: 1px dotted #D2D2D2;
+}
+.speaker-info .bio {
+	margin-left: 142px;
+}
+.speaker-info .bio .read-more {
+	font-size: 13px;
+}
+.speaker-info .bio p {
+	margin-top: 13px;
+	display: none;
+}
 .speaker-info:nth-child(2n+1) {
     background: transparent;
 }
@@ -762,11 +808,7 @@ h1.tab-nav > a.active {
 	width: 100px;
 	margin: 10px;
 }
-.session-detail .speaker-info .has-image .bio {
-    float: left;
-    width: 705px;
-}
-.session-detail .speaker-info .bio p {
+.session-detail .speaker-info .bio h4 {
     color: #363636;
     font-size: 13px;
     line-height: 1.5;
@@ -825,7 +867,7 @@ h1.tab-nav > a.active {
 	transition: border-color 0.2s ease;
 }
 #participant .image:hover, #my-contact .image:hover, #team .image:hover {
-	border-color: #900;
+	border-color: #CF242A;
 }
 #participant h3, #my-contact h3, #team h3 {
 	font-size: 20px;
@@ -992,12 +1034,6 @@ h1.tab-nav > a.active {
 	display: inline-block;
 	text-align: center;
 }
-#register h1 span:first-child {
-	color: #E51937
-}
-#register h1 span:last-child {
-	color: #00A950;
-}
 #register #login, #register #signup {
 	width: 390px;
 	float: left;
@@ -1150,7 +1186,7 @@ h1.tab-nav > a.active {
 	line-height: 20px;
 }
 #my-calendar h2{
-	color: #900;
+	color: #CF242A;
 }
 #my-calendar .session-info {
 	padding: 10px 20px;
@@ -1175,7 +1211,7 @@ h1.tab-nav > a.active {
 }
 .todo-remove {
 	float: right;
-	border-bottom: 1px dotted #900;
+	border-bottom: 1px dotted #CF242A;
 	margin-top: -21px;
 	display: none;
 }

@@ -2,9 +2,11 @@ class IndexController < ApplicationController
   skip_before_filter :authorize, :except => [:todo]
 
   def index
+    @layout = "Home"
   end
 
   def agenda
+    @layout = "Agenda"
     presentations = Presentation.all
     @panels = presentations.find_all { |p| p.datatype == 'panel' }
     @keynotes = presentations.find_all { |p| p.datatype == 'keynote' }
@@ -12,9 +14,11 @@ class IndexController < ApplicationController
   end
 
   def contest
+    @layout = "Contest"
   end
 
   def info
+    @layout = "Info"
   end
 
   def login
@@ -28,6 +32,7 @@ class IndexController < ApplicationController
   end
 
   def people
+    @layout = "People"
     guests = Guest.all
     @speakers = guests.find_all { |p| p.datatype == "keynote" }
     @panelists = guests.find_all { |p| p.datatype == "panel" }
@@ -40,7 +45,7 @@ class IndexController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         UserMailer.after_registration(@user).deliver if Rails.env == 'production'
-        redirect_to agenda_path
+        redirect_to todo_path
       else
         render 'login'
       end
@@ -68,6 +73,7 @@ class IndexController < ApplicationController
   end
   
   def team
+    @layout = "Team"
     @advisors = Guest.find_all_by_datatype('advisor')
     mailist = [
       "bowang@andrew.cmu.edu",
@@ -133,6 +139,7 @@ class IndexController < ApplicationController
   end
 
   def todo
+    @layout = "Todo"
     @user = User.find(session[:user_id])
   end
 end

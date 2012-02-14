@@ -20,7 +20,10 @@
 	              <% guest.title.split('|').each do |title| %>
 	                <h4><%= title %></h4>
 	              <% end %>
+				  <% if not guest.bio.nil? %>
+				  <a class="read-more" href="#">Read More About <%= guest.first_name + ' ' + guest.last_name %></a>
 	              <p><%= guest.bio %></p>
+				  <% end %>
 				</div>
 			</div>
 		</div>
@@ -37,7 +40,11 @@
 				<div class="bio">
 					<h3><%= g.first_name + ' ' + g.last_name %></h3>
 					<h4>CMU Summit Web / Tech Director</h4>
-					<h4>12 people are following<a class="button-gray button-gray-add">Add</a></h4>
+					<h4>12 people are following
+						<% if session[:user_id] %>
+						<a class="button-gray button-gray-add">Add</a>
+						<% end %>
+					</h4>
 				</div>
 			</div>
 		</div>
