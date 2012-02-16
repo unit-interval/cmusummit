@@ -95,13 +95,14 @@ end
 if User.count < 1 then
   User.delete_all
 
-  User.create(
+  john_doe = User.create(
     :email => 'info@cmusummit.org',
     :email_confirmation => 'info@cmusummit.org',
     :password => 'pkusms',
     :password_confirmation => 'pkusms',
     :last_name => 'Doe',
-    :first_name => 'John',
-    :is_admin => true
+    :first_name => 'John'
   )
+  john_doe.is_admin = true
+  john_doe.save
 end

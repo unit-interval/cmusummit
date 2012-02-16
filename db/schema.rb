@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120205170723) do
+ActiveRecord::Schema.define(:version => 20120216172050) do
 
   create_table "followings", :force => true do |t|
     t.integer  "user_id"
@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(:version => 20120205170723) do
     t.integer  "guest_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "contact_id"
   end
 
+  add_index "followings", ["contact_id"], :name => "index_followings_on_contact_id"
   add_index "followings", ["guest_id"], :name => "index_followings_on_guest_id"
   add_index "followings", ["presentation_id"], :name => "index_followings_on_presentation_id"
   add_index "followings", ["user_id"], :name => "index_followings_on_user_id"

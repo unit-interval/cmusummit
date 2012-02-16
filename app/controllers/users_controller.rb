@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :authorize, :only => [:create]
-  before_filter :admin_only, :except => [:update]
+  before_filter :admin_only, :except => [:update, :follow, :unfollow]
 
   # GET /users
   # GET /users.json
@@ -97,6 +97,29 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+
+  # GET /users/1/follow
+  def follow
+    if params[:id].to_i == session[:user_id]
+      render :json => { :ok => false, :error => "can't follow yourself." }
+      return
+    end
+    user = User.find(params[:id])
+    follower = User.find(session[:user_id])
+    user.followers << follower
+    render :json => { :ok => true, :follower_count => user.followers.count }
+  end
+
+  # GET /users/1/unfollow
+  def unfollow
+    user = User.find(params[:id])
+    follower = User.find(session[:user_id])
+    user.followers.delete follower
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render :json => { :ok => true } }
     end
   end
 end

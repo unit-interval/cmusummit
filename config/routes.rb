@@ -11,7 +11,11 @@ Cmusummit::Application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users do
+    member do
+      get :follow, :unfollow
+    end
+  end
 
   root :to => 'index#index'
 

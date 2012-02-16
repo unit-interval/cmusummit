@@ -137,7 +137,9 @@ function bind_ajax_anchors() {
           } else {
             html = 'You are following';
           }
-          $a.hide().siblings('div[data-role="follower-count"]').html(html);
+          $a.hide()
+            .siblings('div[data-role="follower-count"]').html(html).end()
+            .parents('h4[data-role="follower-count"]').html(html);
         }
       });
       return false;

@@ -3,7 +3,10 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
   has_many :guests, :through => :followings, :uniq => true
   has_many :presentations, :through => :followings, :uniq => true
-  has_many :followings
+  has_many :contacts, :through => :followings, :uniq => true
+  has_many :followers, :through => :reverse_followings, :source => :user, :uniq => true
+  has_many :followings, :dependent => :destroy
+  has_many :reverse_followings, :class_name => "Following", :foreign_key => "contact_id", :dependent => :destroy
 
   validates :email, :encrypted_password, :salt, :last_name, :first_name, :presence => true
   validates :email, :uniqueness => true

@@ -33,18 +33,27 @@
 		<div class="speaker-info">
 			<div class="speaker has-image">
                 <a href="https://www.facebook.com/zilinj" target="_blank" class="image">
-					<% if not g.gender.nil? %>
+					<% unless g.gender.nil? %>
 						<%= g.gender ? (image_tag 'default_avatar_male.jpg') : (image_tag 'default_avatar_female.jpg') %>
 					<% end %>
 				</a>
 				<div class="bio">
 					<h3><%= g.first_name + ' ' + g.last_name %></h3>
 					<h4>CMU Summit Web / Tech Director</h4>
-					<h4>12 people are following
-						<% if session[:user_id] %>
-						<a class="button-gray button-gray-add">Add</a>
-						<% end %>
-					</h4>
+                    <% if g.follower_ids.include? session[:user_id] %>
+                      <h4>You <% if g.followers.count > 1 %>and <%= pluralize(g.followers.count - 1, 'person') %> <% end %>are following</h4>
+                    <% else %>
+                      <h4 data-role="follower-count">
+                        <%= pluralize(g.followers.count, 'person is', 'people are') %> following
+                        <% if session[:user_id] %>
+                          <% if session[:user_id] == g.id %>
+                            you
+                          <% else %>
+                            <%= link_to 'Add', follow_user_path(g), :class => "button-gray button-gray-add", "data-ajax" => true, "data-role" => 'follow' %>
+                          <% end %>
+                        <% end %>
+                      </h4>
+                    <% end %>
 				</div>
 			</div>
 		</div>

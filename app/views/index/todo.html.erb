@@ -51,6 +51,18 @@
 					</div>
 				</div>
                 <% end %>
+                <% @user.contacts.each do |c| %>
+				<div class="speaker-info">
+					<div class="speaker has-image">
+                        <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
+						<div class="bio">
+                            <h3><%= c.first_name + ' ' + c.last_name %></h3>
+							<h4>Social Media Links</h4>
+						</div>
+                        <%= link_to 'Remove', unfollow_user_path(c), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
+					</div>
+				</div>
+                <% end %>
 			</div>
 		</div>
 	</div>
