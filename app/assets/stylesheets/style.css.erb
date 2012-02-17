@@ -143,8 +143,7 @@ div.header {
 	color: black;
 }
 #home img {
-	width: 60px;
-	margin: 10px 2px 0 22px;
+	margin: 10px 10px 0 0;
 	float: left;
 }
 #home span {
@@ -184,6 +183,8 @@ div.nav > ul > li a:hover {
 }
 #nav-login {
 	margin: 20px 0 0 10px;
+}
+#nav-login, #getstarted {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -212,13 +213,22 @@ div.nav > ul > li a:hover {
 	-o-transition: .1s linear all;
 	transition: .1s linear all;
 }
-#nav-login:hover {
+#getstarted {
+	position: absolute;
+	left: 20px;
+	bottom: 30px;
+	width: 315px;
+	height: 55px;
+	font-size: 26px;
+	line-height: 55px;
+}
+#nav-login:hover, #getstarted:hover {
 	background-position: 0 -15px;
 }
-#nav-login a:hover {
+#nav-login a, #nav-login a:hover, #getstarted a, #getstarted a:hover {
 	color: white;
 }
-#nav-login:active {
+#nav-login:active, #getstarted:active {
 	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05)
 	color: white;}
 
@@ -226,7 +236,7 @@ div.nav > ul > li a:hover {
 #content {
 	padding: 10px;
 	background: transparent;
-	width: 940px;
+	width: 942px;
 	margin: 30px auto;
 }
 #container {
@@ -245,42 +255,125 @@ div.nav > ul > li a:hover {
 #cmu-overview {
 	margin-bottom: 20px;
 }
-#index {
-	margin-bottom: 0px;
+#index1 #top, #index2, #index3 {
+	margin: 0px auto;
+	width: 960px;
 }
-#index div.article {
+#index0 {
+	background: #F9F9F7 url(<%= image_path 'sand-bg.png' %>);
+	padding-bottom: 40px;
+	border-bottom: 1px solid #DBDCDE;
+}
+#index1 {
+	position: relative;
+	overflow: hidden;
+}
+#index2 {
+	width: 100%;
+	border-top: 1px solid #DBDCDE;
+	border-bottom: 1px solid #DBDCDE;
+	padding-bottom: 40px;
+}
+#index3 {
+	padding-top: 40px;
+}
+#index1 #top {
+	overflow: visible;
+	height: 380px;
+}
+#mask {
+	position: absolute;
+	width: 1480px;
+	height: 600px;
+	background: -webkit-gradient(linear, 100% 100%, 0% 100%, from(rgba(255,255,255,0.7)), to(transparent));
+}
+#summit-title {
+	float: right;
+	background: rgba(0,0,0,0.5);
+	height: 300px;
+	padding: 40px;
+	width: 300px;
+}
+#navigation_container {
+	margin: 20px 0;
+	position: relative;
+	color: white;
+	background: #CF242A;
+	padding: 5px 0 5px 10px;
+	right: -20px;
+	width: 330px;
+	-moz-box-shadow: 1px 1px 1px #222;
+	-webkit-box-shadow: 1px 1px 1px #222;
+	box-shadow: 1px 1px 1px #222;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+#navigation_container div {
+	border-top: 1px dotted black;
+	border-bottom: 1px dotted black;
+	padding: 5px 0;
+	font-size: 18px;
+}
+#left-ribbon {
+	position: absolute;
+}
+#right-ribbon {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	right: 0;
+	margin-top: 60px;
+	margin-right: -20px;
+}
+#ribbon-corner-1, #ribbon-corner-3 {
+	border-color: #CF242A transparent transparent;
+	border-style:solid;
+	border-width: 20px;
+	margin-top: 40px;
+}
+#ribbon-corner-3 {
+	margin-top: 0px;
+	margin-left: -20px;
+}
+#ribbon-corner-2 {
+	border-color: transparent transparent #CF242A;
+	border-style:solid;
+	border-width: 20px;
+	margin-top: -80px;
+}
+#index1 div.article {
 	border: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	background: transparent;
-	margin: 10px 0 50px;
+	margin: 0 0 50px;
 	position: relative;
 }
-#index #top {
-	height: 185px;
+#level-header {
+	position: absolute;
+	left: 50%;
+	width: 1480px;
+	margin-left: -740px;
 }
-#index .content {
+#index1 .content {
 	padding: 0;
 }
-#index h1 {
+#index1 h1 {
 	border: none;
-	line-height: 80px;
-	font-size: 60px;
-	color: #4C4C4C;
-	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-	padding: 0;
-	margin-top: 20px
+	color: #EEE;
+	font-size: 50px;
+	text-indent: -3px;
+	letter-spacing: -1px;
+	margin: 0;
 }
-#index img{
-	height: 120px;
-	float: left;
-	margin-top: 20px;
+#index1 h2 {
+	font-size: 13px;
+	color: #EEE;
+	line-height: 1.5;
 }
-#index h2 {
-	font-size: 20px;
-	text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
-}
-#index h3 {
+#index1 h3 {
 	float: right;
 	border-radius: 88px;
 	width: 160px;
@@ -292,36 +385,100 @@ div.nav > ul > li a:hover {
 	margin-top: -180px;
 	display: block;
 }
-#index h3 span {
+#index1 h3 span {
 	display: block;
 	width: 100%;
 	text-align: center;
 	color: #4C4C4C;
 }
-#index h3 span:nth-child(1){
+#index1 h3 span:nth-child(1){
 	margin-top: 20px;
 	font-size: 20px;
 }
-#index h3 span:nth-child(2){
+#index1 h3 span:nth-child(2){
 	margin: 5px 0;
 	font-size: 40px;
 }
-#index iframe {
+#index1 iframe {
 	float: right;
 }
-#index p {
-	margin-top: 40px;
-	float: left;
-	width: 340px;
-	font-size: 18px;
-	line-height: 30px;
+#index1 p {
+	color: #DDD;
+	font-size: 14px;
+	line-height: 1.5;
+	position: absolute;
+	bottom: 40px;
+	width: 300px;
 }
 #why p {
 	margin-bottom: 20px;
-	line-height: 1.5;
+	color: #999;
+	font-size: 15px;
+	line-height: 22px;
 }
 #why p:last-child {
 	margin-bottom: 0;
+}
+#why {
+	width: 960px;
+	margin: 0 auto;
+	padding: 40px 0;
+}
+#why-left {
+	float: left;
+	width: 580px;
+}
+#why-left ul {
+	padding: 0 0 10px 20px;
+	list-style-type: disc;
+}
+#why-left li {
+	width: 260px;
+	color: #999;
+	font-size: 15px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+#why-li-left {
+	float: left;
+}
+#why-li-right {
+	float: right;
+}
+#why-right {
+	float: right;
+	width: 340px;
+}
+#douno {
+	width: 960px;
+	padding: 40px 0;
+	margin: 0 auto;
+}
+#douno img {
+	border: 1px solid #DDD;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	padding: 4px;
+	background: white;
+	margin-bottom: 10px;
+}
+#douno h3, #why h3 {
+	margin: 0 auto 20px auto;
+	color: #666;
+	font-size: 1.5em;
+}
+#douno div {
+	float: left;
+	width: 300px;
+	padding: 0;
+	padding: 0 20px 0 0;
+}
+#douno p {
+	color: #999;
+	font-size: 15px;
+	line-height: 22px;
+	padding: 0 10px;
 }
 #random-fact {
 	background: white;
@@ -358,7 +515,7 @@ div.article {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 div.article h1 {
 	color: #111;
@@ -383,7 +540,6 @@ div.article div.content p {
 #main {
 	width: 620px;
 	float: left;
-	margin-right: 20px;
 }
 #main div.article h1 {
 	padding: 15px 30px;
@@ -444,7 +600,7 @@ div.article div.content p {
 }
 /* aside */
 div.aside {
-	float: left;
+	float: right;
 	width: 300px;
 }
 div.aside div.article div.content {

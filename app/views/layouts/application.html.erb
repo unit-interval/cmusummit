@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title><%=@layout%> | CMU Summit</title>
-  <%= favicon_link_tag %>
+  <%= favicon_link_tag "/assets/images/favicon.ico" %>
   <%= stylesheet_link_tag "application" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" %>
   <%= javascript_include_tag "application" %>
@@ -14,7 +14,7 @@
     <div id="container">
       <div class="header">
         <div class="nav">
-			<a id="home" href="/"><%= image_tag 'logo.png' %><span>CMU Summit</span></a>
+			<a id="home" href="/"><%= image_tag 'logo50.png' %><span>CMU Summit</span></a>
           <ul>
             <li><%= link_to "Home", root_path, :class => @layout == "Home" ? "active" : "" %></li>
             <li><%= link_to "Agenda", agenda_path, :class => @layout == "Agenda" ? "active" : "" %></li>

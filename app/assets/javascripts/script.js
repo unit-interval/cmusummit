@@ -75,14 +75,13 @@ $(function() {
 		return false;
 	})
 //	if ($("#index").length > 0) $("#home").hide();
-	if ($("#random-fact").length > 0) {
-		var a = $("#random-fact dd");
-		var n = a.find("span").length;
-		var b = a.find("span");
+	if ($("#douno").length > 0) {
+		var a = $("#douno");
+		var b = a.find("div");
+		var n = b.length;
 		var m = Math.floor(Math.random()*n);
 		var c = $(b[m]);
-		c.show();
-		self.setTimeout(setInterval("randomFactScroll()", 5000), 5000);
+		c.hide();
 	}
 	$(function(){
 		$("#register form input").focus(function(){

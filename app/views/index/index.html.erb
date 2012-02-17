@@ -1,83 +1,118 @@
-<div id="content" class="clearfix">
-	<div id="index" class="section">
+<div id="index-content" class="clearfix">
+	<div id="index1">
+	 	<%= image_tag 'level_header.jpg', :alt => 'CMU-Summit', :id => "level-header" %>
 		<div class="article" id="top">
-			<h3><span>APRIL</span><span>28-29</span><span>Pittsburgh</span><span>Pennsylvania</span></h3>
-            <%= image_tag 'logo.png', :alt => 'CMU-Summit', :id => 'logo' %>
-			<h1>CMU SUMMIT</h1>
-			<h2>US-China Innovation and Entrepreneurship Forum</h2>
-		</div>
-		<div class="article">
-			<div class="content clearfix">
-				<p>
-					CMU Summit is a high-profile forum, where leading entrepreneurs, executives, venture capitalists and researchers from both China and United States could come together to address big issues on economy and technology, and further cultivate potential opportunities for mutual partnerships.
-				</p>
-				<iframe id="cmu-overview" width="560" height="315" src="http://www.youtube.com/embed/1I5i6NO6f7k" frameborder="0" allowfullscreen></iframe>
+			<div id="summit-title">
+				<h1>CMU Summit</h1>
+				<h2>US-China Innovation and Entrepreneurship Forum</h2>
+				<div id="left-ribbon">
+					<div id="ribbon-corner-1"></div>
+					<div id="ribbon-corner-2"></div>
+				</div>
+				<div id="right-ribbon">
+					<div id="ribbon-corner-3"></div>
+				</div>
+				<div id="navigation_container">
+					<div>April 28-29, Pittsburgh, Pennsylvania</div>
+				</div>
+				<p>CMU Summit is a high-profile forum, where leading entrepreneurs, executives, venture capitalists and researchers from both China and United States could come together to address big issues on economy and technology, and further cultivate potential opportunities for mutual partnerships.</p>
 			</div>
-			<div id="random-fact" class="clearfix">
-				<%=render :partial => "randomfacts" %>
+			<div id="getstarted"><a href="/login">Get Involved Now</a></div>
+		</div>
+	</div>
+	<div id="index2" class="clearfix">
+		<div class="content" id="douno">
+    		<h3>Do You Know?</h3>
+			<div>
+				<%= image_tag 'diagram3.jpg', :alt => 'CMU-Summit' %>
+				<p>CMU has been ranked No. 1 among all U.S. universities without a medical school in the number of startup companies created per research dollar spent since 2007.</p>	
+			</div>
+			<div>
+				<%= image_tag 'diagram2.jpg', :alt => 'CMU-Summit' %>
+				<p>With 100 percent of CMU’s electricity coming from green power sources, the university is ranked as a green power leader by the U.S. Environmental Protection Agency.</p>
+			</div>
+			<div>
+				<%= image_tag 'diagram7.jpg', :alt => 'CMU-Summit' %>
+				<p>Dr. Mao Yisheng, an expert on bridge construction and a social activist in China, is the first PhD student even granted by Carnegie Mellon University.</p>
+			</div>
+			<div>
+				<%= image_tag 'diagram4.jpg', :alt => 'CMU-Summit' %>
+				<p>The Smiley :-) was created by Carnegie Mellon research professor Scott Fahlman on September 19, 1982.</p>
 			</div>
 		</div>
 	</div>
-	<div class="section" id="main">
-		<div class="article" id="why">
-			<h1>Why CMU Summit?</h1>
-			<div class="content">
-				<p>Over the past few decades, China has successfully transformed itself from a poor society into a modern nation that plays a central role in global issues. China is currently the fastest-growing economy in the world with unmatched annual growth rates, expanding international influence, and growing technological innovation. China has the single largest population of Internet users in the world and more university graduates than ever. With extraordinary capabilities and great potential, China has a bright future ahead.</p>
-				<p>Today, the United States continues to fuel global markets and lead in innovation and technology. In the age of globalization and facing world financial crises, the relationship between China and the U.S. will undoubtedly continue to play an essential role in future economic issues. With the future in mind, China will face many challenges emerging from its rapid development; ideas and solutions from both China and the United states would aid and benefit the growth of both countries.</p>
-				<p>This April, the CMU Summit is expected to draw more than 1,000 participants to Carnegie Mellon University. Entrepreneurs, executives and venture capitalists from China and the U.S. will come together to discuss China’s growing influence on the global economy. The Summit will explore the United States’ role and how it will present mutual opportunities for both nations in the years to come.</p>
-			</div>
-		</div>
-		<div class="article" id="voice" style="display: none">
-			<h1>Voice</h1>
-			<div class="content clearfix">
-				<div class="voice-quote">
-					<p>"For those of you thinking about Carnegie Mellon, it's a terrific place, and you guys are doing just great work... Carnegie Mellon is a great example of what it means to move forward... At its founding, no one would have imagined that a trade school for the sons and daughters of steelworkers would one day become … one of the region's largest employers and a global research university."</p>
-					<p class="author">
-						President Obama
-					</p>
-				</div>
-				<div class="voice-quote">
-					<p>"We have a lot of Carnegie Mellon alums at Facebook and a lot of them are actually some of our best engineers. So when we decided to organize this trip to go see a few colleges, Carnegie Mellon was at the top of the list."</p>
-					<p class="author">
-						Mark Zuckerberg, Facebook CEO
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="article" id="sponsor">
-			<h1>Current Sponsor</h1>
-			<div class="content clearfix">
-				<ul id="sponsor-list">
-					<li>
-						<a href="http://www.zhenfund.com/"><%= image_tag 'sponsor1.png', :alt => 'Xiaoping Xu' %></a>
-					</li>
-				</ul>
-				<p style="color: #CF242A">Interested in sponsorship?</p><p>Please contact Pengxuan Chen</p><p>Sponsor Relation Director</p><p>Phone: +1 (412)-251-6068</p><p>Email: pengxua1@andrew.cmu.edu.</p>
-			</div>
-		</div> 
-	</div>
-	<div class="aside">
-		<div class="article" id="follow-us">
-			<h3>Get Involved</h3>
-			<div class="content">
-				<% if not session[:user_id] %>
-				<div>
-					<p>Register to keep up-to-date.</p>
-					<a href="/login" class="button-gray" id="aside-register">Sign Up</a>
-				</div>
-				<% end %>
+	<div id="index0" class="clearfix">
+		<div class="content" id="why">
+			<div id="why-left">
+				<h3>Why CMU Summit?</h3>
+				<p>Over the past few decades, China has successfully transformed itself from a poor society into a modern nation that plays a central role in global issues. The past fifty years were marked by unprecedented growth that stunned the world. Here are a few of the accomplishments that have distinguished them in recent years:</p>
 				<div class="clearfix">
-					<p>Follow us on your social network.</p>
-					<ul id="aside-social-network">
-                        <li><a href="https://www.facebook.com/cmusummit"><%= image_tag 'facebook_icon.png' %></a></li>
-						<li><a href="http://page.renren.com/601202783"><%= image_tag 'renren_icon.jpg' %></a></li>
-						<li><a href="http://weibo.com/cmusummit"><%= image_tag 'weibo_icon.png' %></a></li>
-						<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><%= image_tag 'linkin_icon.jpg' %></a></li>
+					<ul id="why-li-left">
+						<li>Fastest-growing economy in the world. In 2010, China had an annual GDP growth rate of 10.3%</li>
+						<li>University graduates all over the world</li>
+					</ul>
+					<ul class="clearfix" id="why-li-right">
+						<li>Expanding international influence and growing technological innovation</li>
+						<li>Single largest population of Internet users worldwide</li>
 					</ul>
 				</div>
+				<p>In the age of globalization and facing world financial crises, the relationship between China and the U.S. will undoubtedly continue to play an essential role in future economic issues. With the future in mind, China will face many challenges emerging from its rapid development; ideas and solutions from both China and the United states would aid and benefit the growth of both countries.</p>
+			</div>
+			<div id="why-right">
+				<h3>Who’s coming?</h3>
+				<p>This April, the CMU Summit is expected to draw more than 1,000 participants to Carnegie Mellon University. Entrepreneurs, executives and venture capitalists from China and the U.S. will come together to discuss China’s growing influence on the global economy. The Summit will explore the United States’ role and how it will present mutual opportunities for both nations in the years to come.</p>
+				<h3>Where and When?</h3>
+				<p>CMU Summit will be held at Carnegie Mellon University on April 28th – 29th, 2012.</p>
 			</div>
 		</div>
-		<%=render :partial => "announcements" %>
 	</div>
+	<div id="index3" class="clearfix">
+		<div class="section" id="main">
+			<div class="article" id="sponsor">
+				<h1>Current Sponsor</h1>
+				<div class="content clearfix">
+					<ul id="sponsor-list">
+						<li>
+							<a href="http://www.zhenfund.com/"><%= image_tag 'sponsor1.png', :alt => 'Xiaoping Xu' %></a>
+						</li>
+					</ul>
+					<p style="color: #CF242A">Interested in sponsorship?</p><p>Please contact Pengxuan Chen</p><p>Sponsor Relation Director</p><p>Phone: +1 (412)-251-6068</p><p>Email: pengxua1@andrew.cmu.edu.</p>
+				</div>
+			</div> 
+			<div class="article" id="voice">
+				<h1>Voice</h1>
+				<div class="content clearfix">
+					<div class="voice-quote">
+						<p>"For those of you thinking about Carnegie Mellon, it's a terrific place, and you guys are doing just great work... Carnegie Mellon is a great example of what it means to move forward... At its founding, no one would have imagined that a trade school for the sons and daughters of steelworkers would one day become … one of the region's largest employers and a global research university."</p>
+						<p class="author">
+							President Obama
+						</p>
+					</div>
+					<div class="voice-quote">
+						<p>"We have a lot of Carnegie Mellon alums at Facebook and a lot of them are actually some of our best engineers. So when we decided to organize this trip to go see a few colleges, Carnegie Mellon was at the top of the list."</p>
+						<p class="author">
+							Mark Zuckerberg, Facebook CEO
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="article" id="follow-us">
+				<h3>Get Involved</h3>
+				<div class="content">
+					<div class="clearfix">
+						<p>Follow us on your social network.</p>
+						<ul id="aside-social-network">
+	                        <li><a href="https://www.facebook.com/cmusummit"><%= image_tag 'facebook_icon.png' %></a></li>
+							<li><a href="http://page.renren.com/601202783"><%= image_tag 'renren_icon.jpg' %></a></li>
+							<li><a href="http://weibo.com/cmusummit"><%= image_tag 'weibo_icon.png' %></a></li>
+							<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><%= image_tag 'linkin_icon.jpg' %></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<%=render :partial => "announcements" %>
+		</div>
 	</div>
 </div>
