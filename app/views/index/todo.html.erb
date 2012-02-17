@@ -32,7 +32,7 @@
                 <% @user.guests.each do |guest| %>
 				<div class="speaker-info">
 					<div class="speaker has-image">
-                        <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
+                        <div class="image"><%= image_tag guest.picture %></div>
 						<div class="bio">
                             <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
                             <% guest.title.split('|').each do |title| %>
@@ -70,7 +70,7 @@
 						<div class="button-gray" id="facebook-link-button">Link Facebook</div>
 					</div>
 					<form class="social-network-link" id="facebook-link-form">
-						<p>1) Click on your Facebook homepage.<br>2) Enter your Facebook ID as it appears in the address bar.</p>
+						<p>Click on your Facebook homepage and enter your Facebook ID as it appears in the address bar.</p>
 						<input type="text" placeholder="Facebook ID"/><label>www.facebook.com/</label>
 						<input class="button-gray" type="submit" value="Link Facebook">
 					</form>
