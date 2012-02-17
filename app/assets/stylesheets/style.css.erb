@@ -107,7 +107,7 @@ textarea {
 /* My Style */
 body {
 	background: #F9F9F7 url(<%= image_path 'whitesand-bg.png' %>);
-	font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+	font-family: arial,sans-serif;
 	color: #343434;
 }
 a {
@@ -151,8 +151,7 @@ div.header {
 	text-transform: uppercase;
 	font-size: 2em;
 	line-height: 70px;
-	font-weight: 300;
-	color: C82828;
+	color: #C82828;
 }
 div.nav {
 	width: 960px;
@@ -214,10 +213,6 @@ div.nav > ul > li a:hover {
 	transition: .1s linear all;
 }
 #getstarted {
-	position: absolute;
-	left: 20px;
-	bottom: 30px;
-	width: 315px;
 	height: 55px;
 	font-size: 26px;
 	line-height: 55px;
@@ -266,20 +261,19 @@ div.nav > ul > li a:hover {
 }
 #index1 {
 	position: relative;
-	overflow: hidden;
+	height: 395px;
 }
 #index2 {
 	width: 100%;
 	border-top: 1px solid #DBDCDE;
 	border-bottom: 1px solid #DBDCDE;
-	padding-bottom: 40px;
 }
 #index3 {
 	padding-top: 40px;
 }
 #index1 #top {
 	overflow: visible;
-	height: 380px;
+	height: 410px;
 }
 #mask {
 	position: absolute;
@@ -290,8 +284,7 @@ div.nav > ul > li a:hover {
 #summit-title {
 	float: right;
 	background: rgba(0,0,0,0.5);
-	height: 300px;
-	padding: 40px;
+	padding: 40px 40px 30px;
 	width: 300px;
 }
 #navigation_container {
@@ -302,21 +295,22 @@ div.nav > ul > li a:hover {
 	padding: 5px 0 5px 10px;
 	right: -20px;
 	width: 330px;
-	-moz-box-shadow: 1px 1px 1px #222;
-	-webkit-box-shadow: 1px 1px 1px #222;
-	box-shadow: 1px 1px 1px #222;
+	-moz-box-shadow: 0px 1px 1px #222;
+	-webkit-box-shadow: 0px 1px 1px #222;
+	box-shadow: 0px 1px 1px #222;
 	-moz-border-radius-topright: 4px;
 	-webkit-border-top-right-radius: 4px;
 	border-top-right-radius: 4px;
 }
 #navigation_container div {
-	border-top: 1px dotted black;
-	border-bottom: 1px dotted black;
-	padding: 5px 0;
+	padding: 6px 0;
 	font-size: 18px;
+	z-index: 2;
+	position: relative;
 }
 #left-ribbon {
 	position: absolute;
+	z-index: 1;
 }
 #right-ribbon {
 	position: absolute;
@@ -354,8 +348,8 @@ div.nav > ul > li a:hover {
 #level-header {
 	position: absolute;
 	left: 50%;
-	width: 1480px;
-	margin-left: -740px;
+	width: 1440px;
+	margin-left: -720px;
 }
 #index1 .content {
 	padding: 0;
@@ -367,9 +361,11 @@ div.nav > ul > li a:hover {
 	text-indent: -3px;
 	letter-spacing: -1px;
 	margin: 0;
+	text-align: center;
 }
 #index1 h2 {
-	font-size: 13px;
+	font-size: 12px;
+	text-align: center;
 	color: #EEE;
 	line-height: 1.5;
 }
@@ -406,9 +402,8 @@ div.nav > ul > li a:hover {
 	color: #DDD;
 	font-size: 14px;
 	line-height: 1.5;
-	position: absolute;
-	bottom: 40px;
-	width: 300px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 #why p {
 	margin-bottom: 20px;
@@ -451,7 +446,7 @@ div.nav > ul > li a:hover {
 }
 #douno {
 	width: 960px;
-	padding: 40px 0;
+	padding: 40px 0 0;
 	margin: 0 auto;
 }
 #douno img {
@@ -464,21 +459,21 @@ div.nav > ul > li a:hover {
 	margin-bottom: 10px;
 }
 #douno h3, #why h3 {
-	margin: 0 auto 20px auto;
+	margin: 0 auto 30px auto;
 	color: #666;
 	font-size: 1.5em;
 }
 #douno div {
 	float: left;
 	width: 300px;
-	padding: 0;
 	padding: 0 20px 0 0;
 }
 #douno p {
+	min-height: 110px;
 	color: #999;
 	font-size: 15px;
 	line-height: 22px;
-	padding: 0 10px;
+	padding: 0 10px 40px;
 }
 #random-fact {
 	background: white;
@@ -1291,7 +1286,6 @@ h1.tab-nav > a.active {
 }
 #update-profile #connect-social-network div.button-gray {
 	margin: 5px auto 0px;
-	line-height: 18px;
 }
 #update-profile .content {
 	max-height: 9999px;

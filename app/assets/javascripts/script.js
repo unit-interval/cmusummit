@@ -75,14 +75,14 @@ $(function() {
 		return false;
 	})
 //	if ($("#index").length > 0) $("#home").hide();
-	if ($("#douno").length > 0) {
+/*	if ($("#douno").length > 0) {
 		var a = $("#douno");
 		var b = a.find("div");
 		var n = b.length;
 		var m = Math.floor(Math.random()*n);
 		var c = $(b[m]);
 		c.hide();
-	}
+	}*/
 	$(function(){
 		$("#register form input").focus(function(){
 			$(this).parent().siblings('span').fadeOut(100);
