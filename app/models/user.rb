@@ -19,15 +19,19 @@ class User < ActiveRecord::Base
   attr_accessible :email, :email_confirmation, :password, :password_confirmation, :last_name, :first_name, :gender
   attr_accessor :password
 
-  def User.authenticate(email, password)
+  def self.authenticate(email, password)
     if user = find_by_email(email)
       if user.encrypted_password == encrypt_password(password, user.salt)
         user
       end
     end
   end
-  def User.encrypt_password(password, salt)
+  def self.encrypt_password(password, salt)
     Digest::SHA2.hexdigest(salt + 'foo' + Digest::SHA2.hexdigest(salt + 'NaCl' + password.to_s + 'blah' + salt) + 'bar' + salt)
+  end
+  def self.generate_temp_password(len = 6)
+    chars = (('a'..'z').to_a + ('2'..'9').to_a) - %w(i o l)
+    (1..len).collect { chars[rand(chars.size)] } .join
   end
 
   def password=(password)

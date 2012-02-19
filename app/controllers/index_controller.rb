@@ -61,8 +61,9 @@ class IndexController < ApplicationController
       end
     else
       if @user = User.find_by_email(params[:email])
-        ## TODO add mailer
-        #UserMailer.retrieve_password(@user).deliver if Rails.env == 'production'
+        @user.password = @user.password_confirmation = User.generate_temp_password
+        @user.save
+        UserMailer.retrieve_password(@user).deliver if Rails.env == 'production'
         flash[:retrieve_password_notice] = 'Password has been sent to you.'
       else
         flash[:retrieve_password_notice] = 'Email address not found.'
