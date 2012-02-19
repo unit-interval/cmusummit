@@ -3,7 +3,7 @@
 		<div class="session-info">
           <h2><%= panel.title %></h2>
 			<div class="speaker-list">
-            <%= panel.guests.collect { |g| g.first_name + ' ' + g.last_name } .join(', ') %>
+            <%= panel.guests.collect { |g| g.full_name } .join(', ') %>
 			</div>
 			<div class="description-container">
 				<div class="description">
@@ -32,7 +32,7 @@
 			<div class="speaker has-image">
 	            <div class="image"><%= image_tag guest.picture %></div>
 				<div class="bio">
-                  <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
+                  <h3><%= guest.full_name %></h3>
 					<div class="people-interested">
                       <% if guest.user_ids.include? session[:user_id] %>
                         <div class="button-gray-inactive">You <% if guest.users.count > 1 %>and <%= pluralize(guest.users.count - 1, 'person') %> <% end %>are following</div>

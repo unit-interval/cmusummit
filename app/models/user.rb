@@ -34,6 +34,9 @@ class User < ActiveRecord::Base
     (1..len).collect { chars[rand(chars.size)] } .join
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
   def password=(password)
     @password = password
 

@@ -34,7 +34,7 @@
 					<div class="speaker has-image">
                         <div class="image"><%= image_tag guest.picture %></div>
 						<div class="bio">
-                            <h3><%= guest.first_name + ' ' + guest.last_name %></h3>
+                            <h3><%= guest.full_name %></h3>
                             <% guest.title.split('|').each do |title| %>
                                 <h4><%= title %></h4>
                             <% end %>
@@ -49,7 +49,7 @@
 					<div class="speaker has-image">
                         <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
 						<div class="bio">
-                            <h3><%= c.first_name + ' ' + c.last_name %></h3>
+                            <h3><%= c.full_name %></h3>
 							<h4>Social Media Links</h4>
 						</div>
                         <%= link_to 'Remove', unfollow_user_path(c), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
