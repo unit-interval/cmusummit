@@ -38,7 +38,6 @@
                             <% guest.title.split('|').each do |title| %>
                                 <h4><%= title %></h4>
                             <% end %>
-							<h4>Social Media Links</h4>
 						</div>
                         <%= link_to 'Remove', unfollow_guest_path(guest), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>
@@ -47,10 +46,15 @@
                 <% @user.contacts.each do |c| %>
 				<div class="speaker-info">
 					<div class="speaker has-image">
-                        <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
+                        <div class="image"><%= image_tag c.profile_picture %></div>
 						<div class="bio">
                             <h3><%= c.full_name %></h3>
-							<h4>Social Media Links</h4>
+                            <h4><%= c.title %></h4>
+                            <h4>
+                            <% if c.fb_username %>
+                              <%= link_to 'Facebook Profile', c.fb_profile_url, :target => '_blank' %>
+                            <% end %>
+                            </h4>
 						</div>
                         <%= link_to 'Remove', unfollow_user_path(c), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>
@@ -65,15 +69,16 @@
 			<div class="content">
 				<div id="connect-social-network">
 					<div id="connect-social-network-intro">
-	                    <div class="image"><%= image_tag 'default_avatar_male.jpg' %></div>
+	                    <div class="image"><%= image_tag @user.profile_picture %></div>
 						<p>Link social media and use profile picture as avatar.</p>
 						<div class="button-gray" id="facebook-link-button">Link Facebook</div>
 					</div>
-					<form class="social-network-link" id="facebook-link-form">
+                    <%= form_for @user, :html => { :class => 'social-network-link', :id =>"facebook-link-form" } do |f| %>
 						<p>Click on your Facebook homepage and enter your Facebook ID as it appears in the address bar.</p>
-						<input type="text" placeholder="Facebook ID"/><label>www.facebook.com/</label>
-						<input class="button-gray" type="submit" value="Link Facebook">
-					</form>
+                        <%= f.text_field :fb_username, :placeholder => 'FB Username' %>
+						<label>www.facebook.com/</label>
+                        <%= f.submit 'Link Facebook', :class => 'button-gray' %>
+                    <% end %>
 				</div>
 				<div id="update-info">
                     <%= form_for @user do |f| %>
@@ -86,6 +91,10 @@
                         <%= f.label :first_name %>
 						<span><%= @user.first_name %></span>
                         <%= f.text_field :first_name, :placeholder => 'First Name' %>
+                      </div><div>
+                        <%= f.label :title %>
+						<span><%= @user.title %></span>
+                        <%= f.text_field :title, :placeholder => 'Job Title or Position' %>
                       </div><div>
                         <%= f.label :gender %>
 						<span><%= @user.gender.nil? ? "N/A" : (@user.gender ? "Male" : "Female") %></span>

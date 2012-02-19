@@ -32,14 +32,12 @@
 	<% speakers.each do |g| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-                <a href="https://www.facebook.com/zilinj" target="_blank" class="image">
-					<% unless g.gender.nil? %>
-						<%= g.gender ? (image_tag 'default_avatar_male.jpg') : (image_tag 'default_avatar_female.jpg') %>
-					<% end %>
-				</a>
+                <div class="image">
+                  <%= image_tag g.profile_picture %>
+				</div>
 				<div class="bio">
 					<h3><%= g.full_name %></h3>
-					<h4>CMU Summit Web / Tech Director</h4>
+                    <h4><%= g.title %></h4>
                     <% if g.follower_ids.include? session[:user_id] %>
                       <h4>You <% if g.followers.count > 1 %>and <%= pluralize(g.followers.count - 1, 'person') %> <% end %>are following</h4>
                     <% else %>
