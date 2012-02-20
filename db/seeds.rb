@@ -47,6 +47,14 @@ if Guest.count < 4 then
     :title => 'President of the Chinese Association for Science and Technology - Pittsburgh Chapter',
     :picture => 'advisor3.jpg'
   )
+  kennedy = Guest.create(
+    :last_name => 'Kennedy',
+    :first_name => 'Charles',
+    :datatype => 'panel',
+    :title => 'Chief Investment Officer for Carnegie Mellon University',
+    :picture => 'panelist3.jpg',
+    :bio => "Charles Kennedy was chosen to be the CIO for the University in January 2012 after his excellent performance as an interim CIO since 2007. From 1995 to 2002, Kennedy was a principal investment banker at RBC Capital Markets, formerly Dain Rauscher Wessels (DRW), in Minneapolis and Boston. While at DRW, he managed transactions for companies in a variety of industries before joining the network technology team in 1997. Kennedy and the team managed six of the top 10 network technology IPOs of 1999. As a partner with DRW Venture Partners, he oversaw investments in 15 companies. Kennedy earned his MBA from Harvard Business School in 1995. He graduated valedictorian of his 1988 class at Duquesne, where he earned a bachelor' degree in business administration."
+  )
   panel1 = Presentation.create(
     :title => %{Energy and Environment Panel: Towards a Sustainable Future},
     :datatype => 'panel',
@@ -83,6 +91,7 @@ if Guest.count < 4 then
     :date => '2012-04-28',
     :time => '12:00'
   )
+  panel5.guests << kennedy
   panel6 = Presentation.create(
     :title => %{Healthcare Panel: U.S. & China Healthcare Reform – Opportunities and Challenges},
     :datatype => 'panel',

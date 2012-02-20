@@ -131,10 +131,16 @@ strong {
 }
 /* header */
 div.header {
-	
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	width: 100%;	
 	background: #F9F9F7 url(<%= image_path 'sand-bg.png' %>) repeat-x top left;
 	height: 70px;
 	border-bottom: 1px solid #DBDCDE;
+}
+div.header.active {
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
 }
 #home {
 	float: left;
@@ -224,9 +230,11 @@ div.nav > ul > li a:hover {
 	color: white;
 }
 #nav-login:active, #getstarted:active {
-	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05)
-	color: white;}
-
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:inset 0 2px 4px rgba(0,0,0,0.25),0 1px 2px rgba(0,0,0,0.05);
+	color: white;
+}
 /* content */
 #content {
 	padding: 10px;
@@ -236,6 +244,7 @@ div.nav > ul > li a:hover {
 }
 #container {
 	min-height: 800px;
+	padding-top: 70px;
 }
 #gradient {
 	position: absolute;
@@ -265,7 +274,6 @@ div.nav > ul > li a:hover {
 }
 #index2 {
 	width: 100%;
-	border-top: 1px solid #DBDCDE;
 	border-bottom: 1px solid #DBDCDE;
 }
 #index3 {
@@ -276,14 +284,15 @@ div.nav > ul > li a:hover {
 	height: 410px;
 }
 #mask {
+	border-bottom: 3px solid #DBDCDE;
+	width: 100%;
+	overflow: hidden;
 	position: absolute;
-	width: 1480px;
-	height: 600px;
-	background: -webkit-gradient(linear, 100% 100%, 0% 100%, from(rgba(255,255,255,0.7)), to(transparent));
+	height: 390px;
 }
 #summit-title {
 	float: right;
-	background: rgba(0,0,0,0.5);
+	background: url(<%= image_path 'grey50.png' %>);
 	padding: 40px 40px 30px;
 	width: 300px;
 }
@@ -303,6 +312,7 @@ div.nav > ul > li a:hover {
 	border-top-right-radius: 4px;
 }
 #navigation_container div {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
 	padding: 6px 0;
 	font-size: 18px;
 	z-index: 2;
@@ -355,6 +365,7 @@ div.nav > ul > li a:hover {
 	padding: 0;
 }
 #index1 h1 {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
 	border: none;
 	color: #EEE;
 	font-size: 50px;

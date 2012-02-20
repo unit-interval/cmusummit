@@ -77,7 +77,7 @@
               <span><%= @user.errors.get(:title)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :gender %>
+            <%= f.label :gender %> (optional)
             <%= f.radio_button :gender, true %> Male
             <%= f.radio_button :gender, false %> Female
           </div><div>

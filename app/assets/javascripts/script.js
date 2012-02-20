@@ -1,4 +1,9 @@
 $(function() {
+	$(window).scroll(function(){
+		var header = $('div.header')
+		if ($(window).scrollTop() > 0) header.addClass('active');
+		else header.removeClass('active');
+	})
 	if ($("#voice").length > 0) {
 		var a = $("#voice div.content");
 		var b = a.find("div.voice-quote");
@@ -83,6 +88,7 @@ $(function() {
 		var c = $(b[m]);
 		c.hide();
 	}*/
+	
 	$(function(){
 		$("#register form input").focus(function(){
 			$(this).parent().siblings('span').fadeOut(100);
