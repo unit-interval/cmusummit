@@ -71,7 +71,7 @@
               <span><%= @user.errors.get(:first_name)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :title %>
+            <%= f.label :title, 'Current Position' %>
             <%= f.text_field :title, :placeholder => 'Job Title or Position' %>
             <% if @user.errors.include? :title %>
               <span><%= @user.errors.get(:title)[0] %></span>

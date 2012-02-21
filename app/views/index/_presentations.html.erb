@@ -10,7 +10,7 @@
                 <%= panel.content %>
 				</div>
 				<div class="session-stats">
-                  Time: <span><%= panel.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span></br>
+                  Time: <span><%= panel.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span><br/>
                   Place: <span><%= panel.venue ? panel.venue : 'TBD' %></span>
 				</div>
 				<div class="session-interested">
@@ -47,7 +47,7 @@
 					</div>
 					<h4>
                     <% guest.title.split('|').each do |title| %>
-                      <%= title %><br />
+                      <%= title %><br/>
                     <% end %>
 					</h4>
 				</div>
