@@ -297,19 +297,12 @@ div.nav > ul > li a:hover {
 	width: 300px;
 }
 #navigation_container {
-	margin: 20px 0;
+	margin: 8px 0 0 -23px;
 	position: relative;
 	color: white;
-	background: #CF242A;
-	padding: 5px 0 5px 10px;
-	right: -20px;
-	width: 330px;
-	-moz-box-shadow: 0px 1px 1px #222;
-	-webkit-box-shadow: 0px 1px 1px #222;
-	box-shadow: 0px 1px 1px #222;
-	-moz-border-radius-topright: 4px;
-	-webkit-border-top-right-radius: 4px;
-	border-top-right-radius: 4px;
+	background: url(<%= image_path 'ribbon.png' %>) no-repeat;
+	padding: 17px 0px 25px 53px;
+	width: 350px;
 }
 #navigation_container div {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
@@ -418,7 +411,7 @@ div.nav > ul > li a:hover {
 }
 #why p {
 	margin-bottom: 20px;
-	color: #999;
+	color: #666;
 	font-size: 15px;
 	line-height: 22px;
 }
@@ -440,7 +433,7 @@ div.nav > ul > li a:hover {
 }
 #why-left li {
 	width: 260px;
-	color: #999;
+	color: #666;
 	font-size: 15px;
 	line-height: 22px;
 	margin-bottom: 10px;
@@ -481,7 +474,7 @@ div.nav > ul > li a:hover {
 }
 #douno p {
 	min-height: 110px;
-	color: #999;
+	color: #666;
 	font-size: 15px;
 	line-height: 22px;
 	padding: 0 10px 40px;
@@ -713,12 +706,20 @@ div.arrow-nav a.down-inactive {
 }
 #aside-social-network > li {
 	float: left;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 #aside-social-network > li img {
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
+	-webkit-transition: box-shadow 0.5s ease;
+	-moz-transition: box-shadow 0.5s ease;
+	-o-transition: box-shadow 0.5s ease;
+	-ms-transition: box-shadow 0.5s ease;
+	transition: box-shadow 0.5s ease;
+}
+#aside-social-network > li img:hover {
+	box-shadow: 0 0 10px #4099FF;
 }
 
 /* Agenda */
