@@ -37,7 +37,7 @@
 				</a>
 				<div class="bio">
 					<h3><%= g.full_name %></h3>
-                    <h4><%= g.title %></h4>
+                    <h4 class="one-line-title"><%= g.title %></h4>
                     <% if g.follower_ids.include? session[:user_id] %>
                       <h4>You <% if g.followers.count > 1 %>and <%= pluralize(g.followers.count - 1, 'person') %> <% end %>are following</h4>
                     <% else %>
