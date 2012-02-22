@@ -1,4 +1,16 @@
 $(function() {
+	$('#douno-nav h3').click(function(){
+		var span = $(this).find('span');
+		var c = $('#douno');
+		if (span.hasClass('active')) {
+			c.slideUp(500);
+			span.removeClass('active').html('Read More');
+		}
+		else {
+			c.slideDown(500);
+			span.addClass('active').html('Read Less');
+		}
+	})
 	$(window).scroll(function(){
 		var header = $('div.header')
 		if ($(window).scrollTop() > 0) header.addClass('active');
