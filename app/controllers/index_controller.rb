@@ -77,8 +77,10 @@ class IndexController < ApplicationController
     @layout = "Team"
     @advisors = Guest.find_all_by_datatype('advisor')
     mailist = [
+      "annabellehht@gmail.com",
       "bowang@andrew.cmu.edu",
       "chenw@cmu.edu",
+      "chris.haoran@gmail.com",
       "chwang1206@gmail.com",
       "cora330@gmail.com",
       "cyclone82@gmail.com",  
@@ -99,10 +101,10 @@ class IndexController < ApplicationController
       "jlin0860@gmail.com",
       "judyyuncai@gmail.com",
       "junzhao.cmu@gmail.com",
-      "kejiaw@andrew.cmu.edu",
       "kkgreat@hotmail.com",
       "lanliu1116@gmail.com",
       "libragold@gmail.com",
+      "limo8968@gmail.com",
       "lipeilin1987@gmail.com",
       "luny1985@gmail.com",
       "luyumengcmu@gmail.com",
@@ -115,12 +117,13 @@ class IndexController < ApplicationController
       "shangg85@gmail.com",
       "shirleyswr@gmail.com",
       "shuxingdeng@gmail.com",
-      "tao@huangtao.me",
       "tianshen65@gmail.com",
+      "sjjatian@gmail.com",
       "versatilewang@gmail.com",
       "weiwei@cs.cmu.edu",
       "wizardlast@gmail.com",
       "wxneverlost@gmail.com",
+      "xguang@gmail.com",
       "xingcmu@gmail.com",
       "xinzheng@andrew.cmu.edu",
       "xinzhuli.cmu@gmail.com",
@@ -134,7 +137,8 @@ class IndexController < ApplicationController
       "zhangtienv@gmail.com",
       "zhangxiong01@gmail.com",
       "zhangzhuolightning@gmail.com",
-      "zlwe88@gmail.com"
+      "zlwe88@gmail.com",
+      "tao@huangtao.me"
     ]
     @members = User.all.find_all { |p| mailist.include? p.email }
   end
