@@ -21,13 +21,14 @@
             <li><%= link_to "Contest", contest_path, :class => @layout == "Contest" ? "active" : "" %></li>
             <li><%= link_to "Info", info_path, :class => @layout == "Info" ? "active" : "" %></li>
             <li><%= link_to "Team", team_path, :class => @layout == "Team" ? "active" : "" %></li>
+            <li id="nav-cn"><%= link_to "中文版", root_path %></li>
+            <li id="nav-en"><%= link_to "English Version", root_path %></li>
             <% if session[:user_id] %>
               <li><%= link_to "Todo", todo_path, :class => @layout == "Todo" ? "active" : "" %></li>
               <li id="nav-login"><%= link_to "Logout", logout_path %></li>
             <% else %>
               <li id="nav-login"><%= link_to "Get Involved", login_path %></li>
             <% end %>
-<!--            <li id="nav-cn"><%= link_to "中文", root_path %></li>-->
           </ul>
         </div>
       </div>
