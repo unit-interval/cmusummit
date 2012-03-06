@@ -10,8 +10,8 @@
                 <%= panel.content %>
 				</div>
 				<div class="session-stats">
-                  Time: <span><%= panel.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span><br/>
-                  Place: <span><%= panel.venue ? panel.venue : 'TBD' %></span>
+                  Time: <span><%= (panel.date > Date.today) ? panel.time.strftime("%H:%M ") + panel.date.strftime('%a %b %d %Y') : 'TBD' %></span><br/>
+                  Place:<span><%= (panel.venue and panel.venue != "") ? panel.venue : 'TBD' %></span>
 				</div>
 				<div class="session-interested">
                   <% if panel.user_ids.include? session[:user_id] %>

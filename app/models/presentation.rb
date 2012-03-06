@@ -4,7 +4,7 @@ class Presentation < ActiveRecord::Base
   has_many :sessions, :dependent => :destroy
   has_many :followings, :dependent => :destroy
 
-  validates :title, :datatype, :content, :date, :time, :presence => true
+  validates :title, :datatype, :content, :time, :presence => true
   validates :title, :length => { :maximum => 1024 }
   validates :datatype, :inclusion => { :in => %w(keynote panel) }
 end

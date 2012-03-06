@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+    <%= f.label :datatype %><br />
+    <%= f.text_field :datatype %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
@@ -36,6 +36,6 @@
     <%= f.time_select :time %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "button-gray" %>
   </div>
 <% end %>

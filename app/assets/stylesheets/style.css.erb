@@ -240,7 +240,7 @@ div.nav > ul > li a:hover {
 }
 #container {
 	min-height: 800px;
-	padding-top: 70px;
+	padding: 70px 0 40px 0;
 }
 #gradient {
 	position: absolute;
@@ -1445,16 +1445,62 @@ h4.one-line-title{
 }
 /* footer */
 div.footer {
-	padding: 30px;
+	padding: 7px 0;
 	font-size: 11px;
-	text-align: center;
 	color: #767676;
 	line-height: 16px;
-	background: #F9F9F7 url(<%= image_path 'sand-bg.png' %>);
+	background: white;
 	border-top: 1px solid #DBDCDE;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+div.footer div {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+div.footer span {
+	margin: 3px;
+	float: left;
+}
+div.footer span.footer-lan {
+	float: right;
+}
+div.footer form {
+	float: right;
 }
 div.footer a:hover {
 	color: black;
+}
+/* admin-tools */
+#admin-tool > div {
+	padding: 20px;
+}
+#admin-tool table {
+	border-collapse: separate;
+	border-spacing: 10px;
+	width: 100%;
+}
+#admin-tool table th {
+	text-align: left;
+}
+#admin-tool table th:last-child {
+	min-width: 140px;
+}
+#admin-tool h1 {
+	padding: 20px;
+	text-align: center;
+}
+#admin-tool p {
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+#admin-tool label {
+	line-height: 1.5;
+}
+#admin-tool input, #admin-tool textarea {
+	margin: 10px;
 }
 /* override rails field_error_proc */
 form div.field_with_errors {

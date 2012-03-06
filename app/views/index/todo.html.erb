@@ -1,12 +1,24 @@
 <div id="content" class="clearfix">
 	<div class="section" id="main">
-		<div class="article">
+		<div class="article" style="display: none">
 			<h1>My Ticket</h1>
 			<div class="content">
 				<p>Click the button to buy the ticket. Please use the same name and the same email address when you buy the ticket.</p>
 				<p><br><a class="button-gray" href="http://cmusummit.eventbrite.com/" target="_blank">Get My Ticket on EventBrite</a></p>
 			</div>
 		</div>
+		<% if @user.is_admin %>
+		<div class="article">
+			<h1>Administration Tools</h1>
+			<div class="content">
+				<p>
+				<%=link_to "Guests Model", guests_path, :target => "_blank" %><br>
+				<%=link_to "Presentations Model", presentations_path, :target => "_blank" %><br>
+				<%=link_to "Sessions Model", sessions_path, :target => "_blank" %>
+				</p>
+			</div>
+		</div>
+		<% end %>
 		<div class="article">
 			<h1>My Calendar</h1>
 			<div class="content clearfix" id="my-calendar">

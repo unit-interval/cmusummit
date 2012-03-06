@@ -11,6 +11,9 @@ Cmusummit::Application.routes.draw do
     end
   end
 
+  resources :sessions do
+  end
+
   resources :users do
     member do
       get :follow, :unfollow

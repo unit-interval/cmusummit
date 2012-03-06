@@ -144,7 +144,7 @@ class IndexController < ApplicationController
   end
 
   def todo
-    @layout = "Todo"
+    @layout = "Account"
     @user = User.find(session[:user_id])
   end
 end

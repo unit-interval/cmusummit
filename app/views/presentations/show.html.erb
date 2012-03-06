@@ -1,3 +1,8 @@
+<div id="content" class="clearfix">
+<div class="section">
+<div class="article" id="admin-tool">
+<h1>Show Presentation</h1>
+<div>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -27,9 +32,10 @@
 
 <p>
   <b>Time:</b>
-  <%= @presentation.time %>
+  <%= @presentation.time.to_s(:time) %>
 </p>
 
 
 <%= link_to 'Edit', edit_presentation_path(@presentation) %> |
 <%= link_to 'Back', presentations_path %>
+</div></div></div></div>

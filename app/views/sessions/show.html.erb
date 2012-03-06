@@ -1,0 +1,19 @@
+<div id="content" class="clearfix">
+<div class="section">
+<div class="article" id="admin-tool">
+<h1>Show Session <%= @session.id %> </h1>
+<div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Guest ID:</b>
+  <%= @session.guest_id %>
+</p>
+<p>
+  <b>Presentation ID:</b>
+  <%= @session.presentation_id %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>
+</div></div></div></div>

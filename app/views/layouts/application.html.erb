@@ -21,10 +21,8 @@
             <li><%= link_to "Contest", contest_path, :class => @layout == "Contest" ? "active" : "" %></li>
             <li><%= link_to "Info", info_path, :class => @layout == "Info" ? "active" : "" %></li>
             <li><%= link_to "Team", team_path, :class => @layout == "Team" ? "active" : "" %></li>
-            <li id="nav-cn"><%= link_to "中文版", root_path %></li>
-            <li id="nav-en"><%= link_to "English Version", root_path %></li>
             <% if session[:user_id] %>
-              <li><%= link_to "Todo", todo_path, :class => @layout == "Todo" ? "active" : "" %></li>
+              <li><%= link_to "Account", todo_path, :class => @layout == "Todo" ? "active" : "" %></li>
               <li id="nav-login"><%= link_to "Logout", logout_path %></li>
             <% else %>
               <li id="nav-login"><%= link_to "Get Involved", login_path %></li>
@@ -37,9 +35,15 @@
 
     </div>
     <div class="footer">
-      <p>
-        ©2012 CMU Summit. Proudly Powered by Unit Interval<br><a  target="_blank" href="https://docs.google.com/spreadsheet/viewform?formkey=dENzd3RGS2NsQ1lVZnhrNzgwcUtERHc6MQ">Tell us what you think</a>
-      </p>
+      <div>
+	    <span>©2012 CMU Summit. Proudly Powered by Unit Interval</span>
+		<form>
+		  <select>
+		    <option>English 英语</option>
+		  </select>
+		</form>
+		<span class="footer-lan">Language 语言:</span>
+      </div>
     </div>
   </div>
 </body>

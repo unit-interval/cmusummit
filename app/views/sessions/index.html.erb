@@ -1,0 +1,25 @@
+<div id="content" class="clearfix">
+<div class="section">
+<div class="article" id="admin-tool">
+<h1>Sessions Model</h1>
+<div>
+<table>
+  <tr>
+	<th>ID</th>
+    <th>Guest</th>
+    <th>Presentation</th>
+    <th></th>
+  </tr>
+
+<% @sessions.each do |session| %>
+  <tr>
+	<td><%= session.id %></td>
+    <td><%= session.guest_id %></td>
+    <td><%= session.presentation_id %></td>
+    <td><%= link_to 'Show', session %> <%= link_to 'Edit', edit_session_path(session) %> <%= link_to 'Destroy', session, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Session', new_session_path %>
+</div></div></div></div>

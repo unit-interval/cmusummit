@@ -101,7 +101,7 @@ if Guest.count < 6 then
   )
 end
 
-if User.count < 1 then
+if User.count < 3 then
   User.delete_all
 
   john_doe = User.create(
@@ -110,7 +110,8 @@ if User.count < 1 then
     :password => 'pkusms',
     :password_confirmation => 'pkusms',
     :last_name => 'Doe',
-    :first_name => 'John'
+    :first_name => 'John',
+    :title => "Web Master"
   )
   john_doe.is_admin = true
   john_doe.save

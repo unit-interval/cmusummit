@@ -13,8 +13,12 @@ $(function() {
 	})
 	$(window).scroll(function(){
 		var header = $('div.header')
-		if ($(window).scrollTop() > 0) header.addClass('active');
-		else header.removeClass('active');
+		if ($(window).scrollTop() < 5) {
+			if (header.hasClass('active')) header.removeClass('active');
+		}
+		else {
+			if (!header.hasClass('active')) header.addClass('active');
+		}
 	})
 	if ($("#voice").length > 0) {
 		var a = $("#voice div.content");
