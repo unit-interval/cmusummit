@@ -44,3 +44,6 @@ gem 'thin', :group => :production
 # Use mysql2 adapter
 gem 'mysql2', :group => :production
 
+# newrelic trial
+gem 'newrelic_rpm'
+
