@@ -77,7 +77,7 @@
                 <% if @submission.errors.any? %>
                   <p id="submission-error">Error(s) occured:</p>
                 <% end %>
-                <%= form_for @submission, :url => contest_path, :method => 'post' do |f| %>
+                <%= form_for @submission, :url => contest_path(:anchor => 'submission'), :method => 'post' do |f| %>
                   <div>
                     <%= f.label :first_name %>
                     <%= f.text_field :first_name %>

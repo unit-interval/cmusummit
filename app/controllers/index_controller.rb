@@ -81,7 +81,7 @@ class IndexController < ApplicationController
     if @submission.valid?
       ContestMailer.submit_executive_summary(@submission).deliver if Rails.env == 'production'
       UserMailer.confirm_submission(@submission.email).deliver if Rails.env == 'production'
-      redirect_to contest_path, :notice => 'Your Executive Summary is successfully submitted.'
+      redirect_to contest_path(:anchor => 'submission'), :notice => 'Your Executive Summary is successfully submitted.'
     else
       render :contest
     end
