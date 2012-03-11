@@ -109,6 +109,12 @@ $(function() {
 		$("#register form input").focus(function(){
 			$(this).parent().siblings('span').fadeOut(100);
 		})
+		$("#contest form input").focus(function(){
+			$(this).parent().siblings('span').fadeOut(100);
+		})
+		$("#contest form textarea").focus(function(){
+			$(this).parent().siblings('span').fadeOut(100);
+		})
 		$("#forget-button").click(function(){
 			$("#forget").slideDown(100);
 		})

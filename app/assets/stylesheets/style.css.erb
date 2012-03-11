@@ -1108,7 +1108,7 @@ h4.one-line-title{
 	display: block;
 }
 #contest #submission label{
-	width: 200px;
+	width: 220px;
 	display: inline-block;
 	text-align: right;
 	padding: 8px 20px 0 0;
@@ -1118,8 +1118,8 @@ h4.one-line-title{
 	width: 400px;
 	margin-bottom: 20px;
 }
-#contest #submission input[type="text"]{
-	width: 200px;
+#contest #submission input[type="text"], #contest #submission input[type="email"]{
+	width: 400px;
 	margin-bottom: 20px;
 }
 #contest #submission input[type="submit"]{
@@ -1263,13 +1263,13 @@ h4.one-line-title{
 	padding: 20px 10px 20px 0;
 	display: inline-block;
 }
-#register .field_with_errors label {
+#register .field_with_errors label, #contest .field_with_errors label {
   color: #ff4500;
 }
-#register form div {
+#register form div, #contest form div {
 	position: relative;
 }
-#register form span {
+#register form span, #contest form span {
 	position: absolute;
 	right: 30px;
 	top: 16px;
@@ -1281,6 +1281,10 @@ h4.one-line-title{
 	font-size: 12px;
 	background: #DDD;
 }
+#contest form span {
+	top: 6px;
+	right: 200px;
+}
 #register #forget {
 	display: none;
 	margin-top: 40px;
@@ -1291,7 +1295,7 @@ h4.one-line-title{
 	width: 250px;
 	margin: 2px;
 }
-#register .field_with_errors input {
+#register .field_with_errors input, #contest .field_with_errors input {
   border: 2px solid #ff4500;
 }
 /* todo */

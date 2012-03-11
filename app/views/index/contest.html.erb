@@ -1,7 +1,22 @@
-<div id="content" class="clearfix">
+<script type="text/javascript">
+<!--
+$(function(){
+	if (document.location.hash) {
+		hash = document.location.hash.replace( /^#/, '' );
+		var node = $( '#' + hash );
+		if ( node.length ) {
+			var b = $('h1.tab-nav a[href$="'+ hash +'"]');
+			b.siblings().removeClass("active");
+			b.addClass("active");
+			node.addClass("active").siblings('div.content').removeClass("active");
+		}
+	}
+})
+//-->
+</script><div id="content" class="clearfix">
     <div class="section">
         <div class="article" id="contest">
-            <h1 class="tab-nav"><a href="#overview" class="active">Overview</a><a href="#rules">Rules</a><a href="#submission">Submission</h1>
+            <h1 class="tab-nav"><a href="#overview" class="active">Overview</a><a href="#rules">Rules</a><a href="#submission">Submission</a></h1>
             <div id="overview" class="active content clearfix">
                 <h2>Mission Statement</h2>
                 <p>CMU Summit New Venture Competition strives to spur entrepreneurship in the Midwest. It also strives to bridge the gap between the resources that entrepreneurs need and the ability of the entrepreneurial ecosystem in place to provide them. The competition is a platform for identifying, nurturing and showcasing emerging entrepreneurs in and out the city of Pittsburgh. On April 28-29, 2012, students and leading experts will gather at Carnegie Mellon University and explore opportunities to address critical social issues or to contribute in technology breakthroughs.</p>
@@ -70,7 +85,7 @@
             </div>
             <div id="submission" class="content clearfix">
                 <h2>Executive Summary Submission</h2>
-                <p>Thank you for your interest in CMU-Summit New Venture Competition.<br>Please fill in the following form to submit your executive summary.</p>
+                <p>Thank you for your interest in CMU-Summit New Venture Competition.Please fill in the following form to submit your executive summary. A confirmation email will be sent to your email after submission. It would take a while to upload your file.</p>
                 <% if notice %>
                   <p id='submission-notice'><%= notice %></p>
                 <% end %>
@@ -130,7 +145,7 @@
                     <%= f.label :website, 'Website (optional)' %>
                     <%= f.text_field :website %>
                   </div><div>
-                    <%= f.label :file, 'Upload Executive Summary' %>
+                    <%= f.label :file, 'Upload Executive Summary (pdf file only; size limit 10mb)' %>
                     <%= f.file_field :file, :accept => 'application/pdf' %>
                     <% if @submission.errors.include? :file %>
                     <span><%= @submission.errors.get(:file)[0] %></span>
