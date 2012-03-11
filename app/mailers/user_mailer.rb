@@ -1,9 +1,12 @@
 class UserMailer < ActionMailer::Base
-  default :from => "info@cmusummit.org"
+  default :from => "CMU Summit <info@cmusummit.org>"
 
   def after_registration(user)
     @user = user
     mail(:to => user.email, :subject => "Welcome to CMU Summit")
+  end
+  def confirm_submission(email)
+    mail(:to => email, :subject => "Your Executive Summary is successfully submitted")
   end
   def retrieve_password(user)
     @user = user

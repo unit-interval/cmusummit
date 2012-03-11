@@ -11,8 +11,7 @@ Cmusummit::Application.routes.draw do
     end
   end
 
-  resources :sessions do
-  end
+  resources :sessions
 
   resources :users do
     member do
@@ -24,5 +23,6 @@ Cmusummit::Application.routes.draw do
 
   get "agenda", "contest", "team", "info", "todo", "login", "logout", "people", :controller => "index"
   post "login" => 'index#sign_in'
+  post "contest" => 'index#submit'
 
 end

@@ -15,6 +15,8 @@ class IndexController < ApplicationController
 
   def contest
     @layout = "Contest"
+    user = session[:user_id] ? User.find(session[:user_id]) : User.new
+    @submission = Submission.new(user.attributes)
   end
 
   def info
@@ -73,6 +75,18 @@ class IndexController < ApplicationController
     end
   end
   
+  def submit
+    @layout = "Contest"
+    @submission = Submission.new params[:submission]
+    if @submission.valid?
+      ContestMailer.submit_executive_summary(@submission).deliver if Rails.env == 'production'
+      UserMailer.confirm_submission(@submission.email).deliver if Rails.env == 'production'
+      redirect_to contest_path, :notice => 'Your Executive Summary is successfully submitted.'
+    else
+      render :contest
+    end
+  end
+
   def team
     @layout = "Team"
     @advisors = Guest.find_all_by_datatype('advisor')
