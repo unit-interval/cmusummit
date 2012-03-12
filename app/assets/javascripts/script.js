@@ -118,9 +118,15 @@ function bind_ajax_anchors() {
           var html;
           if(! data.ok) return;
           if(data.follower_count-- > 1) {
-            html = 'You and ' + data.follower_count + ' people are following';
+			if ($('div#wrapper').hasClass('zh'))
+				html = '你和' + data.follower_count + '人正在关注';
+			else
+            	html = 'You and ' + data.follower_count + ' people are following';
           } else {
-            html = 'You are following';
+			if ($('div#wrapper').hasClass('zh'))
+				html = '你正在关注';
+			else
+            	html = 'You are following';
           }
           $a.hide()
             .siblings('div[data-role="follower-count"]').html(html).end()

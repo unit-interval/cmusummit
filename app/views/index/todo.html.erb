@@ -29,8 +29,8 @@
                     <h2><%= p.title %></h2>
 					<div class="description-container">
 						<div class="session-stats">
-                        <%= t 'time' %>: <span><%= p.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : t('TBa') %></span><br>
-                        <%= t 'place' %>: <span><%= p.venue ? panel.venue : t('tba') %></span>
+                        <%= t 'time' %>: <span><%= (p.date.year == Date.today.year) ? p.time.strftime("%H:%M ") + p.date.strftime('%a %b %d %Y') : t('tba') %></span><br>
+                        <%= t 'place' %>: <span><%= (p.venue and p.venue != "") ? p.venue : t('tba') %></span>
 						</div>
                         <%= link_to t('remove'), unfollow_presentation_path(p), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>

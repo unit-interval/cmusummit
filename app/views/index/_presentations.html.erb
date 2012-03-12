@@ -10,7 +10,7 @@
                 <%= panel.content %>
 				</div>
 				<div class="session-stats">
-                  Time: <span><%= (panel.date > Date.today) ? panel.time.strftime("%H:%M ") + panel.date.strftime('%a %b %d %Y') : 'TBD' %></span><br/>
+                  Time: <span><%= (panel.date.year == Date.today.year) ? panel.time.strftime("%H:%M ") + panel.date.strftime('%a %b %d %Y') : 'TBD' %></span><br/>
                   Place:<span><%= (panel.venue and panel.venue != "") ? panel.venue : 'TBD' %></span>
 				</div>
 				<div class="session-interested">
