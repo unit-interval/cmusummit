@@ -123,16 +123,6 @@ zh:
         side11: "Follow us on your social network."
         side12: "Participate in the CMU Summit New Venture Competition! Click %{href} to view the detail."
         link: "here"
-    announcement:
-        side20: "Announcement"
-        side211: "CMU Summit Website Alpha Version Launched"
-        side212: "Thanks to Unit Interval Studio. The alpha version is launched today."
-        side221: "CMU Summit Website Beta Version Released"
-        side222: "The beta version is open to public today."
-        side231: "CMU Summit Website Beta 2 Released"
-        side232: "Beta 2 is online today."
-        side241: "CMU Summit Website Beta 2.1 Released"
-        side242: "Beta 2.1 is dedicated to CMU Summit - New Venture Competition! Let's rock!"
     agenda:
         overview: "Overview"
         keynote: "Keynote"
@@ -299,6 +289,8 @@ zh:
         p3: "Beta 2 is online today."
         h4: "CMU Summit Website Beta 2.1 Released"
         p4: "Beta 2.1 is dedicated to CMU Summit - New Venture Competition! Let's rock!"
+        h5: "峰会网站RC1启动"
+        p5: "新增中文翻译。"
     account:
         h1: "My Calendar"
         p1: "Go to %{href} and add events to my schedule."

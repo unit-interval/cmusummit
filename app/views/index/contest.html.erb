@@ -5,9 +5,8 @@ $(function(){
 		hash = document.location.hash.replace( /^#/, '' );
 		var node = $( '#' + hash );
 		if ( node.length ) {
-			var b = $('h1.tab-nav a[href$="'+ hash +'"]');
-			b.siblings().removeClass("active");
-			b.addClass("active");
+			var b = $('h1.tab-nav a:nth-child(3)');
+			b.addClass("active").siblings().removeClass("active");
 			node.addClass("active").siblings('div.content').removeClass("active");
 		}
 	}
