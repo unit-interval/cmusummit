@@ -1,7 +1,7 @@
 <div id="content" class="clearfix">
   <div class="section">
     <div class="article" id="register">
-      <h1><span>Log In</span><span>Sign Up</span></h1>
+      <h1><span><%=t "gen.login"%></span><span><%=t "gen.signup"%></span></h1>
       <div id="login" class="clearfix">
         <% if flash[:error_signin] %>
           <p id="error-signin">Invalid user/password combination.</p>
@@ -11,21 +11,21 @@
         <% end %>
         <%= form_tag login_path, :method => 'post' do %>
 		  <div>
-          <%= label_tag :email %>
+          <%= label_tag t :email %>
           <%= email_field_tag :email, flash[:user_email] %>
-          <%= label_tag :password %>
+          <%= label_tag t :password %>
           <%= password_field_tag :password %>
           <%= label_tag %>
-          <%= submit_tag 'Log In' %>
-          <%= button_tag 'Forget Password?', :type => 'button', :id => 'forget-button', :class => 'button-gray' %>
+          <%= submit_tag t 'gen.login' %>
+          <%= button_tag t('gen.forget'), :type => 'button', :id => 'forget-button', :class => 'button-gray' %>
           </div>
         <% end %>
         <%= form_tag login_path, :method => 'post', :id => 'forget' do %>
 		  <div>
-          <%= label_tag :email %>
+          <%= label_tag t :email %>
           <%= email_field_tag :email, flash[:user_email] %>
           <%= label_tag %>
-          <%= submit_tag 'Retrieve Password By Email', :class => 'button-gray' %>
+          <%= submit_tag t 'gen.retrieve', :class => 'button-gray' %>
           </div>
         <% end %>
       </div>
@@ -35,54 +35,54 @@
         <% end %>
         <%= form_for @user, :url => login_path do |f| %>
           <div>
-            <%= f.label :email %>
-            <%= f.text_field :email, :placeholder => 'Email' %>
+            <%= f.label t :email %>
+            <%= f.text_field :email, :placeholder => t('email') %>
             <% if @user.errors.include? :email %>
               <span><%= @user.errors.get(:email)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :email_confirmation, "Confirmation" %>
-            <%= f.text_field :email_confirmation, :placeholder => 'Email Confirmation' %>
+            <%= f.label t :email_confirmation %>
+            <%= f.text_field :email_confirmation, :placeholder => t('email_confirmation') %>
             <% if @user.errors.include? :email_confirmation %>
               <span><%= @user.errors.get(:email_confirmation)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :password %>
-            <%= f.password_field :password, :placeholder => 'Password' %>
+            <%= f.label t :password %>
+            <%= f.password_field :password, :placeholder => t('password') %>
             <% if @user.errors.include? :password %>
               <span><%= @user.errors.get(:password)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :password_confirmation, "Confirmation" %>
-            <%= f.password_field :password_confirmation, :placeholder => 'Password Confirmation' %>
+            <%= f.label t :password_confirmation %>
+            <%= f.password_field :password_confirmation, :placeholder => t('password_confirmation') %>
             <% if @user.errors.include? :password_confirmation %>
               <span><%= @user.errors.get(:password_confirmation)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, :placeholder => 'Last Name' %>
+            <%= f.label t :last_name %>
+            <%= f.text_field :last_name, :placeholder => t('last_name') %>
             <% if @user.errors.include? :last_name %>
               <span><%= @user.errors.get(:last_name)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, :placeholder => 'First Name' %>
+            <%= f.label t :first_name %>
+            <%= f.text_field :first_name, :placeholder => t('first_name') %>
             <% if @user.errors.include? :first_name %>
               <span><%= @user.errors.get(:first_name)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :title, 'Current Position' %>
-            <%= f.text_field :title, :placeholder => 'Job Title or Position' %>
+            <%= f.label t :title %>
+            <%= f.text_field :title, :placeholder => t('title') %>
             <% if @user.errors.include? :title %>
               <span><%= @user.errors.get(:title)[0] %></span>
             <% end %>
           </div><div>
-            <%= f.label :gender %> (optional)
-            <%= f.radio_button :gender, true %> Male
-            <%= f.radio_button :gender, false %> Female
+            <%= f.label t :gender %> (<%=t "option"%>)
+            <%= f.radio_button :gender, true %> <%=t "male" %>
+            <%= f.radio_button :gender, false %> <%=t "female" %>
           </div><div>
             <%= label_tag %>
-            <%= f.submit 'Get Involved!'%>
+            <%= f.submit t "gen.get_involved" %>
 		  </div>
         <% end %>
       </div>

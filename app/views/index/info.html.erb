@@ -1,109 +1,104 @@
 <div id="content" class="clearfix">
 	<div class="section">
 		<div class="article" id="info">
-			<h1 class="tab-nav"><a href="#" class="active">About</a><a href="#">Register</a><a href="#">Travel</a><a href="#">FAQ</a></h1>
+			<h1 class="tab-nav"><a href="#" data-tab="about" class="active"><%=t "info.about"%></a><a href="#" data-tab="register"><%=t "info.register"%></a><a href="#" data-tab="travel"><%=t "info.travel"%></a><a href="#" data-tab="faq"><%=t "info.faq"%></a></h1>
 			<div id="about" class="active content clearfix">
-				<p>CMU Summit is a high-profile forum, where leading entrepreneurs, executives, venture capitalists and researchers from both China and the United States could come together to address cutting-edge and hot issues on economy and technology, and further develop potential opportunities for establishing mutual partnerships. The Summit is anticipated to draw more than 1,000 participants to Carnegie Mellon University, to address emerging challenges in new energy, IT, the healthcare sector, venture capital, and other areas where China and the US share common interests. Following major sessions will be included in the two-day annual conference.</p>
+				<p><%=t 'about.intro'%></p>
 				<div id="about-left">
 					<div class="about-item">
-						<h2>Keynote Speeches</h2>
-						<p>Renowned experts, scholars, and entrepreneurs will be invited to make presentations in respective fields, sharing their own story of success and their insightful foresight.</p>
+						<h2><%=t 'about.h1'%></h2>
+						<p><%=t 'about.p1'%></p>
 					</div>
 					<div class="about-item">
-						<h2>Panel Discussion</h2>
-						<p>Panel discussion is an ideal platform to sparkle thoughts and ideas in a more interactive way. Six panels are developed in the Summit, i.e., IT1: Mobile web and social networking, IT2: Cloud computing and Internet security, Innovation and entrepreneurship, Healthcare, New energy and environment, Finance and Capital market.										</p>
+						<h2><%=t 'about.h2'%></h2>
+						<p><%=t 'about.p2'%></p>
 					</div>
 					<div class="about-item">
-						<h2>Startup Pitch competition</h2>
-						<p>The Startup Pitch competition aims to helping those having interests to start their own business. It will not only provide competition participants with chances to present their entrepreneurship ideas related to business in China; but will also serve for their networking with angel investors, venture capitalists, and government investors from US and China who might offer contestants shrewd advice, valuable mentorship, or beneficial resources in the future.										</p>
+						<h2><%=t 'about.h3'%></h2>
+						<p><%=t 'about.p3'%></p>
 					</div>
 				</div>
 				<div id="about-right">
 					<div class="about-item">
-						<h2>Technology Showcase</h2>
-						<p>This session focuses on showcase researches, startup prototypes/demos from CMU. Potential participants include robotics, human computer interaction, computer vision related projects, and entertainment technologies. To aspire desire to express their innovative ideas and embedded technologies, all CMU folks are welcome to this session.</p>
+						<h2><%=t 'about.h4'%></h2>
+						<p><%=t 'about.p4'%></p>
 					</div>
 					<div class="about-item">
-						<h2>Career Fair</h2>
-						<p>A career fair will be held at the end of the Summit to connect Summit sponsors to talents who attend the summit. The attendees will come from the region and beyond, and the number is projected to exceed 700. Participating companies will set up booths and posters to attract talented new graduates. Should they wish, they may also deliver recruiting info session.</p>
+						<h2><%=t 'about.h5'%></h2>
+						<p><%=t 'about.p5'%></p>
 					</div>
 				</div>
 			</div>
 			<div id="travel" class="content clearfix">
 				<div id="travel-details">
 					<div id="travel-campus">
-						<h2>Direction</h2>
-						<p>Summit attendees arriving at Pittsburgh International Airport in Pittsburgh (Airport Code: PIT) have the following options for transportation to the Carnegie Mellon University and Summit Center and other nearby hotel accommodations:</p>
-						<h3>Taxi Service</h3>
-						<p>Taxi service is available directly from the airport. Follow the signs in baggage claim to direct you to the taxi stand. The cost of travel from the airport to the summit venue is approximately $50-$60.</p>
-						<h3>Public Transportation</h3>
-						<p>Pittsburgh offers convenient local ground transportation service directly from the airport to Carnegie Mellon University. From baggage claim, follow the signs to ground transportation and board Bus 28X to the destination stop to reach Carnegie Mellon University. The one-way fare on the Bus 28X is $4.00 (USD) and be paid by cash only on the bus. For additional bus fare and schedule, please access the <a href=" http://www.portauthority.org/paac/default.aspx" target="_blank">Port Authority Website</a>.</p>
-						<h3>Super Shuttle Service</h3>
-						<p>Super Shuttle Service is available in Pittsburgh to pick passengers from point to point by appointment. The one-way fare from Airport to Carnegie Mellon University varies from $25 to $125 depending on the number of the passengers. For appointment and more additional information, please visit <a href="http://www.supershuttle.com" target="_blank">SuperShuttle Pittsburgh Website</a>.</p>
-						<h3>Rental Car</h3>
-						<p>You can rent a car on-site at the Pittsburgh International Airport. For more information, including a list of car rental agencies and phone numbers, please refer to the <a href="http://www.pitairport.com/car_rental" target="_blank">transportation services section of the Pittsburgh International Airport website</a>.</p>
-						<p>For more transportation Information, you could click <a href="http://www.cmu.edu/about/visit/directions-parking.shtml" target="_blank">here</a></p>
+						<h2><%=t 'travel.h1'%></h2>
+						<p><%=t 'travel.p1'%></p>
+						<h3><%=t 'travel.h2'%></h3>
+						<p><%=t 'travel.p2'%></p>
+						<h3><%=t 'travel.h3'%></h3>
+						<p><%=t('travel.p3').html_safe%></p>
+						<h3><%=t 'travel.h4'%></h3>
+						<p><%=t('travel.p4').html_safe%></p>
+						<h3><%=t 'travel.h5'%></h3>
+						<p><%=t('travel.p5').html_safe%></p>
+						<p><%=t('travel.p6').html_safe%></p>
 					</div>
 					<div id="travel-hotel">
-						<h2>Campus Map</h2>
-						<p>A map of the Carnegie Mellon main campus is available here: 
-						<a href="http://www.cmu.edu/about/visit/campus-map.shtml" target="_blank">CMU Campus Map</a></p>
-						<p><a href="http://www.cmu.edu/homeimages/campus-map/CMU_MapColor_11x17.jpg" target="_blank">11" x 17" Color Map [.jpg]</a></p>
-						<p><a href="http://www.cmu.edu/homeimages/campus-map/CMU_MapColor_8x11.jpg" target="_blank">8.5" x 11" Color Map [.jpg]</a></p>
-						<p><a href="http://www.cmu.edu/homeimages/campus-map/CMU_MapColor_11x17.pdf" target="_blank">11" x 17" Color Map [.pdf]</a></p>
-						<p><a href="http://www.cmu.edu/homeimages/campus-map/CMU_MapColor_8x11.pdf" target="_blank">8.5" x 11" Color Map [.pdf]</a></p>
-						<h2>Accommodations</h2>
-						<p>For students looking for temporary stays during the summit, here is a list of hotels near Carnegie Mellon University sorted by distance.</p>
-						<p><a href="http://www.holidayinn.com/hotels/us/en/pittsburgh/pitsp/hoteldetail" target="_blank">Holiday Inn (University of Pittsburgh, University Center)</a></p>
-						<p>Distance to CMU: 15 minutes’ walk</p>
-						<p><a href="http://www.shadysideinn.com/" target="_blank"> Shadyside Inn</a></p>
-						<p>Distance to CMU: 16 minutes’ walk</p>
-						<p><a href="http://www.marriott.com/hotels/travel/pitro-residence-inn-pittsburgh-university-medicalcenter/" target="_blank">Residence Inn Pittsburgh University Center</a></p>
-						<p>Distance to CMU: 20 minutes’ walk</p>
-						<p><a href="http://www.sunnyledge.com/" target="_blank"> Sunnyledge Hotel</a></p>
-						<p>Distance to CMU: 20 minutes’ walk</p>
-						<p>For more transportation Information, you could click <a href=" http://www.cmu.edu/about/visit/accommodations.shtml" target="_blank">here</a></p>
+						<h2><%=t 'travel.h7'%></h2>
+						<p><%=t('travel.p7').html_safe%></p>
+						<h2><%=t 'travel.h8'%></h2>
+						<p><%=t 'travel.p8'%></p>
+						<p><%=link_to t('travel.h81'), :href=>"http://www.holidayinn.com/hotels/us/en/pittsburgh/pitsp/hoteldetail", :target=>"_blank" %>
+							<br><%=t 'travel.p81'%></p>
+						<p><%=link_to t('travel.h82'), :href=>"http://www.shadysideinn.com/", :target=>"_blank" %>
+							<br><%=t 'travel.p82'%></p>
+						<p><%=link_to t('travel.h83'), :href=>"http://www.marriott.com/hotels/travel/pitro-residence-inn-pittsburgh-university-medicalcenter/", :target=>"_blank" %>
+							<br><%=t 'travel.p83'%></p>
+						<p><%=link_to t('travel.h84'), :href=>"http://www.sunnyledge.com/", :target=>"_blank" %>
+							<br><%=t 'travel.p84'%></p>
+						<p><%=t('travel.p9').html_safe%></p>
 					</div>
 				</div>
 			</div>
 			<div id="register" class="content clearfix">
 				<p>
-					Invited Speakers will be registered automatically. Please do not register via this website.
+					<%=t 'register.p0'%>
 				</p>
 				<div id="pricing">
-					<h2>Pricing</h2>
+					<h2><%=t 'register.h1'%></h2>
 					<table>
 						<tbody>
 							<tr>
-								<td>Early Bird Price (until TBA)</td>
-								<td>TBA</td>
+								<td><%=t 'register.p11'%></td>
+								<td><%=t 'tba'%></td>
 							</tr>
 							<tr>
-								<td>List Price (starting TBA)</td>
-								<td>TBA</td>
+								<td><%=t 'register.p12'%></td>
+								<td><%=t 'tba'%></td>
 							</tr>
 							<tr>
-								<td>Academia (student, faculty)</td>
-								<td>TBA</td>
+								<td><%=t 'register.p13'%></td>
+								<td><%=t 'tba'%></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div id="questions">
-					<h2>Contact Us</h2>
+					<h2><%=t 'register.h2'%></h2>
 					<table>
 						<tbody>
 							<tr>
-								<td>Email:</td>
-								<td>TBA</td>
+								<td><%=t 'register.p21'%>:</td>
+								<td><%=t 'tba'%></td>
 							</tr>
 							<tr>
-								<td>Phone:</td>
-								<td>TBA</td>
+								<td><%=t 'register.p22'%>:</td>
+								<td><%=t 'tba'%></td>
 							</tr>
 							<tr>
-								<td>Hours:</td>
-								<td>TBA</td>
+								<td><%=t 'register.p23'%>:</td>
+								<td><%=t 'tba'%></td>
 							</tr>
 						</tbody>
 					</table>
@@ -112,52 +107,19 @@
 			<div id="faq" class="content clearfix">
 				<div class="clearfix">
 					<div class="faq-section">
-						<h3 id="registration">Registration questions</h3>
+						<h3 id="registration"><%=t 'faq.h1'%></h3>
 						<dl>
-							<dt>
-								How can I register for the Summit?
-							</dt>
-							<dd>
-								Online registration is available now. Please sign up <a href="/login">here</a>.
-							</dd>
-							<dt>
-								I am interested in sponsoring the Summit. Who do I reach to?
-							</dt>
-							<dd>
-								Please contact Pengxuan Chen, Sponsor Relation Director, Phone +1 (412)-251-6068, Email: pengxua1@andrew.cmu.edu.
-							</dd>
-							<dt>
-								Are there hotels near the Summit? How much does it cost to make a reservation for hotels?
-							</dt>
-							<dd>
-								Detailed information can be found under the Travel tab.
-							</dd>
+							<dt><%=t 'faq.q11'%></dt><dd><%=t('faq.a11').html_safe %></dd>
+							<dt><%=t 'faq.q12'%></dt><dd><%=t 'faq.a12'%></dd>
+							<dt><%=t 'faq.q13'%></dt><dd><%=t 'faq.a13'%></dd>
 						</dl>
 					</div>
 					<div class="faq-section right">
-						<h3 id="general">General event questions</h3>
+						<h3 id="general"><%=t 'faq.h2'%></h3>
 						<dl>
-							<dt>
-								Where and when is CMU China Summit 2012?
-							</dt>
-							<dd>
-								April 28th – 29th, 2012. Carnegie Mellon University, 5000 Forbes Avenue, Pittsburgh, PA15213
-							</dd>
-							<dt>
-								Who will talk in Cloud computing and Security Panel, professors from universities or experts from industry?
-							</dt>
-							<dd>
-								In our panel, we will invite 5 people from different backgrounds. We will invite professors from universities, so they will give an introduction about the innovated and brilliant ideas in this field which will lead the future trends.
-								We will also invite talents from industry since they experienced in this field and they will share their deep insights. 
-								We are also expecting company leaders to come so they can talk about their long term strategies.
-								We will invite experts in policy field to provide guidance about how to do start-up in this field under regulations.
-							</dd>
-							<dt>
-								How many speakers are in Innovation and Entrepreneurship panel? Do audience have chance to ask questions?
-							</dt>
-							<dd>
-								We are going to invite 3-5 speakers who have sufficient experience about Innovation and Entrepreneurship. It depends on our potential speakers' schedule. We are going to publish the speakers list before the mid April. At the end of the speech, we are going to leave a certain amount of time for audience to ask questions.
-							</dd>						
+							<dt><%=t 'faq.q21'%></dt><dd><%=t 'faq.a21'%></dd>
+							<dt><%=t 'faq.q22'%></dt><dd><%=t 'faq.a22'%></dd>
+							<dt><%=t 'faq.q23'%></dt><dd><%=t 'faq.a23'%></dd>
 						</dl>
 					</div>
 				</div>

@@ -20,27 +20,27 @@
 		</div>
 		<% end %>
 		<div class="article">
-			<h1>My Calendar</h1>
+			<h1><%=t 'account.h1'%></h1>
 			<div class="content clearfix" id="my-calendar">
-				<p>Go to <a href="/agenda">Agenda</a> and add events to my schedule.</p>
+				<p><%=t('account.p1', :href => link_to(t("gen.agenda"), agenda_path)).html_safe %></p>
                 <% @user.presentations.each do |p| %>
 				<div class="session-info">
                     <h2><%= p.title %></h2>
 					<div class="description-container">
 						<div class="session-stats">
-                        Time: <span><%= p.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : 'TBD' %></span><br>
-                        Place: <span><%= p.venue ? panel.venue : 'TBD' %></span>
+                        <%= t 'time' %>: <span><%= p.time > Time.gm(2012,2) ? panel.time.strftime('%a %b %d %H:%M') : t('TBa') %></span><br>
+                        <%= t 'place' %>: <span><%= p.venue ? panel.venue : t('tba') %></span>
 						</div>
-                        <%= link_to 'Remove', unfollow_presentation_path(p), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
+                        <%= link_to t('remove'), unfollow_presentation_path(p), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>
                 </div>
                 <% end %>
 			</div>
 		</div>
 		<div class="article">
-			<h1>My Contact</h1>
+			<h1><%=t 'account.h2' %></h1>
 			<div class="content clearfix" id="my-contact">
-				<p>Go to <a href="/people">People</a> and add people to my contact to keep in touch.</p>
+				<p><%=t('account.p2', :href => link_to(t("gen.people"), agenda_path)).html_safe %></p>
                 <% @user.guests.each do |guest| %>
 				<div class="speaker-info">
 					<div class="speaker has-image">
@@ -51,21 +51,22 @@
                                 <h4><%= title %></h4>
                             <% end %>
 						</div>
-                        <%= link_to 'Remove', unfollow_guest_path(guest), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
+                        <%= link_to t('remove'), unfollow_guest_path(guest), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
 					</div>
 				</div>
                 <% end %>
                 <% @user.contacts.each do |c| %>
 				<div class="speaker-info">
 					<div class="speaker has-image">
-                        <div class="image"><%= image_tag c.profile_picture %></div>
+                        <% if c.fb_username %>
+                          <%= link_to image_tag c.profile_picture, c.fb_profile_url, :target => '_blank', :class => 'image' %>
+                        <% else %>
+                          <div class="image"><%= image_tag c.profile_picture %></div>
+                        <% end %>
 						<div class="bio">
                             <h3><%= c.full_name %></h3>
                             <h4><%= c.title %></h4>
                             <h4>
-                            <% if c.fb_username %>
-                              <%= link_to 'Facebook Profile', c.fb_profile_url, :target => '_blank' %>
-                            <% end %>
                             </h4>
 						</div>
                         <%= link_to 'Remove', unfollow_user_path(c), :class => 'todo-remove', "data-ajax" => true, "data-role" => 'unfollow', :rel => 'nofollow' %>
@@ -96,26 +97,26 @@
                     <%= form_for @user do |f| %>
                       <%= hidden_field_tag :task, 'update_profile' %>
                       <div>
-                        <%= f.label :last_name %>
+                        <%= f.label t :last_name %>
 						<span><%= @user.last_name %></span>
                         <%= f.text_field :last_name, :placeholder => 'Last Name' %>
                       </div><div>
-                        <%= f.label :first_name %>
+                        <%= f.label t :first_name %>
 						<span><%= @user.first_name %></span>
                         <%= f.text_field :first_name, :placeholder => 'First Name' %>
                       </div><div>
-                        <%= f.label :title %>
+                        <%= f.label t :title %>
 						<span><%= @user.title %></span>
                         <%= f.text_field :title, :placeholder => 'Job Title or Position' %>
                       </div><div>
-                        <%= f.label :gender %>
-						<span><%= @user.gender.nil? ? "N/A" : (@user.gender ? "Male" : "Female") %></span>
-                        <%= f.radio_button :gender, true %> <span class="gender-span">Male</span>
-                        <%= f.radio_button :gender, false %> <span class="gender-span">Female</span>
+                        <%= f.label t :gender %>
+						<span><%= @user.gender.nil? ? t("tba") : (@user.gender ? t("male") : t("female")) %></span>
+                        <%= f.radio_button :gender, true %> <span class="gender-span"><%=t 'male' %></span>
+                        <%= f.radio_button :gender, false %> <span class="gender-span"><%=t 'female' %></span>
                       </div><div class="change-profile-button-group">
-						<button class="button-gray" id="change-profile-button">Change Profile</button>
-                        <%= f.submit 'Save Changes', :class => 'button-gray', :id => 'save-changes' %>
-						<button class="button-gray" id="change-password-button">Change Password</button>
+						<button class="button-gray" id="change-profile-button"><%=t 'change_profile' %></button>
+                        <%= f.submit t('save_changes'), :class => 'button-gray', :id => 'save-changes' %>
+						<button class="button-gray" id="change-password-button"><%= t('change_psw') %></button>
                       </div>
                     <% end %>
 				</div>
@@ -123,35 +124,22 @@
                     <%= form_for @user do |f| %>
                       <%= hidden_field_tag :task, 'update_password' %>
                       <div>
-                        <%= label_tag :password_old, 'Old Password' %>
-                        <%= password_field_tag :password_old, nil, :placeholder => 'Old Password' %>
+                        <%= label_tag t(:password_old) %>
+                        <%= password_field_tag :password_old, nil, :placeholder => t('password_old') %>
                       </div><div>
-                        <%= f.label :password, 'New Password' %>
-                        <%= f.password_field :password, :placeholder => 'New Password' %>
+                        <%= f.label t :password %>
+                        <%= f.password_field :password, :placeholder => t('password') %>
                       </div><div>
-                        <%= f.label :password_confirmation, "Confirmation" %>
-                        <%= f.password_field :password_confirmation, :placeholder => 'Confirmation' %>
+                        <%= f.label t :password_confirmation %>
+                        <%= f.password_field :password_confirmation, :placeholder => t('password_confirmation') %>
                       </div><div class="change-profile-button-group">
-                        <%= f.submit 'Update Password', :class => 'button-gray' %>
+                        <%= f.submit t('save_psw'), :class => 'button-gray' %>
                       </div>
                     <% end %>
 				</div>
 			</div>
 		</div>
-		<div class="article" id="follow-us">
-			<h3>Get Involved</h3>
-			<div class="content">
-				<div class="clearfix">
-					<p>Follow us on your social network.</p>
-					<ul id="aside-social-network">
-                        <li><a href="https://www.facebook.com/cmusummit"><%= image_tag 'facebook_icon.png' %></a></li>
-						<li><a href="http://page.renren.com/601202783"><%= image_tag 'renren_icon.jpg' %></a></li>
-						<li><a href="http://weibo.com/cmusummit"><%= image_tag 'weibo_icon.png' %></a></li>
-						<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><%= image_tag 'linkin_icon.jpg' %></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<%=render :partial => "follow" %>
 		<%=render :partial => "announcements" %>
 	</div>
 	</div>

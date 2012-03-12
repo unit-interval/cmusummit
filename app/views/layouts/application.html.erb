@@ -2,30 +2,30 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title><%=@layout%> | CMU Summit</title>
+  <title><%=t("gen."+@layout) if @layout %> | <%=t "gen.CMU_SUMMIT" %></title>
   <%= favicon_link_tag "favicon.ico" %>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrapper">
+  <div id="wrapper" class=<%= I18n.locale %>>
     <div id="container">
       <div class="header">
         <div class="nav">
-			<a id="home" href="/"><%= image_tag 'logo50.png' %><span>CMU Summit</span></a>
+			<%= link_to t("gen.CMU_SUMMIT"), root_path %>
           <ul>
-            <li><%= link_to "Home", root_path, :class => @layout == "Home" ? "active" : "" %></li>
-            <li><%= link_to "Agenda", agenda_path, :class => @layout == "Agenda" ? "active" : "" %></li>
-           	<li><%= link_to "People", people_path, :class => @layout == "People" ? "active" : "" %></li>
-            <li><%= link_to "Contest", contest_path, :class => @layout == "Contest" ? "active" : "" %></li>
-            <li><%= link_to "Info", info_path, :class => @layout == "Info" ? "active" : "" %></li>
-            <li><%= link_to "Team", team_path, :class => @layout == "Team" ? "active" : "" %></li>
+            <li><%= link_to t("gen.home"), root_path, :class => @layout == "home" ? "active" : "" %></li>
+            <li><%= link_to t("gen.agenda"), agenda_path, :class => @layout == "agenda" ? "active" : "" %></li>
+           	<li><%= link_to t("gen.people"), people_path, :class => @layout == "people" ? "active" : "" %></li>
+            <li><%= link_to t("gen.contest"), contest_path, :class => @layout == "contest" ? "active" : "" %></li>
+            <li><%= link_to t("gen.info"), info_path, :class => @layout == "info" ? "active" : "" %></li>
+            <li><%= link_to t("gen.team"), team_path, :class => @layout == "team" ? "active" : "" %></li>
             <% if session[:user_id] %>
-              <li><%= link_to "Account", todo_path, :class => @layout == "Todo" ? "active" : "" %></li>
-              <li id="nav-login"><%= link_to "Logout", logout_path %></li>
+              <li><%= link_to t("gen.account"), todo_path, :class => @layout == "account" ? "active" : "" %></li>
+              <li id="nav-login"><%= link_to t("gen.logout"), logout_path %></li>
             <% else %>
-              <li id="nav-login"><%= link_to "Get Involved", login_path %></li>
+              <li id="nav-login"><%= link_to t("gen.get_involved"), login_path %></li>
             <% end %>
           </ul>
         </div>
@@ -36,13 +36,14 @@
     </div>
     <div class="footer">
       <div>
-	    <span>©2012 CMU Summit. Proudly Powered by Unit Interval</span>
+	    <span><%=t "gen.copyright" %></span>
 		<form>
-		  <select>
-		    <option>English 英语</option>
+		  <select onchange="location = this.options[this.selectedIndex].value;">
+		    <option value="/">Language 语言</option>
+			<option value="/?locale=en">English 英语</option>
+		    <option value="/?locale=zh">Chinese 中文</option>
 		  </select>
 		</form>
-		<span class="footer-lan">Language 语言:</span>
       </div>
     </div>
   </div>

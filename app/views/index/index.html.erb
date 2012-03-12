@@ -3,119 +3,105 @@
 	<div id="index1">
 		<div class="article" id="top">
 			<div id="summit-title">
-				<h1>CMU SUMMIT</h1>
-				<h2>US-China Innovation and Entrepreneurship Forum</h2>
+				<h1><%=t "gen.CMU_SUMMIT" %></h1>
+				<h2><%=t "index.US_China" %></h2>
 				<div id="navigation_container">
-					<div>April 28-29, Pittsburgh, Pennsylvania</div>
+					<div><%=t "index.April" %></div>
 				</div>
-				<p>CMU Summit is a high-profile forum, where leading entrepreneurs, executives, venture capitalists and researchers from both China and United States could come together to address big issues on economy and technology, and further cultivate potential opportunities for mutual partnerships.</p>
-				<div id="getstarted"><a href="/login">Get Involved Now</a></div>
+				<p><%=t "index.high_profile" %></p>
+				<div id="getstarted"><a href="/login"><%=t "index.get_involved_now" %></a></div>
 			</div>
 		</div>
 	</div>
 	<div id="index2" class="clearfix">
 		<div id="douno-nav">
-    		<h3>Do You Know?<span class="button-gray">Read More</span></h3>
+    		<h3><%=t "index.douno" %><span class="button-gray" id="douno_read_more"><%=t "index.read_more" %></span><span class="button-gray" id="douno_read_less"><%=t "index.read_less" %></span></h3>
 		</div>
 		<div class="content clearfix" id="douno">
 			<div>
 				<%= image_tag 'diagram3.jpg', :alt => 'CMU-Summit' %>
-				<p>CMU has been ranked No. 1 among all U.S. universities without a medical school in the number of startup companies created per research dollar spent since 2007.</p>	
+				<p><%=t "index.douno1" %></p>	
 			</div>
 			<div>
 				<%= image_tag 'diagram2.jpg', :alt => 'CMU-Summit' %>
-				<p>With 100 percent of CMU’s electricity coming from green power sources, the university is ranked as a green power leader by the U.S. Environmental Protection Agency.</p>
+				<p><%=t "index.douno2" %></p>
 			</div>
 			<div>
 				<%= image_tag 'diagram9.jpg', :alt => 'CMU-Summit' %>
-				<p>In 1979, Carnegie Mellon established the nation’s first Robotics Institute.</p>
+				<p><%=t "index.douno3" %></p>
 			</div>
 			<div>
 				<%= image_tag 'diagram4.jpg', :alt => 'CMU-Summit' %>
-				<p>The Smiley :-) was created by Carnegie Mellon research professor Scott Fahlman on September 19, 1982.</p>
+				<p><%=t "index.douno4" %></p>
 			</div>
 			<div>
 				<%= image_tag 'diagram8.jpg', :alt => 'CMU-Summit' %>
-				<p>Carnegie Mellon is home to the only building in the world where Google, Intel, Apple and a Microsoft-sponsored research lab live under one roof.</p>
+				<p><%=t "index.douno5" %></p>
 			</div>
 			<div>
 				<%= image_tag 'diagram7.jpg', :alt => 'CMU-Summit' %>
-				<p>Dr. Mao Yisheng, an expert on bridge construction and a social activist in China, is the first PhD student ever granted by Carnegie Mellon University.</p>
+				<p><%=t "index.douno6" %></p>
 			</div>
 		</div>
 	</div>
 	<div id="index0" class="clearfix">
 		<div class="content clearfix" id="why">
 			<div id="why-left">
-				<h3>Why CMU Summit?</h3>
-				<p>Over the past few decades, China has successfully transformed itself from a poor society into a modern nation that plays a central role in global issues. The past fifty years were marked by unprecedented growth that stunned the world. Here are a few of the accomplishments that have distinguished them in recent years:</p>
+				<h3><%=t "index.why" %></h3>
+				<p><%=t "index.why0" %></p>
 				<div class="clearfix">
 					<ul id="why-li-left">
-						<li>Fastest-growing economy in the world. In 2010, China had an annual GDP growth rate of 10.3%</li>
-						<li>University graduates all over the world</li>
+						<li><%=t "index.why1" %></li>
+						<li><%=t "index.why2" %></li>
 					</ul>
 					<ul class="clearfix" id="why-li-right">
-						<li>Expanding international influence and growing technological innovation</li>
-						<li>Single largest population of Internet users worldwide</li>
+						<li><%=t "index.why3" %></li>
+						<li><%=t "index.why4" %></li>
 					</ul>
 				</div>
-				<p>In the age of globalization and facing world financial crises, the relationship between China and the U.S. will undoubtedly continue to play an essential role in future economic issues. With the future in mind, China will face many challenges emerging from its rapid development; ideas and solutions from both China and the United states would aid and benefit the growth of both countries.</p>
+				<p><%=t "index.why5" %></p>
 			</div>
 			<div id="why-right">
-				<h3>Who’s coming?</h3>
-				<p>This April, the CMU Summit is expected to draw more than 1,000 participants to Carnegie Mellon University. Entrepreneurs, executives and venture capitalists from China and the U.S. will come together to discuss China’s growing influence on the global economy. The Summit will explore the United States’ role and how it will present mutual opportunities for both nations in the years to come.</p>
-				<h3>Where and When?</h3>
-				<p>CMU Summit will be held at Carnegie Mellon University on April 28th – 29th, 2012.</p>
+				<h3><%=t "index.who" %></h3>
+				<p><%=t "index.who0" %></p>
+				<h3><%=t "index.where" %></h3>
+				<p><%=t "index.where0" %></p>
 			</div>
 		</div>
 	</div>
 	<div id="index3" class="clearfix">
 		<div class="section" id="main">
 			<div class="article" id="sponsor">
-				<h1>Current Sponsor</h1>
+				<h1><%=t "index.sponsor" %></h1>
 				<div class="content clearfix">
 					<ul id="sponsor-list">
 						<li>
 							<a href="http://www.zhenfund.com/"><%= image_tag 'sponsor1.png', :alt => 'Xiaoping Xu' %></a>
 						</li>
 					</ul>
-					<p style="color: #CF242A">Interested in sponsorship?</p><p>Please contact Pengxuan Chen</p><p>Sponsor Relation Director</p><p>Phone: +1 (412)-251-6068</p><p>Email: pengxua1@andrew.cmu.edu.</p>
+					<p style="color: #CF242A"><%=t "index.sponsor0" %></p><p><%=t "index.sponsor1" %></p><p><%=t "index.sponsor2" %></p><p><%=t "index.sponsor3" %></p><p><%=t "index.sponsor4" %></p>
 				</div>
 			</div> 
 			<div class="article" id="voice">
-				<h1>Voice</h1>
+				<h1><%=t "index.voice" %></h1>
 				<div class="content clearfix">
 					<div class="voice-quote">
-						<p>"For those of you thinking about Carnegie Mellon, it's a terrific place, and you guys are doing just great work... Carnegie Mellon is a great example of what it means to move forward... At its founding, no one would have imagined that a trade school for the sons and daughters of steelworkers would one day become … one of the region's largest employers and a global research university."</p>
+						<p><%=t "index.voice1" %></p>
 						<p class="author">
-							President Obama
+							<%=t "index.voice11" %>
 						</p>
 					</div>
 					<div class="voice-quote">
-						<p>"We have a lot of Carnegie Mellon alums at Facebook and a lot of them are actually some of our best engineers. So when we decided to organize this trip to go see a few colleges, Carnegie Mellon was at the top of the list."</p>
+						<p><%=t "index.voice2" %></p>
 						<p class="author">
-							Mark Zuckerberg, Facebook CEO
+							<%=t "index.voice21" %>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="aside">
-			<div class="article" id="follow-us">
-				<h3>Get Involved</h3>
-				<div class="content">
-					<div class="clearfix">
-						<p>Follow us on your social network.</p>
-						<ul id="aside-social-network" class="clearfix">
-	                        <li><a href="https://www.facebook.com/cmusummit"><%= image_tag 'facebook_icon.png' %></a></li>
-							<li><a href="http://page.renren.com/601202783"><%= image_tag 'renren_icon.jpg' %></a></li>
-							<li><a href="http://weibo.com/cmusummit"><%= image_tag 'weibo_icon.png' %></a></li>
-							<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><%= image_tag 'linkin_icon.jpg' %></a></li>
-						</ul>
-						<p>Participate in the CMU Summit New Venture Competition! Click <a href="/contest">here</a> to view the detail.</p>
-					</div>
-				</div>
-			</div>
+			<%=render :partial => "follow" %>
 			<%=render :partial => "announcements" %>
 		</div>
 	</div>

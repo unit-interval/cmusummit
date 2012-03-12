@@ -1,29 +1,23 @@
-<h1>Listing users</h1>
+<div id="content" class="clearfix">
+<div class="section">
+<div class="article" id="admin-tool">
+<h1>Users Model</h1>
+<div>
 
 <table>
   <tr>
     <th>Email</th>
-    <th>Encrypted password</th>
-    <th>Salt</th>
     <th>Last name</th>
     <th>First name</th>
-    <th>Gender</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.email %></td>
-    <td><%= user.encrypted_password %></td>
-    <td><%= user.salt %></td>
     <td><%= user.last_name %></td>
     <td><%= user.first_name %></td>
-    <td><%= user.gender %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', user %> <%= link_to 'Edit', edit_user_path(user) %> <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -31,3 +25,4 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+</div></div></div></div>

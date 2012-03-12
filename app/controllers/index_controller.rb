@@ -2,11 +2,11 @@ class IndexController < ApplicationController
   skip_before_filter :authorize, :except => [:todo]
 
   def index
-    @layout = "Home"
+    @layout = "home"
   end
 
   def agenda
-    @layout = "Agenda"
+    @layout = "agenda"
     presentations = Presentation.all
     @panels = presentations.find_all { |p| p.datatype == 'panel' }
     @keynotes = presentations.find_all { |p| p.datatype == 'keynote' }
@@ -14,16 +14,17 @@ class IndexController < ApplicationController
   end
 
   def contest
-    @layout = "Contest"
+    @layout = "contest"
     user = session[:user_id] ? User.find(session[:user_id]) : User.new
     @submission = Submission.new(user.attributes)
   end
 
   def info
-    @layout = "Info"
+    @layout = "info"
   end
 
   def login
+    @layout = "get_involved"
     @user = User.new
   end
 
@@ -34,7 +35,7 @@ class IndexController < ApplicationController
   end
 
   def people
-    @layout = "People"
+    @layout = "people"
     guests = Guest.all
     @speakers = guests.find_all { |p| p.datatype == "keynote" }
     @panelists = guests.find_all { |p| p.datatype == "panel" }
@@ -76,7 +77,7 @@ class IndexController < ApplicationController
   end
   
   def submit
-    @layout = "Contest"
+    @layout = "contest"
     @submission = Submission.new params[:submission]
     if @submission.valid?
       ContestMailer.submit_executive_summary(@submission).deliver if Rails.env == 'production'
@@ -88,7 +89,7 @@ class IndexController < ApplicationController
   end
 
   def team
-    @layout = "Team"
+    @layout = "team"
     @advisors = Guest.find_all_by_datatype('advisor')
     mailist = [
       "annabellehht@gmail.com",
@@ -158,7 +159,7 @@ class IndexController < ApplicationController
   end
 
   def todo
-    @layout = "Account"
+    @layout = "account"
     @user = User.find(session[:user_id])
   end
 end

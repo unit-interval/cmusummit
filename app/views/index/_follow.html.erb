@@ -1,0 +1,15 @@
+<div class="article" id="follow-us">
+	<h3><%=t "gen.get_involved" %></h3>
+	<div class="content">
+		<div class="clearfix">
+			<p><%=t "follow.side11" %></p>
+			<ul id="aside-social-network" class="clearfix">
+                <li><a href="https://www.facebook.com/cmusummit"><%= image_tag 'facebook_icon.png' %></a></li>
+				<li><a href="http://page.renren.com/601202783"><%= image_tag 'renren_icon.jpg' %></a></li>
+				<li><a href="http://weibo.com/cmusummit"><%= image_tag 'weibo_icon.png' %></a></li>
+				<li><a href="http://www.linkedin.com/groups/CMU-Summit-4275100"><%= image_tag 'linkin_icon.jpg' %></a></li>
+			</ul>
+			<p><%=t("follow.side12", :href => link_to(t("follow.link"), contest_path)).html_safe %></p>
+		</div>
+	</div>
+</div>

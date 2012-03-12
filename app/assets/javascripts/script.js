@@ -1,24 +1,12 @@
 $(function() {
+	var header = $('div.header');
 	$('#douno-nav h3').click(function(){
-		var span = $(this).find('span');
-		var c = $('#douno');
-		if (span.hasClass('active')) {
-			c.slideUp(500);
-			span.removeClass('active').html('Read More');
-		}
-		else {
-			c.slideDown(500);
-			span.addClass('active').html('Read Less');
-		}
+		$('#douno').slideToggle(500);
+		$(this).toggleClass('active');
 	})
 	$(window).scroll(function(){
-		var header = $('div.header')
-		if ($(window).scrollTop() < 5) {
-			if (header.hasClass('active')) header.removeClass('active');
-		}
-		else {
-			if (!header.hasClass('active')) header.addClass('active');
-		}
+		if ($(window).scrollTop() < 5 && header.hasClass('active')) header.removeClass('active');
+		if (!header.hasClass('active') && $(window).scrollTop() > 5) header.addClass('active');
 	})
 	if ($("#voice").length > 0) {
 		var a = $("#voice div.content");
@@ -28,42 +16,12 @@ $(function() {
 		var c = $(b[m]);
 		c.show();
 	}
-	$("#agenda > h1 > a").click(function() {
-		var b = $(this);
-		var a = b.html().toLowerCase();
-		b.siblings().removeClass("active");
-		b.addClass("active");
-		$("#agenda .content").removeClass("active");
-		$("#agenda #" + a).addClass("active");
+	$('h1.tab-nav a').click(function(){
+		var i = $(this).data("tab");
+		$('#'+i).show().siblings('div').hide();
+		$(this).addClass('active').siblings('a').removeClass('active');
 		return false;
-	});
-	$("#people > h1 > a").click(function() {
-		var b = $(this);
-		var a = b.html().toLowerCase();
-		b.siblings().removeClass("active");
-		b.addClass("active");
-		$("#people .people-page").removeClass("active");
-		$("#people #" + a).addClass("active");
-		return false;
-	});
-	$("#contest > h1 > a").click(function() {
-		var b = $(this);
-		var a = b.html().toLowerCase();
-		b.siblings().removeClass("active");
-		b.addClass("active");
-		$("#contest .content").removeClass("active");
-		$("#contest #" + a).addClass("active");
-		return false;
-	});
-	$("#info > h1 > a").click(function() {
-		var b = $(this);
-		var a = b.html().toLowerCase();
-		b.siblings().removeClass("active");
-		b.addClass("active");
-		$("#info .content").removeClass("active");
-		$("#info #" + a).addClass("active");
-		return false;
-	});
+	})
 	$('.speaker-info .bio .read-more').click(function(){
 		$(this).hide().next('p').show();
 		return false;

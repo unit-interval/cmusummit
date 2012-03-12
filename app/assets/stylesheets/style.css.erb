@@ -144,22 +144,16 @@ div.header {
 div.header.active {
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
 }
-#home {
-	float: left;
-}
-#home span {
-	color: black;
-}
-#home img {
-	margin: 10px 10px 0 0;
-	float: left;
-}
-#home span {
+div.nav > a {
+	background: url(<%= image_path 'logo50.png' %>) no-repeat;
 	position: absolute;
 	font-family: Santana, arial,sans-serif;
 	text-transform: uppercase;
 	font-size: 2em;
-	top: 23px;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 60px;
+	top: 10px;
 	color: #C82828;
 }
 div.nav {
@@ -367,11 +361,17 @@ div.nav > ul > li a:hover {
 	margin: 0;
 	text-align: center;
 }
+.zh #index1 h1 {
+	font-size: 33px;
+}
 #index1 h2 {
 	font-size: 13px;
 	text-align: center;
 	color: #EEE;
 	line-height: 1.5;
+}
+.zh #index1 h2 {
+	font-size: 33px;
 }
 #index1 h3 {
 	float: right;
@@ -473,6 +473,12 @@ div.nav > ul > li a:hover {
 	margin-left: 20px;
 	position: relative;
 	top: -5px;
+}
+#douno-nav h3.active #douno_read_more, #douno-nav #douno_read_less {
+	display: none;
+}
+#douno-nav h3.active #douno_read_less, #douno-nav #douno_read_more {
+	display: inline-block;
 }
 #why h3 {
 	margin: 0 auto 30px auto;
@@ -1258,7 +1264,7 @@ h4.one-line-title{
 	font-size: 13px;
 }
 #register label {
-	width: 80px;
+	width: 97px;
 	text-align: right;
 	padding: 20px 10px 20px 0;
 	display: inline-block;
@@ -1272,7 +1278,7 @@ h4.one-line-title{
 #register form span, #contest form span {
 	position: absolute;
 	right: 30px;
-	top: 16px;
+	top: 15px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -1292,10 +1298,10 @@ h4.one-line-title{
 	border-top: 1px dashed #D2D2D2;
 }
 #register input[type="text"], #register input[type="password"], #register input[type="email"] {
-	width: 250px;
+	width: 230px;
 	margin: 2px;
 }
-#register .field_with_errors input, #contest .field_with_errors input {
+#register .field_with_errors input, #contest .field_with_errors input, #contest .field_with_errors textarea {
   border: 2px solid #ff4500;
 }
 /* todo */
