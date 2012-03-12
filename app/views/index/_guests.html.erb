@@ -32,9 +32,15 @@
 	<% speakers.each do |g| %>
 		<div class="speaker-info">
 			<div class="speaker has-image">
-                <a href=<%= g.fb_username.nil? ? '#' : 'https://www.facebook.com/'+g.fb_username %> class="image">
-                  <%= image_tag g.profile_picture %>
-				</a>
+                <% if not g.fb_username.nil? %>
+					<a href=<%='https://www.facebook.com/'+g.fb_username%> class="image" target="_blank">
+						<%=image_tag g.profile_picture %>
+					</a>
+				<% else %>
+					<div class="image">
+						<%=image_tag g.profile_picture %>
+					</div>
+				<% end %>
 				<div class="bio">
 					<h3><%= g.full_name %></h3>
                     <h4 class="one-line-title"><%= g.title %></h4>

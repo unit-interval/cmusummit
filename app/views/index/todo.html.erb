@@ -60,7 +60,7 @@
 				<div class="speaker-info">
 					<div class="speaker has-image">
                         <% if c.fb_username %>
-                          <%= link_to image_tag c.profile_picture, c.fb_profile_url, :target => '_blank', :class => 'image' %>
+                          <a class="image" href=<%=c.fb_profile_url %> target="_blank"><%= image_tag c.profile_picture %></a>
                         <% else %>
                           <div class="image"><%= image_tag c.profile_picture %></div>
                         <% end %>
