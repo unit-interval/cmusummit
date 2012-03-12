@@ -25,6 +25,48 @@ zh:
     save_changes: 保存更改"
     change_psw: "更换密码"
     save_psw: "更新密码"
+    error: "发生错误"
+    activemodel:
+        errors:
+            models:
+                submission:
+                    attributes:
+                        last_name:
+                            blank: "不能为空"
+                        first_name:
+                            blank: "不能为空"
+                        email:
+                            blank: "不能为空"
+                        mobile_phone:
+                            blank: "不能为空"
+                        institute:
+                            blank: "不能为空"
+                        team_size:
+                            blank: "不能为空"
+                        venture_title:
+                            blank: "不能为空"
+                        definition:
+                            blank: "不能为空"
+                        file:
+                            blank: "不能为空"
+    activerecord:
+        errors:
+            models:
+                user:
+                    attributes:
+                        email:
+                            blank: "不能为空"
+                        email_confirmation:
+                            blank: "不能为空"
+                        password:
+                            confirmation: "两次密码输入不同"
+                            too_short: "密码太短（至少6位）"
+                        last_name:
+                            blank: "不能为空"
+                        first_name:
+                            blank: "不能为空"
+                        title:
+                            blank: "不能为空"
     gen:
         home: "首页"
         agenda: "峰会日程"

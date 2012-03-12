@@ -2,8 +2,8 @@ en:
     email: "Email"
     password: "Password"
     password_old: "Old Password"
-    email_confirmation: "Confiremation"
-    password_confirmation: "Confiremation"
+    email_confirmation: "Confirmation"
+    password_confirmation: "Confirmation"
     first_name: "First Name"
     last_name: "Last Name"
     title: "Current Position"
@@ -25,6 +25,48 @@ en:
     save_changes: "Save Changes"
     change_psw: "Change Password"
     save_psw: "Update Password"
+    error: "Errors Occured"
+    activemodel:
+        errors:
+            models:
+                submission:
+                    attributes:
+                        last_name:
+                            blank: "Can't Be Blank"
+                        first_name:
+                            blank: "Can't Be Blank"
+                        email:
+                            blank: "Can't Be Blank"
+                        mobile_phone:
+                            blank: "Can't Be Blank"
+                        institute:
+                            blank: "Can't Be Blank"
+                        team_size:
+                            blank: "Can't Be Blank"
+                        venture_title:
+                            blank: "Can't Be Blank"
+                        definition:
+                            blank: "Can't Be Blank"
+                        file:
+                            blank: "Can't Be Blank"
+    activerecord:
+        errors:
+            models:
+                user:
+                    attributes:
+                        email:
+                            blank: "Can't Be Blank"
+                        email_confirmation:
+                            blank: "Can't Be Blank"
+                        password:
+                            confirmation: "Doesn't Math Confirmation"
+                            too_short: "Too Weak (At Least 6)"
+                        last_name:
+                            blank: "Can't Be Blank"
+                        first_name:
+                            blank: "Can't Be Blank"
+                        title:
+                            blank: "Can't Be Blank"
     gen:
         home: "Home"
         agenda: "Agenda"

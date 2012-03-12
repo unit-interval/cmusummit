@@ -93,7 +93,7 @@ $(function(){
                   <p id='submission-notice'><%= notice %></p>
                 <% end %>
                 <% if @submission.errors.any? %>
-                  <p id="submission-error">Error(s) occured:</p>
+                  <p id="submission-error"><%=t 'error' %></p>
                 <% end %>
                 <%= form_for @submission, :url => contest_path(:anchor => 'submission'), :method => 'post' do |f| %>
                   <div>
