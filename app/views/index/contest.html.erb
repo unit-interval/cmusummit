@@ -89,7 +89,7 @@ $(function(){
                 <h2><%=t 'contest.h13'%></h2>
                 <p><%=t 'contest.p13'%></p>
                 <% if notice %>
-                  <p id='submission-notice'><%= notice %></p>
+                  <p id='submission-notice'><%= t 'notice' %></p>
                 <% end %>
                 <% if @submission.errors.any? %>
                   <p id="submission-error"><%=t 'error' %></p>

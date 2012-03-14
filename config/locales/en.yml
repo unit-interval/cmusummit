@@ -26,6 +26,7 @@ en:
     change_psw: "Change Password"
     save_psw: "Update Password"
     error: "Errors Occured"
+    notice: "Your Executive Summary is successfully submitted."
     activemodel:
         errors:
             models:
@@ -207,10 +208,10 @@ en:
         h12: "Legal Disclaimers"
         p121: "CMU summit reserves the right to disqualify any team in violation of any regulations, laws or rules."
         p122: "By participating in the competition, each team agrees that neither CMU nor Summit personnel assume any liability whatsoever for any disclosures of business plan information which may be made (whether inadvertently or otherwise) by any judge, reviewer, staff member, audience member or other individual connected with, participating in, viewing, hearing, or receiving information from the competition."
-        p123: ""
-        p124: ""
+        p123: "Participants submit applications to the committee and indicate their adherence to the rules of the competition to compete in activities in the CMU Summit New Venture Competition，and that all actions by the participants  follow the rules' constraints. Participants must obey the decision of the judges, or they forfeit their qualification to be considered for the awards."
+        p124: "The contest committee reserves the right to make amends and additions without prior mention, and to have the final say in the decision of the competition."
         h13: "Executive Summary Submission"
-        p13: "Thank you for your interest in CMU-Summit New Venture Competition.Please fill in the following form to submit your executive summary. A confirmation email will be sent to your email after submission. It would take a while to upload your file."
+        p13: "Thank you for your interest in CMU Summit New Venture Competition. Please fill in the following form to submit your executive summary. A confirmation email will be sent to your email after submission. It would take a while to upload your file."
     info:
         about: "About"
         register: "Register"
