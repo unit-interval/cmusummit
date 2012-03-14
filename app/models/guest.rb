@@ -8,9 +8,13 @@ class Guest < ActiveRecord::Base
   validates :last_name, :first_name, :length => { :maximum => 255 }
   validates :title, :length => { :maximum => 1024 }
 
-  translates :title, :bio, :fallbacks_for_empty_translations => true
+  translates :last_name, :first_name, :title, :bio, :fallbacks_for_empty_translations => true
 
   def full_name
-    "#{first_name} #{last_name}"
+    if I18n.locale == :zh
+      "#{last_name}#{first_name}"
+    else
+      "#{first_name} #{last_name}"
+    end
   end
 end

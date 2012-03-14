@@ -13,9 +13,7 @@
 
   <div class="field">
     <%= f.label :title %>
-    <% if @presentation.translated_attribute_names.include? :title %>
-      <%= label_tag ' (has translation)' %>
-    <% end %>
+    <%= label_tag ' (has translation)' %>
     <br />
     <%= f.text_field :title %>
   </div>
@@ -25,13 +23,14 @@
   </div>
   <div class="field">
     <%= f.label :content %>
-    <% if @presentation.translated_attribute_names.include? :content %>
-      <%= label_tag ' (has translation)' %>
-    <% end %><br />
+    <%= label_tag ' (has translation)' %>
+    <br />
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :venue %><br />
+    <%= f.label :venue %>
+    <%= label_tag ' (has translation)' %>
+    <br />
     <%= f.text_field :venue %>
   </div>
   <div class="field">

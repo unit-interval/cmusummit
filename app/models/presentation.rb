@@ -8,5 +8,5 @@ class Presentation < ActiveRecord::Base
   validates :title, :length => { :maximum => 1024 }
   validates :datatype, :inclusion => { :in => %w(keynote panel) }
 
-  translates :title, :content, :fallbacks_for_empty_translations => true
+  translates :title, :content, :venue, :fallbacks_for_empty_translations => true
 end
