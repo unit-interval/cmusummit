@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates :password, :length => { :minimum => 6 }, :if => :encrypted_password_changed?
   validates :email, :salt, :last_name, :first_name, :length => { :maximum => 255 }
 
-  attr_accessible :email, :email_confirmation, :password, :password_confirmation, :last_name, :first_name, :gender, :title, :fb_username
+  attr_accessible :email, :email_confirmation, :password, :password_confirmation, :last_name, :first_name, :gender, :title, :fb_username, :is_admin, :is_member
   attr_accessor :password
 
   def self.authenticate(email, password)

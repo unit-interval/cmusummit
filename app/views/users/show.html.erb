@@ -11,16 +11,6 @@
 </p>
 
 <p>
-  <b>Encrypted password:</b>
-  <%= @user.encrypted_password %>
-</p>
-
-<p>
-  <b>Salt:</b>
-  <%= @user.salt %>
-</p>
-
-<p>
   <b>Last name:</b>
   <%= @user.last_name %>
 </p>
@@ -35,6 +25,25 @@
   <%= @user.gender %>
 </p>
 
+<p>
+  <b>Title:</b>
+  <%= @user.title %>
+</p>
+
+<p>
+  <b>Facebook:</b>
+  <%= @user.fb_username %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @user.is_admin %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @user.is_member %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

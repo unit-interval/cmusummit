@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219162118) do
+ActiveRecord::Schema.define(:version => 20120314021359) do
 
   create_table "followings", :force => true do |t|
     t.integer  "user_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20120219162118) do
     t.boolean  "is_admin",           :default => false
     t.string   "title"
     t.string   "fb_username"
+    t.boolean  "is_member",          :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
