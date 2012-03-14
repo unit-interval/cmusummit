@@ -303,3 +303,5 @@ en:
         h3: "My Profile"
         p31: "Link social media and use profile picture as avatar."
         p32: "Click on your own Facebook page (not Facebook homepage) and enter your Facebook ID as it appears in the address bar. Don't have a Facebook ID? You can create one in Account Setting."
+        b0: "Link Facebook"
+        p0: "FB Username"

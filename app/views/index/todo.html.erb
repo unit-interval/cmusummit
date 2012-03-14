@@ -81,17 +81,17 @@
 	</div>
 	<div class="aside">
 		<div class="article" id="update-profile">
-			<h3>My Profile</h3>
+			<h3><%=t 'account.h3' %></h3>
 			<div class="content">
 				<div id="connect-social-network">
 					<div id="connect-social-network-intro">
 	                    <div class="image"><%= image_tag @user.profile_picture %></div>
-						<p>Link social media and use profile picture as avatar.</p>
-						<div class="button-gray" id="facebook-link-button">Link Facebook</div>
+						<p><%= t 'account.p31' %></p>
+						<div class="button-gray" id="facebook-link-button"><%= t 'account.b0' %></div>
 					</div>
                     <%= form_for @user, :html => { :class => 'social-network-link', :id =>"facebook-link-form" } do |f| %>
-						<p>Click on your own Facebook page (not Facebook homepage) and enter your Facebook ID as it appears in the address bar. Don't have a Facebook ID? You can create one in Account Setting.</p>
-						<%= f.text_field :fb_username, :placeholder => 'FB Username' %>
+						<p><%= t 'account.p32' %></p>
+						<%= f.text_field :fb_username, :placeholder => t('account.p0') %>
 						<label>www.facebook.com/</label>
                         <%= f.submit 'Link Facebook', :class => 'button-gray' %>
                     <% end %>
