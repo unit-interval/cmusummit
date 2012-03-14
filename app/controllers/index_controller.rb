@@ -91,7 +91,7 @@ class IndexController < ApplicationController
   def team
     @layout = "team"
     @advisors = Guest.find_all_by_datatype('advisor')
-    @members = User.all.find_all { |p| p.is_member }
+    @members = User.members.all
   end
 
   def todo

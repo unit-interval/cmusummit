@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :email_confirmation, :password, :password_confirmation, :last_name, :first_name, :gender, :title, :fb_username, :is_admin, :is_member
   attr_accessor :password
 
+  scope :members, where(:is_member => true)
+
   def self.authenticate(email, password)
     if user = find_by_email(email)
       if user.encrypted_password == encrypt_password(password, user.salt)
