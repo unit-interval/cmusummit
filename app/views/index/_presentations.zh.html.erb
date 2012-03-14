@@ -15,14 +15,14 @@
 				</div>
 				<div class="session-interested">
                   <% if panel.user_ids.include? session[:user_id] %>
-                    <div class="button-gray-inactive">You <% if panel.users.count > 1 %>and <%= pluralize(panel.users.count - 1, 'person') %> <% end %>are following</div>
+                    <div class="button-gray-inactive">你<% if panel.users.count > 1 %>和 <%= panel.users.count - 1 %> 人<% end %>正在关注</div>
                   <% else %>
 					<% if session[:user_id] %>
                       <%= link_to '成为他们中的一员并加入我的日程', follow_presentation_path(panel), :class => "button-gray", "data-ajax" => true, "data-role" => 'follow' %>
 					<% else %>
                       <%= link_to '注册并成为他们中的一员', login_path, :class => "button-gray" %>
 					<% end %>
-                    <div class="button-gray-inactive" data-role="follower-count"><%= pluralize(panel.users.count, '人喜欢', '人喜欢') %></div>
+                    <div class="button-gray-inactive" data-role="follower-count"><%= panel.users.count %> 人关注</div>
                   <% end %>
 				</div>
 			</div>
@@ -35,9 +35,9 @@
                   <h3><%= guest.full_name %></h3>
 					<div class="people-interested">
                       <% if guest.user_ids.include? session[:user_id] %>
-                        <div class="button-gray-inactive">你<% if guest.users.count > 1 %>和<%= pluralize(guest.users.count - 1, '人') %> <% end %>正在关注</div>
+                        <div class="button-gray-inactive">你<% if guest.users.count > 1 %>和 <%= guest.users.count - 1 %> 人<% end %>正在关注</div>
                       <% else %>
-                        <div class="button-gray-inactive" data-role="follower-count"><%= pluralize(guest.users.count, '人', '人') %>正在关注</div>
+                        <div class="button-gray-inactive" data-role="follower-count"><%= guest.users.count %> 人正在关注</div>
 						<% if session[:user_id] %>
                           <%= link_to '成为他们中的一员并添加到我的通讯录', follow_guest_path(guest), :class => "button-gray", "data-ajax" => true, "data-role" => 'follow' %>
 						<% else %>

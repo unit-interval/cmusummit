@@ -7,9 +7,9 @@
 	              <h3><%= guest.full_name %></h3>
 					<div class="people-interested">
                       <% if guest.user_ids.include? session[:user_id] %>
-                        <div class="button-gray-inactive">你<% if guest.users.count > 1 %>和其他 <%= pluralize(guest.users.count - 1, '人', '人') %> <% end %>正在关注</div>
+                        <div class="button-gray-inactive">你<% if guest.users.count > 1 %>和其他 <%= guest.users.count - 1 %> 人<% end %>正在关注</div>
                       <% else %>
-                        <div class="button-gray-inactive" data-role="follower-count">有 <%= pluralize(guest.users.count, '人', '人') %>正在关注</div>
+                        <div class="button-gray-inactive" data-role="follower-count">有 <%= guest.users.count %> 人正在关注</div>
 						<% if session[:user_id] %>
                           <%= link_to '成为他们中的一员', follow_guest_path(guest), :class => "button-gray", "data-ajax" => true, "data-role" => 'follow' %>
 						<% else %>
@@ -45,10 +45,10 @@
 					<h3><%= g.full_name %></h3>
                     <h4 class="one-line-title"><%= g.title %></h4>
                     <% if g.follower_ids.include? session[:user_id] %>
-                      <h4>你<% if g.followers.count > 1 -%>和其他 <%= pluralize(g.followers.count - 1, '人', '人') -%><% end %>正在关注</h4>
+                      <h4>你<% if g.followers.count > 1 -%>和其他 <%= g.followers.count - 1 -%><% end %> 人正在关注</h4>
                     <% else %>
                       <h4 data-role="follower-count">
-                        有 <%= pluralize(g.followers.count, '人', '人') -%>正在关注<% if session[:user_id] -%><% if session[:user_id] == g.id -%>你
+                        有 <%= g.followers.count -%> 人正在关注<% if session[:user_id] -%><% if session[:user_id] == g.id -%>你
                           <% else %>
                             <%= link_to '添加', follow_user_path(g), :class => "button-gray button-gray-add", "data-ajax" => true, "data-role" => 'follow' %>
                           <% end %>
