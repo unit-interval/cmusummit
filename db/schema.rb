@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314021359) do
+ActiveRecord::Schema.define(:version => 20120314163117) do
 
   create_table "followings", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(:version => 20120314021359) do
   add_index "followings", ["presentation_id"], :name => "index_followings_on_presentation_id"
   add_index "followings", ["user_id"], :name => "index_followings_on_user_id"
 
+  create_table "guest_translations", :force => true do |t|
+    t.integer  "guest_id"
+    t.string   "locale"
+    t.text     "bio"
+    t.text     "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "guest_translations", ["guest_id"], :name => "index_guest_translations_on_guest_id"
+  add_index "guest_translations", ["locale"], :name => "index_guest_translations_on_locale"
+
   create_table "guests", :force => true do |t|
     t.string   "last_name"
     t.string   "first_name"
@@ -36,6 +48,18 @@ ActiveRecord::Schema.define(:version => 20120314021359) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "presentation_translations", :force => true do |t|
+    t.integer  "presentation_id"
+    t.string   "locale"
+    t.text     "content"
+    t.string   "title"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "presentation_translations", ["locale"], :name => "index_presentation_translations_on_locale"
+  add_index "presentation_translations", ["presentation_id"], :name => "index_06a75948c1ee24280e31c12b5a2944f03508c134"
 
   create_table "presentations", :force => true do |t|
     t.string   "title"

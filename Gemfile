@@ -47,3 +47,6 @@ gem 'mysql2', :group => :production
 # newrelic trial
 gem 'newrelic_rpm'
 
+# model i18n
+gem 'globalize3'
+
