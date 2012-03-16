@@ -1,4 +1,6 @@
 zh:
+    time: '时间'
+    place: '地点'
     email: "邮箱"
     password: "密码"
     password_old: "旧密码"

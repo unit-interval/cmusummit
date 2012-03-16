@@ -1,4 +1,6 @@
 en:
+    time: 'Time'
+    place: 'Place'
     email: "Email"
     password: "Password"
     password_old: "Old Password"
