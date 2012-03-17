@@ -86,6 +86,10 @@ en:
         logout: "Logout"
         copyright: "©2012 CMU Summit. Proudly Powered by Unit Interval"
         CMU_SUMMIT: "CMU SUMMIT"
+    login:
+        p1: 'Get your ticket to CMU Summit on EventBrite.'
+        b0: 'Get Your Ticket Now on EventBrite'
+        p2: 'Or you can sign up on our website below and buy your ticket later.'
     index:
         US_China: "US-China Innovation and Entrepreneurship Forum"
         April: "April 28-29, Pittsburgh, Pennsylvania"
@@ -234,9 +238,10 @@ en:
     register:
         p0: "Invited Speakers will be registered automatically. Please do not register via this website."
         h1: "Pricing"
-        p11: "Early Bird Price (until TBA)"
-        p12: "List Price (starting TBA)"
-        p13: "Academia (student, faculty)"
+        p11: "General Admission: CMU Students"
+        p12: "General Admission: Other Students"
+        p13: "General Admission: Professionals"
+        p14: "VIP Networking Dinner"
         h2: "Contact Us"
         p21: "Email"
         p22: "Phone"
@@ -298,6 +303,7 @@ en:
         h5: "CMU Summit Website RC1 Launched"
         p5: "Chinese translation in on today."
     account:
+        h0: 'My Ticket'
         h1: "My Calendar"
         p1: "Go to %{href} and add events to my schedule."
         h2: "My Contact"

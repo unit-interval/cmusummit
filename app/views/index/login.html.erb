@@ -1,5 +1,14 @@
 <div id="content" class="clearfix">
   <div class="section">
+	<div class="article" id="ticket">
+		<h1><%=t 'gen.get_involved' %></h1>
+		<div class="content">
+			<p><%=t 'login.p1' %></p>
+			<a href="http://cmusummit2012.eventbrite.com/" target="_blank" class="button-gray"><%=t 'login.b0' %></a>
+			<p><%=t 'login.p2' %></p>
+		</div>
+    </div>
+	<% unless session[:user_id] %>
     <div class="article" id="register">
       <h1><span><%=t "gen.login"%></span><span><%=t "gen.signup"%></span></h1>
       <div id="login" class="clearfix">
@@ -87,5 +96,6 @@
         <% end %>
       </div>
     </div>
+	<% end %>
   </div>
 </div>
