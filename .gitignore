@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore bundled executables
+/bin
+
 # Ignore gems from deployment bundle install
 /vendor/bundle
 
