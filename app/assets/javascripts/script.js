@@ -3,11 +3,11 @@ $(function() {
 	$('#douno-nav h3').click(function(){
 		$('#douno').slideToggle(500);
 		$(this).toggleClass('active');
-	})
+	});
 	$(window).scroll(function(){
 		if ($(window).scrollTop() < 5 && header.hasClass('active')) header.removeClass('active');
 		if (!header.hasClass('active') && $(window).scrollTop() > 5) header.addClass('active');
-	})
+	});
 	if ($("#voice").length > 0) {
 		var a = $("#voice div.content");
 		var b = a.find("div.voice-quote");
@@ -21,11 +21,11 @@ $(function() {
 		$('#'+i).show().siblings('div').hide();
 		$(this).addClass('active').siblings('a').removeClass('active');
 		return false;
-	})
+	});
 	$('.speaker-info .bio .read-more').click(function(){
 		$(this).hide().next('p').show();
 		return false;
-	})
+	});
 	$("#top h3").delay(2000).animate({'margin-top': 5}, 500);
 	$(".arrow-nav a.up").click(function(){
 		var f=$(this);
@@ -39,7 +39,7 @@ $(function() {
 			}
 		});
 		return false;
-	})
+	});
 	$(".arrow-nav a.down").click(function(){
 		var e=$(this);
 		var c=e.parent().siblings('.content');
@@ -52,7 +52,7 @@ $(function() {
 			}			
 		});
 		return false;
-	})
+	});
 //	if ($("#index").length > 0) $("#home").hide();
 /*	if ($("#douno").length > 0) {
 		var a = $("#douno");
@@ -63,33 +63,31 @@ $(function() {
 		c.hide();
 	}*/
 	
-	$(function(){
-		$("#register form input").focus(function(){
-			$(this).parent().siblings('span').fadeOut(100);
-		})
-		$("#contest form input").focus(function(){
-			$(this).parent().siblings('span').fadeOut(100);
-		})
-		$("#contest form textarea").focus(function(){
-			$(this).parent().siblings('span').fadeOut(100);
-		})
-		$("#forget-button").click(function(){
-			$("#forget").slideDown(100);
-		})
-	})
+    $("#register form input").focus(function(){
+        $(this).parent().siblings('span').fadeOut(100);
+    });
+    $("#contest form input").focus(function(){
+        $(this).parent().siblings('span').fadeOut(100);
+    });
+    $("#contest form textarea").focus(function(){
+        $(this).parent().siblings('span').fadeOut(100);
+    });
+    $("#forget-button").click(function(){
+        $("#forget").slideDown(100);
+    });
 	$("#facebook-link-button").click(function(){
 		$("#connect-social-network-intro").hide(100);
 		$("#facebook-link-form").show(100);
 		$("#renren-link-form").hide(100);
-	})
+	});
 	$("#renren-link-button").click(function(){
 		$("#facebook-link-form").hide(100);
 		$("#renren-link-form").show(100);
-	})
+	});
 	$("#change-profile-button").click(function(){
 		$("#update-info").addClass('active');
 		return false;
-	})
+	});
 	$("#change-password-button").click(function(){
 		$("#update-password-div").slideDown(100);
 		return false;
